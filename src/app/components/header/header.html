@@ -1,0 +1,28 @@
+<mat-toolbar>
+  <mat-menu #appMenu="matMenu">
+    <ng-template matMenuContent>
+      <button mat-menu-item>Análises</button>
+      <button mat-menu-item>Contato</button>
+    </ng-template>
+  </mat-menu>
+
+  <button matIconButton [matMenuTriggerFor]="appMenu">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <span><strong>ClickReviews</strong></span>
+  <span class="example-spacer"></span>
+  <button matIconButton class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button matIconButton class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>share</mat-icon>
+  </button>
+
+  <mat-slide-toggle />
+</mat-toolbar>
+
+
+
+
+
