@@ -1,23 +1,23 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Header } from './components/header/header';
-import { MatCardModule } from '@angular/material/card';
 import { ChangeDetectionStrategy } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
+import { MaterialModule } from './material.module';
+import { ProductsCard } from "./components/products-card/products-card";
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [
     RouterOutlet,
     Header,
-    MatCardModule,
-    MatButtonModule,
-  ],
+    MaterialModule,
+    ProductsCard
+],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
   protected title = 'click-reviews-angular-front';
-  city = 'Blumenau'
 }
