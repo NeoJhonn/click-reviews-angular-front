@@ -7,6 +7,6 @@ import { CadeiraSafaty1st } from './components/reviews/cadeira-safaty1st/cadeira
 export const routes: Routes = [
   { path: '', component: Home },
   { path: 'analise-galaxy-a15', component: Galaxy15 },
-  { path: 'analise-cadeira-safaty1st', component: CadeiraSafaty1st },
+  { path: 'analise-cadeira-safety1st', component: CadeiraSafaty1st },
   { path: 'contato', component: ReachOut },
 ];
