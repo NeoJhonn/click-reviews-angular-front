@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { Header } from './components/header/header';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { ChangeDetectionStrategy } from '@angular/core';
 import { MaterialModule } from './material.module';
-import { ProductsCard } from "./components/products-card/products-card";
+import { Home } from './components/home/home';
+import { Header } from './components/header/header';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
+    RouterModule,
     RouterOutlet,
-    Header,
     MaterialModule,
-    ProductsCard
+    Header
 ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './app.html',

@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 import { MaterialModule } from '../../material.module';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-products-card',
-  imports: [MaterialModule],
+  imports: [
+    RouterModule,
+    MaterialModule],
   templateUrl: './products-card.html',
   styleUrl: './products-card.scss'
 })
