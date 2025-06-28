@@ -13,11 +13,6 @@ import { RouterModule } from '@angular/router';
   styleUrl: './header.scss'
 })
 export class Header {
-  favoritar() {
-    const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
-    const shortcut = isMac ? 'Command + D' : 'Ctrl + D';
-    alert(`Pressione ${shortcut} para adicionar esta página aos favoritos.`);
-  }
 
   mostrarMenu = false;
   urlAtual = window.location.href;

@@ -12,9 +12,6 @@
 
   <span><strong><a routerLink="/">ClickReviews</a></strong></span>
   <span class="example-spacer"></span>
-  <button matIconButton class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon (click)="favoritar()">favorite</mat-icon>
-  </button>
   <button matIconButton class="example-icon" aria-label="Example icon-button with share icon">
     <mat-icon (click)="mostrarMenu = !mostrarMenu">share</mat-icon>
   </button>
@@ -24,13 +21,11 @@
     <div class="absolute bg-white p-2 shadow-md rounded mt-2 z-10">
       <a (click)="compartilharWhatsApp()" class="compartilhar-link">WhatsApp</a><br>
       <a (click)="compartilharFacebook()" class="compartilhar-link">Facebook</a><br>
-      <a (click)="compartilharTwitter()" class="compartilhar-link">Twitter</a><br>
-      <a (click)="compartilharLinkedIn()" class="compartilhar-link">LinkedIn</a><br>
+      <a (click)="compartilharTwitter()" class="compartilhar-link">Twitter/X</a><br>
       <a (click)="copiarLink()" class="compartilhar-link">Copiar link</a>
     </div>
   }
 
-  <mat-slide-toggle />
 </mat-toolbar>
 
 
