@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MaterialModule } from '../../material.module';
 import { RouterModule } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -13,35 +14,32 @@ import { RouterModule } from '@angular/router';
   styleUrl: './header.scss'
 })
 export class Header {
+  private snackBar = inject(MatSnackBar);
 
-  mostrarMenu = false;
-  urlAtual = window.location.href;
-  texto = 'Confira esta página incrível que encontrei:';
+  sharePage(): void {
+    const shareData = {
+      title: document.title,
+      text: 'Confira essa análise no ClickReviews!',
+      url: window.location.href
+    };
 
-  compartilharWhatsApp() {
-    window.open(`https://wa.me/?text=${encodeURIComponent(this.texto + ' ' + this.urlAtual)}`, '_blank');
-    this.mostrarMenu = false;
+    if (navigator.share) {
+      navigator.share(shareData)
+        .then(() => console.log('Compartilhado com sucesso!'))
+        .catch(err => console.error('Erro ao compartilhar:', err));
+    } else {
+      // Fallback para copiar o link no desktop
+      navigator.clipboard.writeText(window.location.href)
+        .then(() => {
+          this.snackBar.open('Link copiado para a área de transferência!', 'Fechar', {
+            duration: 3000,
+            horizontalPosition: 'center',
+            verticalPosition: 'bottom'
+          });
+        })
+        .catch(() => {
+          alert('Não foi possível copiar o link. Copie manualmente.');
+        });
+    }
   }
-
-  compartilharFacebook() {
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(this.urlAtual)}`, '_blank');
-    this.mostrarMenu = false;
-  }
-
-  compartilharTwitter() {
-    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(this.texto)}&url=${encodeURIComponent(this.urlAtual)}`, '_blank');
-    this.mostrarMenu = false;
-  }
-
-  compartilharLinkedIn() {
-    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(this.urlAtual)}`, '_blank');
-    this.mostrarMenu = false;
-  }
-
-  copiarLink() {
-    navigator.clipboard.writeText(this.urlAtual);
-    alert('Link copiado para a área de transferência!');
-    this.mostrarMenu = false;
-  }
-
 }

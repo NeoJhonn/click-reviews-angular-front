@@ -13,19 +13,8 @@
   <span><strong><a routerLink="/">ClickReviews</a></strong></span>
   <span class="example-spacer"></span>
   <button matIconButton class="example-icon" aria-label="Example icon-button with share icon">
-    <mat-icon (click)="mostrarMenu = !mostrarMenu">share</mat-icon>
+    <mat-icon (click)="sharePage()">share</mat-icon>
   </button>
-
-  <!-- Menu de compartilhamento -->
-  @if (mostrarMenu) {
-    <div class="absolute bg-white p-2 shadow-md rounded mt-2 z-10">
-      <a (click)="compartilharWhatsApp()" class="compartilhar-link">WhatsApp</a><br>
-      <a (click)="compartilharFacebook()" class="compartilhar-link">Facebook</a><br>
-      <a (click)="compartilharTwitter()" class="compartilhar-link">Twitter/X</a><br>
-      <a (click)="copiarLink()" class="compartilhar-link">Copiar link</a>
-    </div>
-  }
-
 </mat-toolbar>
 
 
