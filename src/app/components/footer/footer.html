@@ -1,0 +1,26 @@
+<mat-toolbar color="primary" class="footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-info">
+        <span class="copyright">
+          &copy; {{ currentYear }} ClickReviews, todos os direitos reservados
+        </span>
+        <div class="footer-links">
+          <a routerLink="/termos">Termos de Uso</a>
+          <a routerLink="/privacidade">Política de Privacidade</a>
+          <a routerLink="/contato">Contato</a>
+        </div>
+      </div>
+
+      <div class="social-media">
+        @for (link of socialLinks; track link.icon) {
+        <a [href]="link.url" target="_blank" rel="noopener noreferrer">
+          <button mat-icon-button [attr.aria-label]="'Ícone do ' + link.icon">
+            <mat-icon>{{ link.icon }}</mat-icon>
+          </button>
+        </a>
+        }
+      </div>
+    </div>
+  </div>
+</mat-toolbar>
