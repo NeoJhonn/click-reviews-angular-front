@@ -27,3 +27,46 @@ img[mat-card-image] {
   width: 100%;
   //margin: 1rem auto;
 }
+
+.benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  word-break: break-word;
+  text-align: left;
+}
+
+.benefit-item mat-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #1976d2; /* 🔵 azul do Angular Material */
+}
+
+.benefit-item:hover {
+  background-color: #f1f1f1;
+}
+
+mat-card-content {
+  text-align: left; /* Garante que tudo dentro fique à esquerda */
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+@media (max-width: 600px) {
+  .benefit-item {
+    font-size: 0.95rem;
+    padding: 0.6rem 0.8rem;
+  }
+}
+

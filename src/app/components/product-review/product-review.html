@@ -8,21 +8,34 @@
 
   <mat-card-content>
     <h3>✨ Principais Benefícios</h3>
-    <mat-list role="list">
+    <div class="benefits-list">
       @for (benefit of benefits; track benefit) {
-    <mat-list-item role="listitem">
-      {{ benefit }}
-    </mat-list-item>
-  }
-</mat-list>
+      <div class="benefit-item">
+        <mat-icon color="primary">check_circle</mat-icon>
+        <span>{{ benefit }}</span>
+      </div>
+      }
+    </div>
 
-    <a mat-stroked-button color="accent" [href]="linkVerPreco" target="_blank" aria-label="Ver preço no Mercado Livre">
+    <a
+      mat-stroked-button
+      color="accent"
+      [href]="linkVerPreco"
+      target="_blank"
+      aria-label="Ver preço no Mercado Livre"
+    >
       💰 Ver Preço Atual no Mercado Livre
     </a>
 
     <h3>🎥 Review em vídeo</h3>
     <div class="video-container">
-      <iframe width="930" height="523" [src]="videoUrl | safe" frameborder="0" allowfullscreen></iframe>
+      <iframe
+        width="930"
+        height="523"
+        [src]="videoUrl | safe"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
     </div>
 
     <h3>💡 Nossa Opinião</h3>
@@ -35,7 +48,13 @@
   </mat-card-content>
 
   <mat-card-actions>
-    <a mat-raised-button color="primary" [href]="linkComprar" target="_blank" aria-label="Comprar com desconto">
+    <a
+      mat-raised-button
+      color="primary"
+      [href]="linkComprar"
+      target="_blank"
+      aria-label="Comprar com desconto"
+    >
       👉 Comprar com Desconto no Mercado Livre
     </a>
   </mat-card-actions>
