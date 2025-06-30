@@ -1,1 +1,47 @@
-<p>reach-out works!</p>
+<div class="contact-container">
+  <div class="profile-section">
+    <div class="profile-image">
+      <!-- Substitua pelo caminho da sua imagem -->
+      <img src="assets/images/Foto_Perfil.jpg" alt="Jhonny Azevedo" />
+    </div>
+
+    <div class="profile-content">
+      <h1>Olá, sou Jhonny Azevedo</h1>
+
+      <mat-card class="intro-card">
+        <mat-card-content>
+          <p>
+            Um apaixonado por tecnologia e por desenvolvimento Front e Backend.
+            A ClickReviews foi criada com meu talento, com muito amor e
+            dedicação. Todos os reviews aqui são de produtos que realmente
+            melhoram a vida das pessoas.
+          </p>
+          <p>
+            Sempre que possível, faço reviews de produtos que eu testei ou que
+            possuo. Os links de compras são todos de parceiros renomados do
+            mercado (Mercado Livre, Amazon, Shopee), garantindo que você tenha
+            uma compra tranquila e segura.
+          </p>
+        </mat-card-content>
+      </mat-card>
+
+      <div class="contact-section">
+        <h2>Entre em contato</h2>
+        <mat-divider></mat-divider>
+
+        <div class="contact-buttons">
+          @for (link of contactLinks; track link.icon) {
+          <a [href]="link.url" target="_blank">
+            <img
+              [src]="link.icon"
+              alt="WhatsApp"
+              width="60"
+              height="60"
+            />
+          </a>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

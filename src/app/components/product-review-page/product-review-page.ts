@@ -27,7 +27,7 @@ export class ProductReviewPage implements OnInit {
       const slug = params.get('slug');
       if (slug) {
         this.loadProduct(slug);
-        console.log('slud da rota: ', slug);
+        console.log('slug da rota: ', slug);
       }
     });
   }

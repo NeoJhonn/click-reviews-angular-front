@@ -9,6 +9,8 @@ import {MatListModule} from '@angular/material/list';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDividerModule } from '@angular/material/divider';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatListModule,
     MatChipsModule,
     MatProgressSpinnerModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDividerModule,
+    CommonModule
   ]
 })
 
