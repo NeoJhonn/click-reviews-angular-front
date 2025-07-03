@@ -20,7 +20,8 @@ export class Header {
     const shareData = {
       title: document.title,
       text: document.title,
-      url: window.location.href
+      url: window.location.href,
+      image: document.images.namedItem("<img mat-card-image />")
     };
 
     if (navigator.share) {
