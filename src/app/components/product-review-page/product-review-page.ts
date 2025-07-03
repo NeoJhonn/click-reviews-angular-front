@@ -21,7 +21,9 @@ export class ProductReviewPage implements OnInit {
 
   product?: any;
 
-  constructor(private title: Title, private meta: Meta,
+  constructor(
+    private title: Title,
+    private meta: Meta,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
@@ -58,14 +60,14 @@ export class ProductReviewPage implements OnInit {
         property: 'og:image',
         content: this.product.imageUrl,
       });
-       if (isPlatformBrowser(this.platformId)) {
-      const url = window.location.href;
+      if (isPlatformBrowser(this.platformId)) {
+        const url = window.location.href;
 
-      this.meta.updateTag({
-        property: 'og:url',
-        content: url
-      });
-    }
+        this.meta.updateTag({
+          property: 'og:url',
+          content: url,
+        });
+      }
       this.cdr.detectChanges(); // <- força atualização de estado para carregar a página
       console.log('Produto carregado:', found);
     });

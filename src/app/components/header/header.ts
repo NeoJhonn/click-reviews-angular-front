@@ -19,7 +19,7 @@ export class Header {
   sharePage(): void {
     const shareData = {
       title: document.title,
-      text: 'Confira essa análise no ClickReviews!',
+      text: document.title,
       url: window.location.href
     };
 
