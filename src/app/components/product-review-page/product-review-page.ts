@@ -1,10 +1,11 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, Inject, inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ProductReview } from '../product-review/product-review';
 import { MaterialModule } from '../../material.module';
 import { ChangeDetectorRef } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-product-review-page',
@@ -20,7 +21,9 @@ export class ProductReviewPage implements OnInit {
 
   product?: any;
 
-  constructor(private title: Title, private meta: Meta) {}
+  constructor(private title: Title, private meta: Meta,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -55,10 +58,14 @@ export class ProductReviewPage implements OnInit {
         property: 'og:image',
         content: this.product.imageUrl,
       });
+       if (isPlatformBrowser(this.platformId)) {
+      const url = window.location.href;
+
       this.meta.updateTag({
         property: 'og:url',
-        content: window.location.href,
+        content: url
       });
+    }
       this.cdr.detectChanges(); // <- força atualização de estado para carregar a página
       console.log('Produto carregado:', found);
     });
