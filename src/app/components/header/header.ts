@@ -21,7 +21,7 @@ export class Header {
       title: document.title,
       text: document.title,
       url: window.location.href,
-      image: document.images.namedItem("<img mat-card-image />")
+      image: document.images
     };
 
     if (navigator.share) {
