@@ -58,7 +58,7 @@ export class ProductReviewPage implements OnInit {
       });
       this.meta.updateTag({
         property: 'og:image',
-        content: 'https://www.clickreviews.com.br/assets/images/Foto_Perfil.jpg',
+        content: 'https://opengraph.b-cdn.net/production/images/c30a3418-086b-4f4e-8699-779e7cb54288.jpg?token=tKYv34SjjDt6BEC9a0K3qXcQYR364z726PcdNBsp-sw&height=536&width=715&expires=33287598816',
       });
       if (isPlatformBrowser(this.platformId)) {
         const url = window.location.href;
