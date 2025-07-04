@@ -58,7 +58,7 @@ export class ProductReviewPage implements OnInit {
       });
       this.meta.updateTag({
         property: 'og:image',
-        content: '/assets/data/images/Foto_Perfil.jpg',
+        content: 'https://www.clickreviews.com.br/assets/images/Foto_Perfil.jpg',
       });
       if (isPlatformBrowser(this.platformId)) {
         const url = window.location.href;
