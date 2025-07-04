@@ -17,13 +17,10 @@ export class Header {
   private snackBar = inject(MatSnackBar);
 
   sharePage(): void {
-    const img = document.querySelector('#thumbnail') as HTMLImageElement;
-    console.log(img.src);
     const shareData = {
       title: document.title,
       text: document.title,
       url: window.location.href,
-      image: img.src
     };
 
     if (navigator.share) {

@@ -43,10 +43,10 @@ export class ProductReviewPage implements OnInit {
       this.product = found;
       this.title.setTitle(`${this.product.productTitle} | ClickReviews`);
 
-      // this.meta.updateTag({
-      //   name: 'description',
-      //   content: this.product.opinion,
-      // });
+      this.meta.updateTag({
+        name: 'description',
+        content: this.product.opinion,
+      });
 
       this.meta.updateTag({
         property: 'og:title',
