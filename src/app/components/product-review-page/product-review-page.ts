@@ -58,7 +58,7 @@ export class ProductReviewPage implements OnInit {
       });
       this.meta.updateTag({
         property: 'og:image',
-        content: this.product.imageUrl,
+        content: '/assets/data/images/Foto_Perfil.jpg',
       });
       if (isPlatformBrowser(this.platformId)) {
         const url = window.location.href;
