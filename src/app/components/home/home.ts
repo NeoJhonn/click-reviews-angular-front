@@ -13,9 +13,14 @@ import { Title, Meta } from '@angular/platform-browser';
 export class Home {
   constructor(private title: Title, private meta: Meta) {
     // SEO Metadata
+    this.title.setTitle(`Home | ClickReviews`);
     this.meta.updateTag({
-        property: 'og:title',
-        content: `Home | Produtos em Destaque | ClickReviews`,
+        property: 'og:description',
+        content: 'ClickReviews, o melhor site de Reviews do Brasil!',
+      });
+    this.meta.updateTag({
+        property: 'og:url',
+        content: window.location.href,
       });
    }
 
