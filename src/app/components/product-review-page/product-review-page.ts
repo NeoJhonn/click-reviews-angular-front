@@ -41,33 +41,49 @@ export class ProductReviewPage implements OnInit {
     this.http.get<any[]>('/assets/data/products.json').subscribe(products => {
       const found = products.find(p => p.slug === slug);
       this.product = found;
-      this.title.setTitle(`${this.product.productTitle} | ClickReviews`);
+      
+      // Atualiza o título da aba
+    this.title.setTitle(`${this.product.productTitle} | ClickReviews`);
 
-      this.meta.updateTag({
-        name: 'description',
-        content: this.product.opinion,
-      });
+    // Limpa tags anteriores (evita duplicação)
+    this.meta.removeTag("name='description'");
+    this.meta.removeTag("property='og:title'");
+    this.meta.removeTag("property='og:description'");
+    this.meta.removeTag("property='og:image'");
+    this.meta.removeTag("property='og:url'");
+    this.meta.removeTag("property='og:type'");
+    this.meta.removeTag("name='twitter:card'");
+    this.meta.removeTag("name='twitter:title'");
+    this.meta.removeTag("name='twitter:description'");
+    this.meta.removeTag("name='twitter:image'");
 
-      this.meta.updateTag({
-        property: 'og:title',
-        content: this.product.productTitle,
-      });
-      this.meta.updateTag({
-        property: 'og:description',
-        content: this.product.opinion,
-      });
-      this.meta.updateTag({
-        property: 'og:image',
-        content: 'https://opengraph.b-cdn.net/production/images/c30a3418-086b-4f4e-8699-779e7cb54288.jpg?token=tKYv34SjjDt6BEC9a0K3qXcQYR364z726PcdNBsp-sw&height=536&width=715&expires=33287598816',
-      });
-      if (isPlatformBrowser(this.platformId)) {
-        const url = window.location.href;
 
-        this.meta.updateTag({
-          property: 'og:url',
-          content: url,
-        });
-      }
+    // Open Graph
+    this.meta.addTags([
+      { property: 'og:title', content: this.product.productTitle },
+      { property: 'og:description', content: this.product.opinion },
+      { property: 'og:image', content: this.product.imageUrl },
+      { property: 'og:url', content: `https://clickreviews.com.br/review/${this.product.slug}` },
+      { property: 'og:type', content: 'website' },
+    ]);
+
+    // Twitter Card
+    this.meta.addTags([
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:title', content: this.product.productTitle },
+      { name: 'twitter:description', content: this.product.opinion },
+      { name: 'twitter:image', content: this.product.imageUrl },
+    ]);
+
+
+      // if (isPlatformBrowser(this.platformId)) {
+      //   const url = window.location.href;
+
+      //   this.meta.updateTag({
+      //     property: 'og:url',
+      //     content: url,
+      //   });
+      // }
       this.cdr.detectChanges(); // <- força atualização de estado para carregar a página
       console.log('Produto carregado:', found);
     });
