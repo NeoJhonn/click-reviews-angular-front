@@ -17,6 +17,10 @@ import { isPlatformBrowser } from '@angular/common';
 export class HomeComponent {
   constructor(@Inject(PLATFORM_ID) private platformId: Object,
   private title: Title, private meta: Meta) {
+
+   }
+
+   ngOnInit(): void {
     // SEO Metadata
     this.title.setTitle(`Home | ClickReviews`);
 
@@ -45,5 +49,4 @@ export class HomeComponent {
     });
     }
    }
-
 }
