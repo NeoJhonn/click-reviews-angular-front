@@ -11,5 +11,6 @@
       "src": "/(.*)",
       "dest": "dist/click-reviews-angular-front/server/main.server.mjs"
     }
-  ]
+  ],
+  "buildCommand": "npm run build"
 }
