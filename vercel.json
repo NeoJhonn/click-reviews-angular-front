@@ -1,11 +1,11 @@
 {
   "version": 2,
   "buildCommand": "npm run build",
-  "outputDirectory": "dist/click-reviews-angular-front/browser",
-  "routes": [
+  "outputDirectory": "dist/browser",
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "dist/click-reviews-angular-front/server/main.server.mjs"
+      "source": "/(.*)",
+      "destination": "/api/index.mjs"
     }
   ]
 }
