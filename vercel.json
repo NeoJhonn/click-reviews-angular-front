@@ -1,10 +1,16 @@
 {
   "version": 2,
-
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node"
+    }
+  ],
   "routes": [
     {
       "src": "/(.*)",
       "dest": "dist/click-reviews-angular-front/server/main.server.mjs"
     }
-  ]
+  ],
+  "buildCommand": "npm run build"
 }
