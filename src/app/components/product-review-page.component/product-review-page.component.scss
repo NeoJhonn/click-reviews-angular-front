@@ -1,0 +1,6 @@
+.loading-container{
+  position: fixed;
+  inset: 0; /* equivale a top, right, bottom, left: 0 */
+  display: grid;
+  place-items: center; /* atalho para align-items + justify-content */
+}

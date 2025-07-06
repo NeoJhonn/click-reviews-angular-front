@@ -1,0 +1,19 @@
+<mat-toolbar color="primary" class="footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-info">
+        <span class="copyright">
+          &copy; {{ currentYear }} ClickReviews, todos os direitos reservados
+        </span>
+      </div>
+
+      <div class="social-media">
+        @for (link of socialLinks; track link.icon) {
+        <a [href]="link.url" target="_blank">
+          <img [src]="link.icon" alt="Instagram" width="40" height="40" />
+        </a>
+        }
+      </div>
+    </div>
+  </div>
+</mat-toolbar>

@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
-import { ReachOut } from './components/reach-out/reach-out';
-import { Home } from './components/home/home';
-import { ProductReviewPage } from './components/product-review-page/product-review-page';
+import { HomeComponent } from './components/home.component/home.component';
+import { ProductReviewPageComponent } from './components/product-review-page.component/product-review-page.component';
+import { ReachOutComponent } from './components/reach-out.component/reach-out.component';
 
 export const routes: Routes = [
-  { path: '', component: Home },
-  { path: 'review/:slug', component: ProductReviewPage },
-  { path: 'contato', component: ReachOut }
+  { path: '', component: HomeComponent },
+  { path: 'review/:slug', component: ProductReviewPageComponent },
+  { path: 'contato', component: ReachOutComponent }
 ];

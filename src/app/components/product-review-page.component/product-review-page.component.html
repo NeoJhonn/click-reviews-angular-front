@@ -1,0 +1,21 @@
+@defer (when product != null) {
+  <app-product-review
+    [productTitle]="product.productTitle"
+    [subtitle]="product.subtitle"
+    [imageUrl]="product.imageUrl"
+    [benefits]="product.benefits"
+    [videoUrl]="product.videoUrl"
+    [opinion]="product.opinion"
+    [linkVerPreco]="product.linkVerPreco"
+    [linkComprar]="product.linkComprar">
+  </app-product-review>
+}@placeholder {
+  <div class="loading-container" >
+    <mat-spinner diameter="50"></mat-spinner>
+    <p style="margin-top: -20rem;">Carregando informações do produto...</p>
+  </div>
+} @error {
+  <p>Ocorreu um erro ao carregar o produto.</p>
+}
+
+
