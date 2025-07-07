@@ -39,11 +39,14 @@ app.use(
  * Handle all other requests by rendering the Angular application.
  */
 app.use((req, res, next) => {
+  console.log('📦 SSR Request URL:', req.url);
   angularApp
     .handle(req)
-    .then((response) =>
-      response ? writeResponseToNodeResponse(response, res) : next(),
-    )
+    .then((response) => {
+      console.log('✅ SSR success');
+      return   response ? writeResponseToNodeResponse(response, res) : next(),
+
+   })
     .catch(next);
 });
 
