@@ -3,7 +3,6 @@
   "type": "module",
   "version": "0.0.0",
   "scripts": {
-    
     "ng": "ng",
     "start": "node dist/click-reviews-angular-front/server/main.server.mjs",
     "build": "npm run build:ssr",
@@ -11,7 +10,7 @@
     "test": "ng test",
     "serve:ssr:click-reviews-angular-front": "node dist/click-reviews-angular-front/server/main.server.mjs",
     "build:ssr": "ng build --configuration production",
-    "serve:ssr": "node dist/click-reviews-angular-front/server/main.server.mjs"
+    "serve:ssr": "npm run serve:ssr"
   },
   "private": true,
   "dependencies": {
