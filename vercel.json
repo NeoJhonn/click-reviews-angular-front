@@ -1,7 +1,5 @@
 {
   "version": 2,
-  "buildCommand": "npm run build:ssr",
-  "outputDirectory": "dist/click-reviews-angular-front/browser",
   "builds": [
     {
       "src": "dist/click-reviews-angular-front/server/server.mjs",
@@ -13,5 +11,7 @@
       "src": "/(.*)",
       "dest": "dist/click-reviews-angular-front/server/server.mjs"
     }
-  ]
+  ],
+  "buildCommand": "npm run build:ssr",
+  "outputDirectory": "dist/click-reviews-angular-front/browser"
 }
