@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "scripts": {
-    "postinstall": "npm run build:ssr",
+    
     "ng": "ng",
     "start": "node dist/click-reviews-angular-front/server/main.server.mjs",
     "build": "npm run build:ssr",
