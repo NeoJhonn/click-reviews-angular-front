@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "dist/click-reviews-angular-front/server/server.mjs",
+      "src": "api/index.mjs",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "dist/click-reviews-angular-front/server/server.mjs"
+      "dest": "api/index.mjs"
     }
   ],
   "buildCommand": "npm run build:ssr",
