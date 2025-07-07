@@ -42,11 +42,11 @@ app.use((req, res, next) => {
   console.log('📦 SSR Request URL:', req.url);
   angularApp
     .handle(req)
-    .then((response) => {
-      console.log('✅ SSR success');
-      return   response ? writeResponseToNodeResponse(response, res) : next(),
+    .then((response) =>
 
-   })
+      response ? writeResponseToNodeResponse(response, res) : next(),
+
+   )
     .catch(next);
 });
 
