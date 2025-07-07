@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node dist/click-reviews-angular-front/server/main.server.mjs",
+    "start": "ng serve:ssr",
     "build": "npm run build:ssr",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
