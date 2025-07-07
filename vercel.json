@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "buildCommand": "npm run build",
+  "buildCommand": "npm run build:ssr",
   "outputDirectory": "dist/click-reviews-angular-front/browser",
+  "framework": "angular",
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/api/index.mjs"
+      "destination": "dist/click-reviews-angular-front/server/server.mjs"
     }
   ]
 }
