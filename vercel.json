@@ -1,11 +1,10 @@
 {
   "version": 2,
-  "buildCommand": "npm run build:ssr",
   "routes": [
     { "handle": "filesystem" },
     {
       "src": "/.*",
-      "dest": "/main.server.mjs"
+      "dest": "server/main.server.mjs"
     }
   ]
 }
