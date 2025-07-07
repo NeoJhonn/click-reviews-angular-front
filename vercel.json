@@ -5,8 +5,8 @@
   "framework": "angular",
   "routes": [
     {
-      "source": "/(.*)",
-      "destination": "dist/click-reviews-angular-front/server/server.mjs"
+      "src": "/(.*)",
+      "dest": "dist/click-reviews-angular-front/server/server.mjs"
     }
   ]
 }
