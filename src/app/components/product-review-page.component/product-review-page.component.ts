@@ -2,9 +2,10 @@ import { Component, Inject, PLATFORM_ID, inject } from '@angular/core';
 import { ProductReviewComponent } from '../product-review.component/product-review.component';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { ChangeDetectorRef, isPlatformBrowser } from '@angular/core';
+import { ChangeDetectorRef } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { MaterialModule } from '../../material.module-module';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-product-review-page',
