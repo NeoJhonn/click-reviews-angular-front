@@ -81,7 +81,7 @@ export class ProductReviewPageComponent {
         { name: 'twitter:image', content: this.product.imageUrl },
       ]);
 
-      //this.cdr.detectChanges();
+      this.cdr.detectChanges();
       console.log('Produto carregado:', found);
     });
   }
