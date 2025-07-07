@@ -59,24 +59,6 @@ export class ProductReviewPageComponent {
     this.meta.removeTag("name='twitter:description'");
     this.meta.removeTag("name='twitter:image'");
 
-
-    // Open Graph
-    this.meta.addTags([
-      { property: 'og:title', content: this.product.productTitle },
-      { property: 'og:description', content: this.product.opinion },
-      { property: 'og:image', content: this.product.imageUrl },
-      { property: 'og:url', content: `https://clickreviews.com.br/review/${this.product.slug}` },
-      { property: 'og:type', content: 'website' },
-    ]);
-
-    // Twitter Card
-    this.meta.addTags([
-      { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:title', content: this.product.productTitle },
-      { name: 'twitter:description', content: this.product.opinion },
-      { name: 'twitter:image', content: this.product.imageUrl },
-    ]);
-
       this.cdr.detectChanges(); // <- força atualização de estado para carregar a página
       console.log('Produto carregado:', found);
     });

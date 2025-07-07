@@ -6,8 +6,9 @@ import {
 } from '@angular/ssr/node';
 import express from 'express';
 import { join } from 'node:path';
+import fs from 'fs/promises';
 
-const browserDistFolder = join(import.meta.dirname, '../browser');
+const browserDistFolder = join(process.cwd(), 'dist/click-reviews-angular-front/browser');
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
@@ -24,6 +25,43 @@ const angularApp = new AngularNodeAppEngine();
  * ```
  */
 
+
+/** Função auxiliar para ler stream em string */
+async function streamToString(stream: ReadableStream<Uint8Array>): Promise<string> {
+  const reader = stream.getReader();
+  const chunks: Uint8Array[] = [];
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    chunks.push(value);
+  }
+
+  const concatenated = new Uint8Array(chunks.reduce((acc, val) => acc + val.length, 0));
+  let offset = 0;
+  for (const chunk of chunks) {
+    concatenated.set(chunk, offset);
+    offset += chunk.length;
+  }
+
+  return new TextDecoder().decode(concatenated);
+}
+
+/** Função para pegar produto pelo slug do JSON */
+async function getProductBySlug(slug: string) {
+  const filePath = join(browserDistFolder, 'assets/data/products.json');
+  try {
+    const jsonData = await fs.readFile(filePath, 'utf-8');
+    const products = JSON.parse(jsonData);
+    return products.find((p: any) => p.slug === slug);
+  } catch (err) {
+    console.error('Erro lendo products.json:', err);
+    return null;
+  }
+}
+
+
+
 /**
  * Serve static files from /browser
  */
@@ -38,6 +76,7 @@ app.use(
 /**
  * Handle all other requests by rendering the Angular application.
  */
+/** Middleware SSR com injeção dinâmica de meta tags */
 app.use(async (req, res, next) => {
   try {
     const response = await angularApp.handle(req);
@@ -51,27 +90,31 @@ app.use(async (req, res, next) => {
     }
 
     const html = await streamToString(response.body);
-
     let modifiedHtml = html;
-    if (req.url === '/') {
-      const metaTags = `
-        <title>Home | ClickReviews</title>
-        <!-- Facebook Meta Tags -->
-<meta property="og:url" content="https://www.clickreviews.com.br/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Home | ClickReviews">
-<meta property="og:description" content="ClickReviews, o melhor site de Reviews do Brasil!">
-<meta property="og:image" content="">
 
-<!-- Twitter Meta Tags -->
+    if (req.url.startsWith('/review/')) {
+      const slug = req.url.split('/review/')[1];
+      const product = await getProductBySlug(slug);
+
+      if (product) {
+        const metaTags = `
+          <title>${product.productTitle} - Review Completo | ClickReviews</title>
+          <!-- Facebook Meta Tags -->
+          <meta property="og:title" content="${product.productTitle} - Review Completo | ClickReviews" />
+          <meta property="og:description" content="${product.subtitle}" />
+          <meta property="og:image" content="${product.imageUrl}" />
+          <meta property="og:url" content="https://clickreviews.com.br/review/${product.slug}" />
+          <!-- Twitter Meta Tags -->
 <meta name="twitter:card" content="summary_large_image">
 <meta property="twitter:domain" content="clickreviews.com.br">
-<meta property="twitter:url" content="https://www.clickreviews.com.br/">
-<meta name="twitter:title" content="Home | ClickReviews">
-<meta name="twitter:description" content="ClickReviews, o melhor site de Reviews do Brasil!">
-<meta name="twitter:image" content="">
-      `;
-      modifiedHtml = html.replace(/<title>.*<\/title>/, metaTags);
+<meta property="twitter:url" content="https://clickreviews.com.br/review/${product.slug}"
+<meta name="twitter:title" content="${product.productTitle} - Review Completo | ClickReviews">
+<meta name="twitter:description" content="${product.subtitle}">
+<meta name="twitter:image" content="${product.imageUrl}">
+        `;
+
+        modifiedHtml = html.replace(/<title>.*<\/title>/, metaTags);
+      }
     }
 
     const newResponse = new Response(modifiedHtml, {
@@ -108,23 +151,4 @@ if (isMainModule(import.meta.url)) {
  */
 export const reqHandler = createNodeRequestHandler(app);
 
-async function streamToString(stream: ReadableStream<Uint8Array>): Promise<string> {
-  const reader = stream.getReader();
-  const chunks: Uint8Array[] = [];
-
-  while (true) {
-    const { done, value } = await reader.read();
-    if (done) break;
-    chunks.push(value);
-  }
-
-  const concatenated = new Uint8Array(chunks.reduce((acc, val) => acc + val.length, 0));
-  let offset = 0;
-  for (const chunk of chunks) {
-    concatenated.set(chunk, offset);
-    offset += chunk.length;
-  }
-
-  return new TextDecoder().decode(concatenated);
-}
 
