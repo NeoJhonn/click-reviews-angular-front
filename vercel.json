@@ -5,7 +5,7 @@
     { "handle": "filesystem" },
     {
       "src": "/.*",
-      "dest": "dist/click-reviews-angular-front/server/server.mjs"
+      "dest": "server/server.mjs"
     }
   ]
 }
