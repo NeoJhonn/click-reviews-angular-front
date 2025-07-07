@@ -64,7 +64,7 @@
           "defaultConfiguration": "development"
         },
         "server": {
-          "builder": "@angular-devkit/build-angular:server",
+          "builder": "@angular/build:server",
           "options": {
             "outputPath": "dist/click-reviews-angular-front/server",
             "main": "src/main.server.ts",
