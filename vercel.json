@@ -1,17 +1,11 @@
 {
   "version": 2,
-  "builds": [
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/click-reviews-angular-front/browser",
+  "rewrites": [
     {
-      "src": "api/index.mjs",
-      "use": "@vercel/node"
+      "source": "/(.*)",
+      "destination": "/api/index.mjs"
     }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "api/index.mjs"
-    }
-  ],
-  "buildCommand": "npm run build:ssr",
-  "outputDirectory": "dist/click-reviews-angular-front/browser"
+  ]
 }
