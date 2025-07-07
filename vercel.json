@@ -1,11 +1,8 @@
 {
   "version": 2,
   "buildCommand": "npm run build:ssr",
-  "outputDirectory": "dist/click-reviews-angular-front/browser",
   "routes": [
-    {
-      "handle": "filesystem"
-    },
+    { "handle": "filesystem" },
     {
       "src": "/.*",
       "dest": "dist/click-reviews-angular-front/server/server.mjs"
