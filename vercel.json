@@ -4,7 +4,7 @@
     { "handle": "filesystem" },
     {
       "src": "/.*",
-      "dest": "server/main.server.mjs"
+      "dest": "server/server.mjs"
     }
   ]
 }
