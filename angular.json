@@ -52,7 +52,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular/build:dev-server",
+          "builder": "@angular-devkit/build-angular:server",
           "configurations": {
             "production": {
               "buildTarget": "click-reviews-angular-front:build:production"
