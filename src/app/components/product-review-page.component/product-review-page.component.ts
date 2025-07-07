@@ -34,7 +34,6 @@ export class ProductReviewPageComponent {
       const slug = params.get('slug');
       if (slug) {
         this.loadProduct(slug);
-        console.log('slug da rota: ', slug);
       }
     });
   }
@@ -58,9 +57,11 @@ export class ProductReviewPageComponent {
     this.meta.removeTag("name='twitter:title'");
     this.meta.removeTag("name='twitter:description'");
     this.meta.removeTag("name='twitter:image'");
+    this.meta.removeTag("name='twitter:domain'");
+    this.meta.removeTag("name='twitter:url'");
+
 
       this.cdr.detectChanges(); // <- força atualização de estado para carregar a página
-      console.log('Produto carregado:', found);
     });
   }
 }
