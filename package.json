@@ -8,7 +8,7 @@
     "build": "npm run build:ssr",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:click-reviews-angular-front": "node dist/click-reviews-angular-front/server/main.server.mjs",
+    "serve:ssr:click-reviews-angular-front": "node dist/click-reviews-angular-front/server/server.mjs",
     "build:ssr": "ng build --configuration production"
   },
   "private": true,
