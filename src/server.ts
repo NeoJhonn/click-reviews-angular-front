@@ -12,6 +12,7 @@ const browserDistFolder = join(import.meta.dirname, '../browser');
 const app = express();
 const angularApp = new AngularNodeAppEngine();
 
+// Converte ReadableStream em string (usado para ler HTML do SSR)
 async function streamToString(stream: ReadableStream<Uint8Array>): Promise<string> {
   const reader = stream.getReader();
   const chunks: Uint8Array[] = [];
@@ -33,6 +34,7 @@ async function streamToString(stream: ReadableStream<Uint8Array>): Promise<strin
   return new TextDecoder().decode(combined);
 }
 
+// Carrega os dados do produto do JSON
 async function getProductMeta(slug: string) {
   try {
     const file = join(browserDistFolder, 'assets/data/products.json');
@@ -45,6 +47,7 @@ async function getProductMeta(slug: string) {
   }
 }
 
+// Serve arquivos estáticos
 app.use(
   express.static(browserDistFolder, {
     maxAge: '1y',
@@ -53,27 +56,26 @@ app.use(
   }),
 );
 
+// SSR + injeção de meta tags dinâmicas
 app.use(async (req, res, next) => {
   try {
     const response = await angularApp.handle(req);
-
     if (!response) return next();
 
     if (!response.body) {
       return writeResponseToNodeResponse(response, res);
     }
 
-    const html = await streamToString(response.body);
-    let modifiedHtml = html;
+    let html = await streamToString(response.body);
 
-    // Se for uma rota dinâmica de review
+    // Se for rota de review
     if (req.url.startsWith('/review/')) {
       const slug = req.url.split('/review/')[1];
       const product = await getProductMeta(slug);
 
       if (product) {
-        const tags = `
-          <title>${product.productTitle} | ClickReviews</title>
+        const titleTag = `<title>${product.productTitle} | ClickReviews</title>`;
+        const metaTags = `
           <meta name="description" content="${product.subtitle}">
           <meta property="og:title" content="${product.productTitle} | ClickReviews">
           <meta property="og:description" content="${product.subtitle}">
@@ -81,11 +83,16 @@ app.use(async (req, res, next) => {
           <meta property="og:url" content="https://clickreviews.com.br/review/${product.slug}">
         `;
 
-        modifiedHtml = html.replace(/<title>.*<\/title>/, tags);
+        // Substitui o título
+        html = html.replace(/<title>.*<\/title>/, titleTag);
+
+        // Insere as metas logo após <head>
+        html = html.replace('<head>', `<head>\n${metaTags}`);
       }
     }
 
-    const newResponse = new Response(modifiedHtml, {
+    // Envia a resposta SSR modificada
+    const newResponse = new Response(html, {
       status: response.status,
       statusText: response.statusText,
       headers: response.headers,
@@ -98,9 +105,11 @@ app.use(async (req, res, next) => {
   }
 });
 
+// Inicia o servidor local (para testes locais com `npm run serve:ssr`)
 if (isMainModule(import.meta.url)) {
   const port = process.env['PORT'] || 4000;
   app.listen(port, () => console.log(`Server listening on http://localhost:${port}`));
 }
 
+// Exporta para Vercel / Node handlers
 export const handler = createNodeRequestHandler(app);
