@@ -1,5 +1,12 @@
 {
+  "version": 2,
   "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
-    ]
+    { "source": "/(.*)", "destination": "/api/index.js" }
+  ],
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "dist/click-reviews-angular-front/**"
+    }
+  }
 }
+
