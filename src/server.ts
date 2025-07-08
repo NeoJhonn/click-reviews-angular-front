@@ -8,7 +8,7 @@ import express from 'express';
 import { join } from 'node:path';
 import fs from 'fs/promises';
 
-const browserDistFolder = join('indexFile.html', '../browser');
+const browserDistFolder = join('src/indexFile.html', '../browser');
 export const app = express();
 const angularApp = new AngularNodeAppEngine();
 
