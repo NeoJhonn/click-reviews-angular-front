@@ -93,8 +93,8 @@ app.use(async (req, res, next) => {
 
   // Insere metas logo antes do </head>
   html = html.replace('</head>', `${metaTags}\n</head>`);
+  }
 }
-
     // Envia a resposta SSR modificada
     const newResponse = new Response(html, {
       status: response.status,
