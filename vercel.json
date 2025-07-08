@@ -1,7 +1,10 @@
 {
-  "version": 2,
-  "outputDirectory": "dist/click-reviews-angular-front/browser",
+  "functions": {
+    "api/index.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
   "rewrites": [
-    { "source": "/(.*)", "destination": "/api/index" }
+    { "source": "/(.*)", "destination": "/" }
   ]
 }
