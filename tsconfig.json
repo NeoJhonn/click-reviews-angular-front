@@ -12,11 +12,8 @@
     "isolatedModules": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "ES2020",
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "outDir": "dist",
-    "esModuleInterop": true,
+     "target": "ES2022",
+    "module": "preserve"
   },
   "include": ["api"],
   "angularCompilerOptions": {
