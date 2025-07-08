@@ -74,35 +74,6 @@ app.use(async (req, res, next) => {
       const product = await getProductMeta(slug);
 
     if (product) {
-      const titleTag = `<title>${product.productTitle} | ClickReviews</title>`;
-      const metaTags = `
-    <meta name="description" content="${product.subtitle}">
-    <meta property="og:title" content="${product.productTitle} | ClickReviews">
-    <meta property="og:description" content="${product.subtitle}">
-    <meta property="og:image" content="${product.imageUrl}">
-    <meta property="og:url" content="https://clickreviews.com.br/review/${product.slug}">
-     `;
-
-  // Substitui o título
-  html = html.replace(/<title>.*?<\/title>/, titleTag);
-
-  // Remove meta description e og tags anteriores
-  html = html
-    .replace(/<meta name="description".*?>/g, '')
-    .replace(/<meta property="og:.*?".*?>/g, '');
-
-  // Insere metas logo antes do </head>
-  html = html.replace('</head>', `${metaTags}\n</head>`);
-  }
-}
-    // Envia a resposta SSR modificada
-    const newResponse = new Response(html, {
-      status: response.status,
-      statusText: response.statusText,
-      headers: response.headers,
-    });
-
-    if (product) {
   const titleTag = `<title>${product.productTitle} | ClickReviews</title>`;
   const metaTags = `
     <meta name="description" content="${product.subtitle}">
@@ -117,6 +88,15 @@ app.use(async (req, res, next) => {
     .replace(/<meta[^>]+(name|property)="(description|og:[^"]+)"[^>]*>/g, '')  // remove tags fixas existentes
     .replace('</head>', `${metaTags}\n</head>`);                            // insere as novas antes de </head>
 }
+}
+    // Envia a resposta SSR modificada
+    const newResponse = new Response(html, {
+      status: response.status,
+      statusText: response.statusText,
+      headers: response.headers,
+    });
+
+    
 
     writeResponseToNodeResponse(newResponse, res);
   } catch (err) {
