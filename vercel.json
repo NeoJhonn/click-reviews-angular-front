@@ -1,5 +1,5 @@
 {
   "rewrites": [
-    { "source": "/review/", "destination": "/api/index" }
+    { "source": "/review/*", "destination": "/api/index" }
   ]
 }
