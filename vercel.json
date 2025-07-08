@@ -1,5 +1,8 @@
 {
+  "version": 2,
+  "buildCommand": "npm run build:ssr",
+  "outputDirectory": "dist/click-reviews-angular-front/browser",
   "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
+    { "source": "/(.*)", "destination": "/api/index" }
   ]
 }
