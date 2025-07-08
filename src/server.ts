@@ -69,27 +69,31 @@ app.use(async (req, res, next) => {
     let html = await streamToString(response.body);
 
     // Se for rota de review
-    if (req.url.startsWith('review/')) {
-      const slug = req.url.split('review/')[1];
+    if (req.url.startsWith('/review/')) {
+      const slug = req.url.split('/review/')[1];
       const product = await getProductMeta(slug);
 
-      if (product) {
-        const titleTag = `<title>${product.productTitle} | ClickReviews</title>`;
-        const metaTags = `
-          <meta name="description" content="${product.subtitle}">
-          <meta property="og:title" content="${product.productTitle} | ClickReviews">
-          <meta property="og:description" content="${product.subtitle}">
-          <meta property="og:image" content="${product.imageUrl}">
-          <meta property="og:url" content="https://clickreviews.com.br/review/${product.slug}">
-        `;
+    if (product) {
+      const titleTag = `<title>${product.productTitle} | ClickReviews</title>`;
+      const metaTags = `
+    <meta name="description" content="${product.subtitle}">
+    <meta property="og:title" content="${product.productTitle} | ClickReviews">
+    <meta property="og:description" content="${product.subtitle}">
+    <meta property="og:image" content="${product.imageUrl}">
+    <meta property="og:url" content="https://clickreviews.com.br/review/${product.slug}">
+     `;
 
-        // Substitui o título
-        html = html.replace(/<title>.*<\/title>/, titleTag);
+  // Substitui o título
+  html = html.replace(/<title>.*?<\/title>/, titleTag);
 
-        // Insere as metas logo após <head>
-        html = html.replace('<head>', `<head>\n${metaTags}`);
-      }
-    }
+  // Remove meta description e og tags anteriores
+  html = html
+    .replace(/<meta name="description".*?>/g, '')
+    .replace(/<meta property="og:.*?".*?>/g, '');
+
+  // Insere metas logo antes do </head>
+  html = html.replace('</head>', `${metaTags}\n</head>`);
+}
 
     // Envia a resposta SSR modificada
     const newResponse = new Response(html, {
