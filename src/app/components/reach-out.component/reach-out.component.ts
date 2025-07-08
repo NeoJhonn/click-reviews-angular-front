@@ -1,6 +1,6 @@
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { MaterialModule } from '../../material.module-module';
-import { Title, Meta } from '@angular/platform-browser';
+import { Title } from '@angular/platform-browser';
 import { isPlatformBrowser } from '@angular/common';
 
 @Component({
@@ -12,8 +12,7 @@ import { isPlatformBrowser } from '@angular/common';
 export class ReachOutComponent {
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
-    private title: Title,
-    private meta: Meta
+    private title: Title
   ) {
     // SEO Metadata
     this.title.setTitle(`Contato | ClickReviews`);
