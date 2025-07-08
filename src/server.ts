@@ -105,7 +105,32 @@ app.use(async (req, res, next) => {
         `;
         console.log(html);
         // Substitui apenas o <title> e meta tags
-        html = html.replace(/<title>.*<\/title>/, metaTags);
+        html = html.replace(
+   `<title>Home | ClickReviews</title>
+    <meta property="og:url" content="https://www.clickreviews.com.br/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Home | ClickReviews" />
+    <meta
+      property="og:description"
+      content="ClickReviews, o melhor site de Reviews do Brasil!"
+    />
+    <meta
+      property="og:image"
+      content="https://www.clickreviews.com.br/assets/icons/logo_site.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="clickreviews.com.br" />
+    <meta property="twitter:url" content="https://www.clickreviews.com.br/" />
+    <meta name="twitter:title" content="Home | ClickReviews" />
+    <meta
+      name="twitter:description"
+      content="ClickReviews, o melhor site de Reviews do Brasil!"
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.clickreviews.com.br/assets/icons/logo_site.png"
+    />`
+    , metaTags);
 
 
       }
