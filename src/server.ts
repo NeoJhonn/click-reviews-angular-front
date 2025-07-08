@@ -6,6 +6,8 @@ import {
 } from '@angular/ssr/node';
 import express from 'express';
 import { join } from 'node:path';
+import fs from 'fs/promises';
+
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
 
@@ -24,6 +26,43 @@ const angularApp = new AngularNodeAppEngine();
  * ```
  */
 
+// Função para transformar o body do Response em string
+async function streamToString(stream: ReadableStream<Uint8Array>): Promise<string> {
+  const reader = stream.getReader();
+  const chunks: Uint8Array[] = [];
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    chunks.push(value);
+  }
+
+  const size = chunks.reduce((acc, c) => acc + c.length, 0);
+  const merged = new Uint8Array(size);
+  let offset = 0;
+  for (const chunk of chunks) {
+    merged.set(chunk, offset);
+    offset += chunk.length;
+  }
+
+  return new TextDecoder().decode(merged);
+}
+
+// Função para buscar o produto pelo slug no arquivo JSON
+async function getProductBySlug(slug: string) {
+  const filePath = join(browserDistFolder, '/assets/data/products.json');
+  try {
+    const jsonData = await fs.readFile(filePath, 'utf-8');
+    const products = JSON.parse(jsonData);
+    return products.find((p: any) => p.slug === slug);
+  } catch (err) {
+    console.error('Erro lendo products.json:', err);
+    return null;
+  }
+}
+
+
+
 /**
  * Serve static files from /browser
  */
@@ -38,16 +77,51 @@ app.use(
 /**
  * Handle all other requests by rendering the Angular application.
  */
-app.use((req, res, next) => {
-  console.log('📦 SSR Request URL:', req.url);
-  angularApp
-    .handle(req)
-    .then((response) =>
+app.use(async (req, res, next) => {
+  try {
+    const response = await angularApp.handle(req);
+    if (!response || !response.body) return next();
 
-      response ? writeResponseToNodeResponse(response, res) : next(),
+    let html = await streamToString(response.body);
 
-   )
-    .catch(next);
+    // Detecta rota dinâmica
+    if (req.url.startsWith('/review/')) {
+      const slug = req.url.split('/review/')[1];
+      const product = await getProductBySlug(slug);
+
+      if (product) {
+        const metaTags = `
+          <title>${product.productTitle} | ClickReviews</title>
+          <meta name="description" content="${product.subtitle}">
+          <meta property="og:title" content="${product.productTitle} | ClickReviews">
+          <meta property="og:description" content="${product.subtitle}">
+          <meta property="og:image" content="${product.imageUrl}">
+          <meta property="og:url" content="https://clickreviews.com.br/review/${product.slug}">
+          <meta property="og:type" content="website">
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:title" content="${product.productTitle} | ClickReviews">
+          <meta name="twitter:description" content="${product.subtitle}">
+          <meta name="twitter:image" content="${product.imageUrl}">
+        `;
+        console.log(html);
+        // Substitui apenas o <title> e meta tags
+        html = html.replace(/<title>.*<\/title>/, metaTags);
+
+
+      }
+    }
+
+    // Cria uma nova resposta com HTML modificado
+    const newResponse = new Response(html, {
+      status: response.status,
+      headers: response.headers,
+    });
+
+    writeResponseToNodeResponse(newResponse, res);
+  } catch (err) {
+    console.error('Erro no SSR:', err);
+    next(err);
+  }
 });
 
 /**
@@ -70,5 +144,5 @@ if (isMainModule(import.meta.url)) {
  */
 export const reqHandler = createNodeRequestHandler(app);
 
-export const handler = createNodeRequestHandler(app);
+//export const handler = createNodeRequestHandler(app);
 
