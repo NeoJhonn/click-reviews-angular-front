@@ -1,5 +1,13 @@
 {
   "version": 2,
+  {
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ]
+},
   "routes": [
     { "handle": "filesystem" },
     { "src": "/.*", "dest": "dist/click-reviews-angular-front/server/server.mjs" }
