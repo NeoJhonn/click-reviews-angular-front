@@ -9,7 +9,7 @@ import { join } from 'node:path';
 import fs from 'fs/promises';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
-const app = express();
+export const app = express();
 const angularApp = new AngularNodeAppEngine();
 
 // Converte ReadableStream em string (usado para ler HTML do SSR)
