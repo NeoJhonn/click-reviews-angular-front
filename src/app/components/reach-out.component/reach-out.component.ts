@@ -43,7 +43,7 @@ export class ReachOutComponent {
       //content: url,
     //});
    // }
-  //}
+  }
 
   contactLinks = [
     {
