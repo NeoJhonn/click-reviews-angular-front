@@ -18,7 +18,7 @@ export class HomeComponent {
   constructor(@Inject(PLATFORM_ID) private platformId: Object,
   private title: Title, private meta: Meta) {
     // SEO Metadata
-  //   this.title.setTitle(`Home | ClickReviews`);
+     this.title.setTitle(`Home | ClickReviews`);
 
   //   // Limpa tags anteriores (evita duplicação)
   //   this.meta.removeTag("name='description'");
