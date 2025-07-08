@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/api/index.js" }
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/.*", "dest": "dist/click-reviews-angular-front/server/server.mjs" }
   ],
   "functions": {
-    "api/index.js": {
-      "includeFiles": "dist/click-reviews-angular-front/**"
+    "dist/click-reviews-angular-front/server/server.mjs": {
+      "memory": 512,
+      "maxDuration": 10
     }
   }
 }
-
