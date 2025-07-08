@@ -102,6 +102,22 @@ app.use(async (req, res, next) => {
       headers: response.headers,
     });
 
+    if (product) {
+  const titleTag = `<title>${product.productTitle} | ClickReviews</title>`;
+  const metaTags = `
+    <meta name="description" content="${product.subtitle}">
+    <meta property="og:title" content="${product.productTitle} | ClickReviews">
+    <meta property="og:description" content="${product.subtitle}">
+    <meta property="og:image" content="${product.imageUrl}">
+    <meta property="og:url" content="https://clickreviews.com.br/review/${product.slug}">
+  `;
+
+  html = html
+    .replace(/<title>.*?<\/title>/, titleTag)                              // substitui o title
+    .replace(/<meta[^>]+(name|property)="(description|og:[^"]+)"[^>]*>/g, '')  // remove tags fixas existentes
+    .replace('</head>', `${metaTags}\n</head>`);                            // insere as novas antes de </head>
+}
+
     writeResponseToNodeResponse(newResponse, res);
   } catch (err) {
     console.error('SSR Error:', err);
