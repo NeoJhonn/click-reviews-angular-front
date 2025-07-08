@@ -57,7 +57,11 @@ app.use(async (req, res, next) => {
   try {
     const response = await angularApp.handle(req);
 
-    if (!response?.body) return writeResponseToNodeResponse(response, res);
+    if (!response) return next();
+
+    if (!response.body) {
+      return writeResponseToNodeResponse(response, res);
+    }
 
     const html = await streamToString(response.body);
     let modifiedHtml = html;
