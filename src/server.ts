@@ -69,8 +69,8 @@ app.use(async (req, res, next) => {
     let html = await streamToString(response.body);
 
     // Se for rota de review
-    if (req.url.startsWith('/review/')) {
-      const slug = req.url.split('/review/')[1];
+    if (req.url.startsWith('review/')) {
+      const slug = req.url.split('review/')[1];
       const product = await getProductMeta(slug);
 
       if (product) {
