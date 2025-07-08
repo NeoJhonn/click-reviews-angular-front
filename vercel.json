@@ -1,5 +1,7 @@
 {
+  "version": 2,
+  "outputDirectory": "dist/click-reviews-angular-front/browser",
   "rewrites": [
-    { "source": "/(.*)", "destination": "/api" }
+    { "source": "/(.*)", "destination": "/api/index" }
   ]
 }
