@@ -71,10 +71,8 @@ app.use(async (req, res, next) => {
     let html = await streamToString(response.body);
 
      // Se for rota Home
-    
 const pathname = req.url?.split('?')[0]?.trim();
-
-if ( pathname === '/' || pathname === '/index.html') {
+if (!pathname || pathname === '/' || pathname === '/index.html') {
     const titleTag = `<title>Home | ClickReviews</title>`;
     const metaTags = `
     <meta name="description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
@@ -92,7 +90,6 @@ if ( pathname === '/' || pathname === '/index.html') {
   // Remove ALL <meta name="..."> or <meta property="..."> with "description", "og:*", or "twitter:*"
   html = html
     .replace(/<title[^>]*>.*?<\/title>/i, '') // remove existing <title>
-    .replace(/<meta\s+(?:name|property)\s*=\s*["']?(description|og:[^"'>\s]+|twitter:[^"'>\s]+)["']?[^>]*?>/gi, '') // remove matching <meta> tags
     .replace('<head>', `<head>\n${titleTag}\n${metaTags}`); // insert new tags
 
     }
