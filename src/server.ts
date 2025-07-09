@@ -71,9 +71,10 @@ app.use(async (req, res, next) => {
     let html = await streamToString(response.body);
 
      // Se for rota Home
-    if (req.url === '/' || req.url === '/index.html') {
-  const titleTag = `<title>Home | ClickReviews</title>`;
-  const metaTags = `
+    const pathname = req.url?.split('?')[0]; // remove query string if any
+  if (pathname === '/' || pathname === '' || pathname === '/index.html') {
+    const titleTag = `<title>Home | ClickReviews</title>`;
+    const metaTags = `
     <meta name="description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
     <meta property="og:title" content="Home | ClickReviews">
     <meta property="og:description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
@@ -82,7 +83,7 @@ app.use(async (req, res, next) => {
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Home | ClickReviews">
     <meta name="twitter:description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
-    <meta name="twitter:image" content="https://www.clickreviews.com.br/assets/icons/logo_site.webp">
+    <meta name="twitter:image" content="https://www.clickreviews.com.br/assets/icons/logo_site.webp">e
     <meta property="twitter:url" content="https://clickreviews.com.br/">
   `;
 
