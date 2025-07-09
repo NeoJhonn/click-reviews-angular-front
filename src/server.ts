@@ -13,7 +13,9 @@ export const app = express();
 const angularApp = new AngularNodeAppEngine();
 
 // Converte ReadableStream em string (usado para ler HTML do SSR)
-async function streamToString(stream: ReadableStream<Uint8Array>): Promise<string> {
+async function streamToString(
+  stream: ReadableStream<Uint8Array>
+): Promise<string> {
   const reader = stream.getReader();
   const chunks: Uint8Array[] = [];
 
@@ -53,7 +55,7 @@ app.use(
     maxAge: '1y',
     index: false,
     redirect: false,
-  }),
+  })
 );
 
 // SSR + injeção de meta tags dinâmicas
@@ -73,7 +75,7 @@ app.use(async (req, res, next) => {
       const slug = req.url.split('/review/')[1];
       const product = await getProductMeta(slug);
 
-    if (product) {
+      if (product) {
   const titleTag = `<title>${product.productTitle} | ClickReviews</title>`;
   const metaTags = `
     <meta name="description" content="${product.subtitle}">
@@ -81,14 +83,23 @@ app.use(async (req, res, next) => {
     <meta property="og:description" content="${product.subtitle}">
     <meta property="og:image" content="${product.imageUrl}">
     <meta property="og:url" content="https://clickreviews.com.br/review/${product.slug}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${product.productTitle} | ClickReviews">
+    <meta name="twitter:description" content="${product.subtitle}">
+    <meta name="twitter:image" content="${product.imageUrl}">
+    <meta property="twitter:url" content="https://clickreviews.com.br/review/${product.slug}">
   `;
 
+  // Remove ALL <meta name="..."> or <meta property="..."> with "description", "og:*", or "twitter:*"
   html = html
-    .replace(/<title>.*?<\/title>/, titleTag)                              // substitui o title
-    .replace(/<meta[^>]+(name|property)="(description|og:[^"]+)"[^>]*>/g, '')  // remove tags fixas existentes
-    .replace('</head>', `${metaTags}\n</head>`);                            // insere as novas antes de </head>
+    .replace(/<title[^>]*>.*?<\/title>/i, '') // remove existing <title>
+    .replace(/<meta\s+(?:name|property)\s*=\s*["']?(description|og:[^"'>\s]+|twitter:[^"'>\s]+)["']?[^>]*?>/gi, '') // remove matching <meta> tags
+    .replace('<head>', `<head>\n${titleTag}\n${metaTags}`); // insert new tags
 }
-}
+
+
+
+    }
     // Envia a resposta SSR modificada
     const newResponse = new Response(html, {
       status: response.status,
@@ -96,8 +107,7 @@ app.use(async (req, res, next) => {
       headers: response.headers,
     });
 
-
-
+    console.log('Raw HTML before meta replace:', html);
     writeResponseToNodeResponse(newResponse, res);
   } catch (err) {
     console.error('SSR Error:', err);
@@ -108,7 +118,9 @@ app.use(async (req, res, next) => {
 // Inicia o servidor local (para testes locais com `npm run serve:ssr`)
 if (isMainModule(import.meta.url)) {
   const port = process.env['PORT'] || 4000;
-  app.listen(port, () => console.log(`Server listening on http://localhost:${port}`));
+  app.listen(port, () =>
+    console.log(`Server listening on http://localhost:${port}`)
+  );
 }
 
 // Exporta para Vercel / Node handlers
