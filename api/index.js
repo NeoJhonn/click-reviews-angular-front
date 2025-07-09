@@ -1,4 +1,4 @@
 import { createRequestHandler } from '@angular/ssr/vercel';
-import { handler } from '../dist/click-reviews-angular-front/server/server.mjs';
+import { app } from '../dist/my-app/server/server.mjs';
 
-export default createRequestHandler(handler);
+export default createRequestHandler(app);

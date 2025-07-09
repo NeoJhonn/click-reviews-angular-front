@@ -8,7 +8,7 @@ import express from 'express';
 import { join } from 'node:path';
 import fs from 'fs/promises';
 
-const browserDistFolder = join('indexFile', '../browser');
+const browserDistFolder = join(import.meta.dirname, '../browser');
 export const app = express();
 const angularApp = new AngularNodeAppEngine();
 
@@ -96,7 +96,7 @@ app.use(async (req, res, next) => {
       headers: response.headers,
     });
 
-    
+
 
     writeResponseToNodeResponse(newResponse, res);
   } catch (err) {
