@@ -3,14 +3,14 @@
   "type": "module",
   "version": "0.0.0",
   "scripts": {
-  "ng": "ng",
-  "start": "node dist/click-reviews-angular-front/server/server.mjs",
-  "build": "npm run build:ssr",
-  "build:ssr": "ng build",
-  "vercel-build": "npm run build:ssr",
-  "serve:ssr": "node dist/click-reviews-angular-front/server/server.mjs",
-  "watch": "ng build --watch --configuration development",
-  "test": "ng test"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng vercel-build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "serve:ssr:click-reviews-angular-front": "node dist/click-reviews-angular-front/server/server.mjs",
+    "build:ssr": "ng build",
+    "vercel-build": "npm run build:ssr"
 },
   "private": true,
   "dependencies": {
