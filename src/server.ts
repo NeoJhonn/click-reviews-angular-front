@@ -71,8 +71,8 @@ app.use(async (req, res, next) => {
     let html = await streamToString(response.body);
 
      // Se for rota Home
-    const pathname = req.url?.split('?')[0]?.trim(); // remove query string and whitespace
-if (!pathname || pathname === '/' || pathname === '/index.html') {
+    
+if (req.url?.split('?')[0]?.trim() === "https://www.clickreviews.com.br") {
     const titleTag = `<title>Home | ClickReviews</title>`;
     const metaTags = `
     <meta name="description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
