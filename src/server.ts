@@ -72,7 +72,12 @@ app.use(async (req, res, next) => {
 
      // Se for rota Home
     
-if (req.url?.split('?')[0]?.trim() === "https://www.clickreviews.com.br") {
+const pathname = req.url?.split('?')[0]?.trim();
+
+if ( pathname === '' || pathname === '/index.html') {
+  // this is the homepage
+}
+
     const titleTag = `<title>Home | ClickReviews</title>`;
     const metaTags = `
     <meta name="description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
