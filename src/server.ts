@@ -11,7 +11,7 @@ import fs from 'fs/promises';
 const browserDistFolder = join(import.meta.dirname, '../browser');
 export const app = express();
 const angularApp = new AngularNodeAppEngine();
-e
+
 // Converte ReadableStream em string (usado para ler HTML do SSR)
 async function streamToString(
   stream: ReadableStream<Uint8Array>
