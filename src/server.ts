@@ -73,7 +73,7 @@ app.use(async (req, res, next) => {
     // Se for rota Home
     const urlt = new URL(`http://localhost${req.url}`);
 const pathname = urlt.pathname;
-if (pathname === '/') {
+if (pathname === '/api/index') {
   const titleTag = `<title>Home | ClickReviews</title>`;
   const metaTags = `
     <meta name="description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
