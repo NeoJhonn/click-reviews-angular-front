@@ -70,30 +70,7 @@ app.use(async (req, res, next) => {
 
     let html = await streamToString(response.body);
 
-     // Se for rota Home
-const pathname = req.url?.split('?')[0]?.trim();
-if (!pathname || pathname === '/' || pathname === '/index.html') {
-    const titleTag = `<title>Home | ClickReviews</title>`;
-    const metaTags = `
-    <meta name="description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
-    <meta property="og:title" content="Home | ClickReviews">
-    <meta property="og:description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
-    <meta property="og:image" content="https://www.clickreviews.com.br/assets/icons/logo_site.webp">
-    <meta property="og:url" content="https://www.clickreviews.com.br/">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Home | ClickReviews">
-    <meta name="twitter:description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
-    <meta name="twitter:image" content="https://www.clickreviews.com.br/assets/icons/logo_site.webp">e
-    <meta property="twitter:url" content="https://clickreviews.com.br/">
-  `;
-
-  // Remove ALL <meta name="..."> or <meta property="..."> with "description", "og:*", or "twitter:*"
-  html = html
-    .replace(/<title[^>]*>.*?<\/title>/i, '') // remove existing <title>
-    .replace('<head>', `<head>\n${titleTag}\n${metaTags}`); // insert new tags
-
-    } else {
-
+    
     // Se for rota de review
     if (req.url.startsWith('/review/')) {
       const slug = req.url.split('/review/')[1];
@@ -120,8 +97,29 @@ if (!pathname || pathname === '/' || pathname === '/index.html') {
     .replace(/<meta\s+(?:name|property)\s*=\s*["']?(description|og:[^"'>\s]+|twitter:[^"'>\s]+)["']?[^>]*?>/gi, '') // remove matching <meta> tags
     .replace('<head>', `<head>\n${titleTag}\n${metaTags}`); // insert new tags
 }
+} else {
+
+      const titleTag = `<title>Home | ClickReviews</title>`;
+    const metaTags = `
+    <meta name="description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
+    <meta property="og:title" content="Home | ClickReviews">
+    <meta property="og:description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
+    <meta property="og:image" content="https://www.clickreviews.com.br/assets/icons/logo_site.webp">
+    <meta property="og:url" content="https://www.clickreviews.com.br/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Home | ClickReviews">
+    <meta name="twitter:description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
+    <meta name="twitter:image" content="https://www.clickreviews.com.br/assets/icons/logo_site.webp">e
+    <meta property="twitter:url" content="https://clickreviews.com.br/">
+  `;
+
+      // Remove ALL <meta name="..."> or <meta property="..."> with "description", "og:*", or "twitter:*"
+  html = html
+    .replace(/<title[^>]*>.*?<\/title>/i, '') // remove existing <title>
+    .replace(/<meta\s+(?:name|property)\s*=\s*["']?(description|og:[^"'>\s]+|twitter:[^"'>\s]+)["']?[^>]*?>/gi, '') // remove matching <meta> tags
+    .replace('<head>', `<head>\n${titleTag}\n${metaTags}`); // insert new tags
     }
-}
+
     
     // Envia a resposta SSR modificada
     const newResponse = new Response(html, {
