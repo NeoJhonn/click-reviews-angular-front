@@ -70,6 +70,29 @@ app.use(async (req, res, next) => {
 
     let html = await streamToString(response.body);
 
+    // Se for rota Home
+    const urlt = new URL(`http://localhost${req.url}`);
+const pathname = urlt.pathname;
+if (pathname === '/') {
+  const titleTag = `<title>Home | ClickReviews</title>`;
+  const metaTags = `
+    <meta name="description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
+    <meta property="og:title" content="Home | ClickReviews">
+    <meta property="og:description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
+    <meta property="og:image" content="https://www.clickreviews.com.br/assets/icons/logo_site.webp">
+    <meta property="og:url" content="https://www.clickreviews.com.br/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Home | ClickReviews">
+    <meta name="twitter:description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
+    <meta name="twitter:image" content="https://www.clickreviews.com.br/assets/icons/logo_site.webp">
+    <meta property="twitter:url" content="https://clickreviews.com.br/">
+  `;
+
+  html = html
+    .replace(/<title[^>]*>.*?<\/title>/i, '') // remove any existing title
+    .replace('<head>', `<head>\n${titleTag}\n${metaTags}`);
+}
+
     
     // Se for rota de review
     if (req.url.startsWith('/review/')) {
