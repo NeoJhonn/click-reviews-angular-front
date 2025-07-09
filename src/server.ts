@@ -11,7 +11,7 @@ import fs from 'fs/promises';
 const browserDistFolder = join(import.meta.dirname, '../browser');
 export const app = express();
 const angularApp = new AngularNodeAppEngine();
-
+e
 // Converte ReadableStream em string (usado para ler HTML do SSR)
 async function streamToString(
   stream: ReadableStream<Uint8Array>
@@ -120,7 +120,8 @@ if (pathname === '/') {
     .replace(/<meta\s+(?:name|property)\s*=\s*["']?(description|og:[^"'>\s]+|twitter:[^"'>\s]+)["']?[^>]*?>/gi, '') // remove matching <meta> tags
     .replace('<head>', `<head>\n${titleTag}\n${metaTags}`); // insert new tags
 }
-} 
+} else if(2 == 3){
+    }
     if (req.url.startsWith('/contato/')) {
       const titleTag = `<title>Contato | ClickReviews</title>`;
     const metaTags = `
