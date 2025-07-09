@@ -92,7 +92,7 @@ if (!pathname || pathname === '/' || pathname === '/index.html') {
     .replace(/<title[^>]*>.*?<\/title>/i, '') // remove existing <title>
     .replace('<head>', `<head>\n${titleTag}\n${metaTags}`); // insert new tags
 
-    }
+    } else {
 
     // Se for rota de review
     if (req.url.startsWith('/review/')) {
@@ -121,6 +121,7 @@ if (!pathname || pathname === '/' || pathname === '/index.html') {
     .replace('<head>', `<head>\n${titleTag}\n${metaTags}`); // insert new tags
 }
     }
+}
     
     // Envia a resposta SSR modificada
     const newResponse = new Response(html, {
