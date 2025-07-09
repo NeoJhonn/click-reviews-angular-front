@@ -71,7 +71,9 @@ app.use(async (req, res, next) => {
     let html = await streamToString(response.body);
 
     // Se for rota Home
-if (req.url.startsWith('/api/')) {
+const url = new URL(req.url, 'http://localhost'); // Use absolute URL for parsing
+const pathname = url.pathname;
+if (pathname === '/') {
   const titleTag = `<title>Home | ClickReviews</title>`;
   const metaTags = `
     <meta name="description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
@@ -128,7 +130,7 @@ if (req.url.startsWith('/api/')) {
     <meta property="og:image" content="https://www.clickreviews.com.br/assets/icons/logo_site.webp">
     <meta property="og:url" content="https://www.clickreviews.com.br/contato">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Home | ClickReviews">
+    <meta name="twitter:title" content="Contato | ClickReviews">
     <meta name="twitter:description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
     <meta name="twitter:image" content="https://www.clickreviews.com.br/assets/icons/logo_site.webp">e
     <meta property="twitter:url" content="https://clickreviews.com.br/contato">
