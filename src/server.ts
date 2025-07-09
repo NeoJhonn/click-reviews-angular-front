@@ -120,8 +120,8 @@ if (pathname === '/') {
     .replace(/<meta\s+(?:name|property)\s*=\s*["']?(description|og:[^"'>\s]+|twitter:[^"'>\s]+)["']?[^>]*?>/gi, '') // remove matching <meta> tags
     .replace('<head>', `<head>\n${titleTag}\n${metaTags}`); // insert new tags
 }
-} else {
-    if (req.url.startsWith('/review/')) {
+} 
+    if (req.url.startsWith('/contato/')) {
       const titleTag = `<title>Contato | ClickReviews</title>`;
     const metaTags = `
     <meta name="description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
@@ -141,7 +141,7 @@ if (pathname === '/') {
     .replace(/<title[^>]*>.*?<\/title>/i, '') // remove existing <title>
     .replace('<head>', `<head>\n${titleTag}\n${metaTags}`); // insert new tags
     }
-)
+
     
     // Envia a resposta SSR modificada
     const newResponse = new Response(html, {
