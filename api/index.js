@@ -1,5 +1,4 @@
 // api/index.js
-//import { createRequestHandler } from '@angular/ssr/vercel';
-import { app } from '../dist/click-reviews-angular-front/server/server.mjs';
+const { handler } = await import('../dist/click-reviews-angular-front/server/server.mjs');
+export default handler;
 
-export default createRequestHandler(app);
