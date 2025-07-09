@@ -116,7 +116,6 @@ app.use(async (req, res, next) => {
       // Remove ALL <meta name="..."> or <meta property="..."> with "description", "og:*", or "twitter:*"
   html = html
     .replace(/<title[^>]*>.*?<\/title>/i, '') // remove existing <title>
-    .replace(/<meta\s+(?:name|property)\s*=\s*["']?(description|og:[^"'>\s]+|twitter:[^"'>\s]+)["']?[^>]*?>/gi, '') // remove matching <meta> tags
     .replace('<head>', `<head>\n${titleTag}\n${metaTags}`); // insert new tags
     }
 
