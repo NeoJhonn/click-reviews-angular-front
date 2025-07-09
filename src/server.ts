@@ -71,7 +71,7 @@ app.use(async (req, res, next) => {
     let html = await streamToString(response.body);
 
      // Se for rota Home
-    if (/^\/(index\.html)?$/.test(req.url)) {
+    if (req.url === '/' || req.url === '/index.html') {
   const titleTag = `<title>Home | ClickReviews</title>`;
   const metaTags = `
     <meta name="description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
