@@ -4,7 +4,10 @@
     "outDir": "./dist/server",
     "target": "ES2022",
     "module": "NodeNext",
-    "types": []
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "types": [],
+    "noEmitOnError": false
   },
   "files": [
     "src/main.server.ts"
