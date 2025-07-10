@@ -9,13 +9,10 @@ import { join } from 'node:path';
 import fs from 'fs/promises';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
-export const app = express();
+const app = express();
 const angularApp = new AngularNodeAppEngine();
 
-// Converte ReadableStream em string (usado para ler HTML do SSR)
-async function streamToString(
-  stream: ReadableStream<Uint8Array>
-): Promise<string> {
+async function streamToString(stream: ReadableStream<Uint8Array>): Promise<string> {
   const reader = stream.getReader();
   const chunks: Uint8Array[] = [];
 
@@ -36,7 +33,6 @@ async function streamToString(
   return new TextDecoder().decode(combined);
 }
 
-// Carrega os dados do produto do JSON
 async function getProductMeta(slug: string) {
   try {
     const file = join(browserDistFolder, 'assets/data/products.json');
@@ -44,12 +40,12 @@ async function getProductMeta(slug: string) {
     const products = JSON.parse(data);
     return products.find((p: any) => p.slug === slug);
   } catch (e) {
-    console.error('Erro lendo JSON de produtos:', e);
+    console.error('Error reading product JSON:', e);
     return null;
   }
 }
 
-// Serve arquivos estáticos
+// Serve static files
 app.use(
   express.static(browserDistFolder, {
     maxAge: '1y',
@@ -58,14 +54,20 @@ app.use(
   })
 );
 
-// SSR + injeção de meta tags dinâmicas
+// SSR handler with dynamic meta injection
 app.use(async (req, res, next) => {
-  console.log('o que tem aqui no começo: ', req.url);
-
   try {
+    const pathname = req.url?.split('?')[0]?.trim() || '/';
+    console.log('➡️ SSR Request Path:', pathname);
+
+    // Skip static assets
+    const staticExts = ['.ico', '.png', '.jpg', '.svg', '.css', '.js', '.webp', '.txt', '.json'];
+    if (staticExts.some((ext) => pathname.endsWith(ext))) {
+      return next();
+    }
+
     const response = await angularApp.handle(req);
     if (!response) return next();
-
 
     if (!response.body) {
       return writeResponseToNodeResponse(response, res);
@@ -73,84 +75,92 @@ app.use(async (req, res, next) => {
 
     let html = await streamToString(response.body);
 
-    // Se for rota de review
-    if (req.url.startsWith('/review/')) {
-      const slug = req.url.split('/review/')[1];
+    // HOME PAGE
+    if (pathname === '/' || pathname === '/index.html') {
+      console.log('🏠 Injecting Home meta tags');
+      const title = `<title>Home | ClickReviews</title>`;
+      const metas = `
+        <meta name="description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
+        <meta property="og:title" content="Home | ClickReviews">
+        <meta property="og:description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
+        <meta property="og:image" content="https://www.clickreviews.com.br/assets/icons/logo_site.webp">
+        <meta property="og:url" content="https://www.clickreviews.com.br/">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Home | ClickReviews">
+        <meta name="twitter:description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
+        <meta name="twitter:image" content="https://www.clickreviews.com.br/assets/icons/logo_site.webp">
+        <meta property="twitter:url" content="https://www.clickreviews.com.br/">
+      `;
+      html = html
+        .replace(/<title[^>]*>.*?<\/title>/i, '')
+        .replace(/<meta\s+(?:name|property)="(description|og:[^"]+|twitter:[^"]+)"[^>]*>/gi, '')
+        .replace('<head>', `<head>\n${title}\n${metas}`);
+    }
+
+    // REVIEW PAGE
+    if (pathname.startsWith('/review/')) {
+      const slug = pathname.split('/review/')[1];
       const product = await getProductMeta(slug);
-
       if (product) {
-        const titleTag = `<title>${product.productTitle} | ClickReviews</title>`;
-        const metaTags = `
-    <meta name="description" content="${product.subtitle}">
-    <meta property="og:title" content="${product.productTitle} | ClickReviews">
-    <meta property="og:description" content="${product.subtitle}">
-    <meta property="og:image" content="${product.imageUrl}">
-    <meta property="og:url" content="https://clickreviews.com.br/review/${product.slug}">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="${product.productTitle} | ClickReviews">
-    <meta name="twitter:description" content="${product.subtitle}">
-    <meta name="twitter:image" content="${product.imageUrl}">
-    <meta property="twitter:url" content="https://clickreviews.com.br/review/${product.slug}">
-  `;
-
-        // Remove ALL <meta name="..."> or <meta property="..."> with "description", "og:*", or "twitter:*"
+        console.log(`📦 Injecting review meta for slug: ${slug}`);
+        const title = `<title>${product.productTitle} | ClickReviews</title>`;
+        const metas = `
+          <meta name="description" content="${product.subtitle}">
+          <meta property="og:title" content="${product.productTitle} | ClickReviews">
+          <meta property="og:description" content="${product.subtitle}">
+          <meta property="og:image" content="${product.imageUrl}">
+          <meta property="og:url" content="https://clickreviews.com.br/review/${product.slug}">
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:title" content="${product.productTitle} | ClickReviews">
+          <meta name="twitter:description" content="${product.subtitle}">
+          <meta name="twitter:image" content="${product.imageUrl}">
+          <meta property="twitter:url" content="https://clickreviews.com.br/review/${product.slug}">
+        `;
         html = html
-          .replace(/<title[^>]*>.*?<\/title>/i, '') // remove existing <title>
-          .replace(
-            /<meta\s+(?:name|property)\s*=\s*["']?(description|og:[^"'>\s]+|twitter:[^"'>\s]+)["']?[^>]*?>/gi,
-            ''
-          ) // remove matching <meta> tags
-          .replace('<head>', `<head>\n${titleTag}\n${metaTags}`); // insert new tags
+          .replace(/<title[^>]*>.*?<\/title>/i, '')
+          .replace(/<meta\s+(?:name|property)="(description|og:[^"]+|twitter:[^"]+)"[^>]*>/gi, '')
+          .replace('<head>', `<head>\n${title}\n${metas}`);
       }
     }
 
-    if (req.url === '/contato') {
-      const titleTag = `<title>Contato | ClickReviews</title>`;
-      const metaTags = `
-    <meta name="description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
-    <meta property="og:title" content="Contato | ClickReviews">
-    <meta property="og:description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
-    <meta property="og:image" content="https://www.clickreviews.com.br/assets/icons/logo_site.webp">
-    <meta property="og:url" content="https://www.clickreviews.com.br/contato">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Contato | ClickReviews">
-    <meta name="twitter:description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
-    <meta name="twitter:image" content="https://www.clickreviews.com.br/assets/icons/logo_site.webp">
-    <meta property="twitter:url" content="https://clickreviews.com.br/contato">
-  `;
-
-      // Remove ALL <meta name="..."> or <meta property="..."> with "description", "og:*", or "twitter:*"
+    // CONTATO PAGE
+    if (pathname === '/contato') {
+      console.log('📞 Injecting Contato meta tags');
+      const title = `<title>Contato | ClickReviews</title>`;
+      const metas = `
+        <meta name="description" content="Fale com o time do ClickReviews!">
+        <meta property="og:title" content="Contato | ClickReviews">
+        <meta property="og:description" content="Fale com o time do ClickReviews!">
+        <meta property="og:image" content="https://www.clickreviews.com.br/assets/icons/logo_site.webp">
+        <meta property="og:url" content="https://www.clickreviews.com.br/contato">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Contato | ClickReviews">
+        <meta name="twitter:description" content="Fale com o time do ClickReviews!">
+        <meta name="twitter:image" content="https://www.clickreviews.com.br/assets/icons/logo_site.webp">
+        <meta property="twitter:url" content="https://www.clickreviews.com.br/contato">
+      `;
       html = html
-          .replace(/<title[^>]*>.*?<\/title>/i, '') // remove existing <title>
-          .replace(
-            /<meta\s+(?:name|property)\s*=\s*["']?(description|og:[^"'>\s]+|twitter:[^"'>\s]+)["']?[^>]*?>/gi,
-            ''
-          ) // remove matching <meta> tags
-          .replace('<head>', `<head>\n${titleTag}\n${metaTags}`); // insert new tags
+        .replace(/<title[^>]*>.*?<\/title>/i, '')
+        .replace(/<meta\s+(?:name|property)="(description|og:[^"]+|twitter:[^"]+)"[^>]*>/gi, '')
+        .replace('<head>', `<head>\n${title}\n${metas}`);
     }
 
-    // Envia a resposta SSR modificada
     const newResponse = new Response(html, {
       status: response.status,
       statusText: response.statusText,
       headers: response.headers,
     });
 
-    //console.log('Raw HTML before meta replace:', html);
-    writeResponseToNodeResponse(newResponse, res);
+    return writeResponseToNodeResponse(newResponse, res);
   } catch (err) {
-    console.error('SSR Error:', err);
+    console.error('❌ SSR Error:', err);
     next(err);
   }
 });
 
-// Inicia o servidor local (para testes locais com `npm run serve:ssr`)
 if (isMainModule(import.meta.url)) {
   const port = process.env['PORT'] || 4000;
-  app.listen(port, () =>
-    console.log(`Server listening on http://localhost:${port}`)
-  );
+  app.listen(port, () => console.log(`✅ Server listening at http://localhost:${port}`));
 }
 
-// Exporta para Vercel / Node handlers
 export const handler = createNodeRequestHandler(app);
