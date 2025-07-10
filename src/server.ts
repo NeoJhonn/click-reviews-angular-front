@@ -71,10 +71,24 @@ app.use(async (req, res, next) => {
     let html = await streamToString(response.body);
 
     // Se for rota Home
-    const pathname = req.url?.split('favicon.ico')[0]?.trim();
+    const pathname = req.url?.split('?')[0]?.trim() || '/';
+    const staticAssets = [
+      '.ico',
+      '.png',
+      '.jpg',
+      '.svg',
+      '.css',
+      '.js',
+      '.webp',
+      '.txt',
+      '.json',
+    ];
+    if (staticAssets.some((ext) => pathname.endsWith(ext))) {
+      return next();
+    }
+
     console.log('o que tem aqui: ', pathname);
-    if ( pathname === '/' || pathname === '' || pathname === '/index.html'
-) {
+    if (pathname === '/' || pathname === '/index.html') {
       console.log('Entrou na rota do Home');
       const titleTag = `<title>Home | ClickReviews</title>`;
       const metaTags = `
@@ -137,7 +151,7 @@ app.use(async (req, res, next) => {
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Contato | ClickReviews">
     <meta name="twitter:description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
-    <meta name="twitter:image" content="https://www.clickreviews.com.br/assets/icons/logo_site.webp">e
+    <meta name="twitter:image" content="https://www.clickreviews.com.br/assets/icons/logo_site.webp">
     <meta property="twitter:url" content="https://clickreviews.com.br/contato">
   `;
 
