@@ -4,7 +4,7 @@
     { "source": "/(.*)", "destination": "/" }
   ],
   "functions": {
-    "api/index.js": {
+    "api/index.mjs": {
       "includeFiles": "dist/click-reviews-angular-front/**"
     }
   }
