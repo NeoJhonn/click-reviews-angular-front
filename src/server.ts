@@ -60,6 +60,23 @@ app.use(
 
 // SSR + injeção de meta tags dinâmicas
 app.use(async (req, res, next) => {
+  const pathname = req.url?.split('favicon.icon')[0]?.trim() || '/';
+  const staticAssets = [
+      '.ico',
+      '.png',
+      '.jpg',
+      '.svg',
+      '.css',
+      '.js',
+      '.webp',
+      '.txt',
+      '.json',
+    ];
+    if (staticAssets.some((ext) => pathname.endsWith(ext))) {
+      return next();
+    }
+
+
   try {
     const response = await angularApp.handle(req);
     if (!response) return next();
@@ -69,8 +86,6 @@ app.use(async (req, res, next) => {
     }
 
     let html = await streamToString(response.body);
-
-    const pathname = req.url?.split('?')[0]?.trim() || '/';
 
     // Se for rota Home
     console.log('o que tem aqui: ', pathname);
