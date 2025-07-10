@@ -1,10 +1,10 @@
 {
   "version": 2,
   "rewrites": [
-    { "source": "/(.*)", "destination": "/api/index" }
+    { "source": "/(.*)", "destination": "/" }
   ],
   "functions": {
-    "api/index.mjs": {
+    "api/index.js": {
       "includeFiles": "dist/click-reviews-angular-front/**"
     }
   }
