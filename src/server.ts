@@ -66,7 +66,7 @@ app.use(async (req, res, next) => {
     const response = await angularApp.handle(req);
     if (!response) return next();
 
-    const pathname = req.url?.split('favicon.icon')[0]?.trim() || '/';
+    let pathname = req.url?.split('?')[0]?.trim() || '/';
   const staticAssets = [
       '.ico',
       '.png',
