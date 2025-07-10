@@ -60,19 +60,8 @@ app.use(
 
 // SSR + injeção de meta tags dinâmicas
 app.use(async (req, res, next) => {
-  try {
-    const response = await angularApp.handle(req);
-    if (!response) return next();
-
-    if (!response.body) {
-      return writeResponseToNodeResponse(response, res);
-    }
-
-    let html = await streamToString(response.body);
-
-    // Se for rota Home
-    const pathname = req.url?.split('?')[0]?.trim() || '/';
-    const staticAssets = [
+  const pathname = req.url?.split('?')[0]?.trim() || '/';
+  const staticAssets = [
       '.ico',
       '.png',
       '.jpg',
@@ -87,6 +76,18 @@ app.use(async (req, res, next) => {
       return next();
     }
 
+
+  try {
+    const response = await angularApp.handle(req);
+    if (!response) return next();
+
+    if (!response.body) {
+      return writeResponseToNodeResponse(response, res);
+    }
+
+    let html = await streamToString(response.body);
+
+    // Se for rota Home
     console.log('o que tem aqui: ', pathname);
     if (pathname === '/' || pathname === '/index.html') {
       console.log('Entrou na rota do Home');
