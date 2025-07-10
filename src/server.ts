@@ -71,7 +71,7 @@ app.use(async (req, res, next) => {
     let html = await streamToString(response.body);
 
     // Se for rota Home
-    console.log('o que tem aqui', req.url);
+    console.log('o que tem aqui', req.url?.split('favicon.ico')[0]?.trim());
     if (req.url === '/') {
       console.log('Entrou na rota do Home');
       const titleTag = `<title>Home | ClickReviews</title>`;
