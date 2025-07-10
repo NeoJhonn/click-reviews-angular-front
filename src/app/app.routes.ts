@@ -5,7 +5,7 @@ import { ReachOutComponent } from './components/reach-out.component/reach-out.co
 import { NotFoundComponent } from './components/not-found.component/not-found.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'home'},
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: HomeComponent },
   { path: 'review/:slug', component: ProductReviewPageComponent },
   { path: 'contato', component: ReachOutComponent },
