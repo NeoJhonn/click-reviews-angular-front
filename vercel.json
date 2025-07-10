@@ -1,7 +1,9 @@
 {
   "version": 2,
   "rewrites": [
-    { "source": "/", "destination": "/api/index" }
+    { "source": "/", "destination": "/api/index" },
+    { "source": "/contato", "destination": "/api/index" },
+    { "source": "/review/(.*)", "destination": "/api/index" }
   ],
   "functions": {
     "api/index.js": {
