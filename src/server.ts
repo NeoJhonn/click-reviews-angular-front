@@ -71,11 +71,11 @@ app.use(async (req, res, next) => {
     let html = await streamToString(response.body);
 
     // Se for rota Home
-const url = new URL(req.url, 'http://localhost'); // Use absolute URL for parsing
-const pathname = url.pathname;
-if (pathname === '/') {
-  const titleTag = `<title>Home | ClickReviews</title>`;
-  const metaTags = `
+    console.log('o que tem aqui', req.url);
+    if (req.url === '/') {
+      console.log('Entrou na rota do Home');
+      const titleTag = `<title>Home | ClickReviews</title>`;
+      const metaTags = `
     <meta name="description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
     <meta property="og:title" content="Home | ClickReviews">
     <meta property="og:description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
@@ -88,20 +88,19 @@ if (pathname === '/') {
     <meta property="twitter:url" content="https://clickreviews.com.br/">
   `;
 
-  html = html
-    .replace(/<title[^>]*>.*?<\/title>/i, '') // remove any existing title
-    .replace('<head>', `<head>\n${titleTag}\n${metaTags}`);
-}
+      html = html
+        .replace(/<title[^>]*>.*?<\/title>/i, '') // remove any existing title
+        .replace('<head>', `<head>\n${titleTag}\n${metaTags}`);
+    }
 
-    
     // Se for rota de review
     if (req.url.startsWith('/review/')) {
       const slug = req.url.split('/review/')[1];
       const product = await getProductMeta(slug);
 
       if (product) {
-  const titleTag = `<title>${product.productTitle} | ClickReviews</title>`;
-  const metaTags = `
+        const titleTag = `<title>${product.productTitle} | ClickReviews</title>`;
+        const metaTags = `
     <meta name="description" content="${product.subtitle}">
     <meta property="og:title" content="${product.productTitle} | ClickReviews">
     <meta property="og:description" content="${product.subtitle}">
@@ -114,15 +113,20 @@ if (pathname === '/') {
     <meta property="twitter:url" content="https://clickreviews.com.br/review/${product.slug}">
   `;
 
-  // Remove ALL <meta name="..."> or <meta property="..."> with "description", "og:*", or "twitter:*"
-  html = html
-    .replace(/<title[^>]*>.*?<\/title>/i, '') // remove existing <title>
-    .replace(/<meta\s+(?:name|property)\s*=\s*["']?(description|og:[^"'>\s]+|twitter:[^"'>\s]+)["']?[^>]*?>/gi, '') // remove matching <meta> tags
-    .replace('<head>', `<head>\n${titleTag}\n${metaTags}`); // insert new tags
-}
-} else if (req.url.startsWith('/contato')) {
+        // Remove ALL <meta name="..."> or <meta property="..."> with "description", "og:*", or "twitter:*"
+        html = html
+          .replace(/<title[^>]*>.*?<\/title>/i, '') // remove existing <title>
+          .replace(
+            /<meta\s+(?:name|property)\s*=\s*["']?(description|og:[^"'>\s]+|twitter:[^"'>\s]+)["']?[^>]*?>/gi,
+            ''
+          ) // remove matching <meta> tags
+          .replace('<head>', `<head>\n${titleTag}\n${metaTags}`); // insert new tags
+      }
+    }
+
+    if (req.url === '/contato') {
       const titleTag = `<title>Contato | ClickReviews</title>`;
-    const metaTags = `
+      const metaTags = `
     <meta name="description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
     <meta property="og:title" content="Contato | ClickReviews">
     <meta property="og:description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
@@ -136,14 +140,11 @@ if (pathname === '/') {
   `;
 
       // Remove ALL <meta name="..."> or <meta property="..."> with "description", "og:*", or "twitter:*"
-  html = html
-    .replace(/<title[^>]*>.*?<\/title>/i, '') // remove existing <title>
-    .replace('<head>', `<head>\n${titleTag}\n${metaTags}`); // insert new tags
+      html = html
+        .replace(/<title[^>]*>.*?<\/title>/i, '') // remove existing <title>
+        .replace('<head>', `<head>\n${titleTag}\n${metaTags}`); // insert new tags
     }
-    
-    
 
-    
     // Envia a resposta SSR modificada
     const newResponse = new Response(html, {
       status: response.status,
@@ -151,7 +152,7 @@ if (pathname === '/') {
       headers: response.headers,
     });
 
-    console.log('Raw HTML before meta replace:', html);
+    //console.log('Raw HTML before meta replace:', html);
     writeResponseToNodeResponse(newResponse, res);
   } catch (err) {
     console.error('SSR Error:', err);
