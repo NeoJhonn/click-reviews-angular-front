@@ -71,11 +71,10 @@ app.use(async (req, res, next) => {
     let html = await streamToString(response.body);
 
     // Se for rota Home
-    const pathname = req.url?.split('favicon.ico')[0]?.trim();
-    const pathname2 = req.url?.split('favicon.png')[0]?.trim();
-    console.log('o que tem aqui: ', pathname +"  "+ pathname2);
-
-    if (pathname === '/' || pathname2 === '/') {
+    const pathname = req.url?.split('?')[0]?.trim();
+    console.log('o que tem aqui: ', pathname);
+    if ( pathname === '/' || pathname === '' || pathname === '/index.html'
+) {
       console.log('Entrou na rota do Home');
       const titleTag = `<title>Home | ClickReviews</title>`;
       const metaTags = `
