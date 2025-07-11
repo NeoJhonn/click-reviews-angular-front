@@ -14,7 +14,7 @@ const app = express();
 const browserDistFolder = join(import.meta.dirname, '../browser');
 
 // Get robots.txt from browser folder after build
-server.get('/robots.txt', (req, res) => {
+app.get('/robots.txt', (req, res) => {
   res.sendFile(join(__dirname, 'browser', 'robots.txt'));
 });
 
