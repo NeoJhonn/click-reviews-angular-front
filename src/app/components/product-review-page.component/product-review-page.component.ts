@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ChangeDetectorRef } from '@angular/core';
 import { MaterialModule } from '../../material.module-module';
 import { ProductData, ProductDataService } from '../../services/product-data.service';
-import { CanonicalService } from '../services/canonical.service';
+import { CanonicalService } from '../../services/canonical.service';
 
 @Component({
   selector: 'app-product-review-page',
