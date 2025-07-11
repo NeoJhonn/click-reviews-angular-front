@@ -13,10 +13,17 @@ const app = express();
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
 
-// Get robots.txt from browser folder after build
+// Serve robots.txt from browser folder after build
 app.get('/robots.txt', (req, res) => {
   res.sendFile(join(import.meta.dirname,  '../browser/robots.txt'));
 });
+
+// Serve sitemap.xml from browser folder after build
+app.get('/sitemap.xml', (req, res) => {
+  res.sendFile(join(import.meta.dirname,  '../browser/sitemap.xml'));
+});
+
+
 
 const angularApp = new AngularNodeAppEngine();
 
