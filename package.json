@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "scripts": {
-    "generate:sitemap": "node scripts/generate-sitemap.js",
+    "generate:sitemap": "node src/scripts/generate-sitemap.js",
     "ng": "ng",
     "start": "ng serve",
     "build": "npm run generate:sitemap && npm run build:ssr",
