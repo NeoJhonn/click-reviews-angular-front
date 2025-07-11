@@ -19,6 +19,6 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 ${urls.join('\n')}
 </urlset>`;
 
-await fs.writeFile(new URL('../src/sitemap.xml', import.meta.url), sitemap);
+await fs.writeFile(new URL('../sitemap.xml', import.meta.url), sitemap);
 
 console.log('✅ sitemap.xml generated!');
