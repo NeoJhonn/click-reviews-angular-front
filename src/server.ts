@@ -20,6 +20,7 @@ app.get('/robots.txt', (req, res) => {
 
 // Serve sitemap.xml from browser folder after build
 app.get('/sitemap.xml', (req, res) => {
+  res.type('application/xml');
   res.sendFile(join(import.meta.dirname,  '../browser/sitemap.xml'));
 });
 
