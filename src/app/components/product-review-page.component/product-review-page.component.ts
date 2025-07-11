@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ChangeDetectorRef } from '@angular/core';
 import { MaterialModule } from '../../material.module-module';
 import { ProductData, ProductDataService } from '../../services/product-data.service';
+import { CanonicalService } from '../services/canonical.service';
 
 @Component({
   selector: 'app-product-review-page',
@@ -29,7 +30,8 @@ export class ProductReviewPageComponent {
   };
 
   constructor(private route: ActivatedRoute,
-    private productService: ProductDataService, private cdr: ChangeDetectorRef) {
+    private productService: ProductDataService, private cdr: ChangeDetectorRef,
+             private canonicalService: CanonicalService) {
 
   }
 
@@ -45,6 +47,9 @@ export class ProductReviewPageComponent {
       }
     });
   }
+    const slug = this.route.snapshot.paramMap.get('slug');
+    const canonicalUrl = `https://www.clickreviews.com.br/review/${slug}`;
+    this.canonicalService.setCanonicalURL(canonicalUrl);
   }
 
   // loadProduct(slug: string): void {
