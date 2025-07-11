@@ -47,7 +47,8 @@ export class ProductReviewPageComponent {
       }
     });
   }
-    const slug = this.route.snapshot.paramMap.get('slug');
+    // Settando link canonico
+    const slug = this.route.snapshot.paramMap.get(slug);
     const canonicalUrl = `https://www.clickreviews.com.br/review/${slug}`;
     this.canonicalService.setCanonicalURL(canonicalUrl);
   }
