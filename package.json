@@ -10,7 +10,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:click-reviews-angular-front": "node dist/click-reviews-angular-front/server/server.mjs",
-    "build:ssr": "ng build"
+    "build:ssr": "npm run generate:sitemap && ng build"
   },
   "private": true,
   "dependencies": {
