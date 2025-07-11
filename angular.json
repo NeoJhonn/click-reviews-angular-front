@@ -23,6 +23,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/assets",
+               "src/robots.txt",
               "src/assets/data/products.json",
               {
                 "glob": "**/*",
