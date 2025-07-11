@@ -6,11 +6,11 @@
     "generate:sitemap": "node scripts/generate-sitemap.js",
     "ng": "ng",
     "start": "ng serve",
-    "build": "npm run build:ssr",
+    "build": "npm run generate:sitemap && npm run build:ssr",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:click-reviews-angular-front": "node dist/click-reviews-angular-front/server/server.mjs",
-    "build:ssr": "npm run generate:sitemap && ng build"
+    "build:ssr": "ng build"
   },
   "private": true,
   "dependencies": {
