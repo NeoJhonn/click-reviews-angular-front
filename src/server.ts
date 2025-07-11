@@ -15,6 +15,7 @@ const browserDistFolder = join(import.meta.dirname, '../browser');
 
 // Serve robots.txt from browser folder after build
 app.get('/robots.txt', (req, res) => {
+  res.type('text/plain');
   res.sendFile(join(import.meta.dirname,  '../browser/robots.txt'));
 });
 
