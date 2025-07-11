@@ -60,12 +60,6 @@ app.use(async (req, res, next) => {
     const pathname = req.url?.split('?')[0]?.trim() || '/';
     console.log('➡️ SSR Request Path:', pathname);
 
-    // Skip static assets
-    const staticExts = ['.ico', '.png', '.jpg', '.svg', '.css', '.js', '.webp', '.txt', '.json'];
-    if (staticExts.some((ext) => pathname.endsWith(ext))) {
-      return next();
-    }
-
     const response = await angularApp.handle(req);
     if (!response) return next();
 

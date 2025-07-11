@@ -18,6 +18,5 @@ export class ProductReviewComponent {
   @Input() benefits: string[] = [];
   @Input() videoUrl = '';
   @Input() opinion = '';
-  @Input() linkVerPreco = '';
   @Input() linkComprar = '';
 }

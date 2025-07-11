@@ -1,4 +1,4 @@
-@defer (when product != null) {
+@defer (when product.slug != "") {
   <app-product-review
     [productTitle]="product.productTitle"
     [subtitle]="product.subtitle"
@@ -6,7 +6,6 @@
     [benefits]="product.benefits"
     [videoUrl]="product.videoUrl"
     [opinion]="product.opinion"
-    [linkVerPreco]="product.linkVerPreco"
     [linkComprar]="product.linkComprar">
   </app-product-review>
 }@placeholder {

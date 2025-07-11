@@ -1,6 +1,7 @@
 [
   {
     "slug": "galaxy-a15",
+    "productType": "SmartPhone",
     "productTitle": "Samsung Galaxy A15 - Review Completo",
     "subtitle": "Descubra se este celular é ideal para você!",
     "imageUrl": "https://http2.mlstatic.com/D_NQ_NP_2X_668543-MLA75547177771_042024-F.webp",
@@ -12,12 +13,13 @@
       "Bateria de 5.000mAh com carregamento rápido"
     ],
     "videoUrl": "https://www.youtube.com/embed/NmtgI5rH-9k",
+    "opinionPreview": "O Samsung Galaxy A15 possui tela Super AMOLED de 6,5 polegadas, câmera tripla com sensor principal de 50 MP e bateria de 5.000 mAh. Vem com processador Helio G99 (4G) ou Exynos 850 (5G) e 128 GB a 256 GB de armazenamento. É uma opção equilibrada para uso diário.",
     "opinion": "O Galaxy A15 entrega um excelente custo-benefício para quem busca um smartphone equilibrado, moderno e com boas especificações para o uso diário. Sua tela Super AMOLED garante imagens vibrantes, ideais para vídeos e redes sociais. A câmera de 50MP surpreende na qualidade das fotos, e o desempenho com o processador Octa-core é fluido para navegação, apps e até alguns jogos. Além disso, a bateria de longa duração faz dele uma escolha segura para quem passa o dia fora de casa. Sem dúvidas, é uma opção inteligente para quem quer qualidade e economia em um só aparelho.",
-    "linkVerPreco": "https://mercadolivre.com/sec/29obZxg",
     "linkComprar": "https://mercadolivre.com/sec/29obZxg"
   },
   {
   "slug": "cadeira-bebe-multifix",
+  "productType": "Cadeira bebê automotiva",
   "productTitle": "Cadeira de Bebê Multifix Black Urban - Safety 1st",
   "subtitle": "Conforto, segurança e praticidade para o seu bebê desde o nascimento até os 36kg.",
   "imageUrl": "https://http2.mlstatic.com/D_NQ_NP_2X_960393-MLU73445762100_122023-F.webp",
@@ -29,8 +31,8 @@
     "Capa removível e lavável, ideal para o dia a dia"
   ],
   "videoUrl": "https://www.youtube.com/embed/gwm0ZGLM5mk",
+  "opinionPreview": "Cadeira de Bebê Multifix Black Urban , Fácil Instalação Convencional e Isofix, 4 Posições de inclinação, Uso desde o Nascimento até 36 Kg.",
   "opinion": "A Cadeira de Bebê Multifix da Safety 1st é uma das mais versáteis do mercado. Serve desde recém-nascidos até crianças maiores, com sistema Isofix para instalação prática e segura. O design acolchoado e as 4 posições de inclinação garantem conforto até nos trajetos mais longos. É uma escolha excelente para pais que buscam segurança, durabilidade e praticidade em um único produto. A facilidade de limpeza e o ajuste do encosto de cabeça tornam o uso ainda mais intuitivo no dia a dia.",
-  "linkVerPreco": "https://mercadolivre.com/sec/1Nz3jfp",
   "linkComprar": "https://mercadolivre.com/sec/1Nz3jfp"
 }
 ]

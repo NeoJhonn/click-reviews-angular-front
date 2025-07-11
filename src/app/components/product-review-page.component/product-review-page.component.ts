@@ -1,11 +1,9 @@
-import { Component, Inject, PLATFORM_ID, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { ProductReviewComponent } from '../product-review.component/product-review.component';
 import { ActivatedRoute } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { MaterialModule } from '../../material.module-module';
-import { isPlatformBrowser } from '@angular/common';
+import { ProductData, ProductDataService } from '../../services/product-data.service';
 
 @Component({
   selector: 'app-product-review-page',
@@ -17,71 +15,49 @@ import { isPlatformBrowser } from '@angular/common';
   styleUrl: './product-review-page.component.scss'
 })
 export class ProductReviewPageComponent {
-  private route = inject(ActivatedRoute);
-  private http = inject(HttpClient);
-  private cdr = inject(ChangeDetectorRef);
+  product: ProductData = {
+    slug: "",
+  productTitle: "Produto Não econtrado",
+  subtitle: "Produto Não econtrado",
+  imageUrl: "",
+  benefits: [],
+  videoUrl: "",
+  opinionPreview: "",
+  opinion: "",
+  linkComprar: "",
+  productType: ""
+  };
 
-  product?: any;
-  isBrowser: boolean;
+  constructor(private route: ActivatedRoute,
+    private productService: ProductDataService, private cdr: ChangeDetectorRef) {
 
-  constructor(
-    private title: Title,
-    @Inject(PLATFORM_ID) private platformId: Object
-  ) {
-    this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
   ngOnInit(): void {
-    if (this.isBrowser) {
-      this.route.paramMap.subscribe(params => {
-        const slug = params.get('slug');
-        if (slug) {
-          this.loadProduct(slug);
-        }
-      });
-    }
-  }
-
-  loadProduct(slug: string): void {
-    this.http.get<any[]>('/assets/data/products.json').subscribe(products => {
-      const found = products.find(p => p.slug === slug);
-      this.product = found;
-
-      // Atualiza o título da aba
-      this.title.setTitle(`${this.product.productTitle} | ClickReviews`);
-
-      // Limpa tags anteriores
-      //this.meta.removeTag("name='description'");
-      //this.meta.removeTag("property='og:title'");
-      //this.meta.removeTag("property='og:description'");
-      //this.meta.removeTag("property='og:image'");
-      //this.meta.removeTag("property='og:url'");
-      //this.meta.removeTag("property='og:type'");
-      //this.meta.removeTag("name='twitter:card'");
-      //this.meta.removeTag("name='twitter:title'");
-      //this.meta.removeTag("name='twitter:description'");
-      //this.meta.removeTag("name='twitter:image'");
-
-      // Open Graph
-      //this.meta.addTags([
-        //{ property: 'og:title', content: this.product.productTitle },
-       //{ property: 'og:description', content: this.product.opinion },
-        //{ property: 'og:image', content: this.product.imageUrl },
-        //{ property: 'og:url', content: `https://clickreviews.com.br/review/${this.product.slug}` },
-       // { property: 'og:type', content: 'website' },
-     // ]);
-
-      // Twitter Card
-      //this.meta.addTags([
-       // { name: 'twitter:card', content: 'summary_large_image' },
-        //{ name: 'twitter:title', content: this.product.productTitle },
-        //{ name: 'twitter:description', content: this.product.opinion },
-        //{ name: 'twitter:image', content: this.product.imageUrl },
-        //{ name: 'twitter:domain', content: "clickreviews.com.br" },
-        //{ name: 'twitter:url', content: `https://clickreviews.com.br/review/${this.product.slug}` },
-      //]);
-      // força a atulização de estado do produtos
-      this.cdr.detectChanges();
+    const slug = this.route.snapshot.paramMap.get('slug');
+  if (slug) {
+    this.productService.getProductBySlug(slug).subscribe(product => {
+      if (product) {
+        this.product = product;
+        this.cdr.detectChanges();
+      } else {
+        console.error('Produto não encontrado');
+      }
     });
   }
+  }
+
+  // loadProduct(slug: string): void {
+  //   this.http.get<any[]>('/assets/data/products.json').subscribe(products => {
+  //     const found = products.find(p => p.slug === slug);
+  //     this.product = found;
+
+  //     // Atualiza o título da aba
+  //     this.title.setTitle(`${this.product.productTitle} | ClickReviews`);
+
+
+  //     // força a atulização de estado do produtos
+  //     //this.cdr.detectChanges();
+  //   });
+  // }
 }

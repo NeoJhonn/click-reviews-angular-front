@@ -1,1 +1,14 @@
-<app-product-card />
+@defer (when products != []) {
+<section class="featured-products">
+  @for (product of products; track product.slug) {
+    <app-product-card [product]= "product"></app-product-card>
+  }
+</section>
+}@placeholder {
+  <div class="loading-container" >
+    <mat-spinner diameter="50"></mat-spinner>
+    <p style="margin-top: -20rem;">Carregando informações dos produtos...</p>
+  </div>
+} @error {
+  <p>Ocorreu um erro ao carregar os produtos.</p>
+}
