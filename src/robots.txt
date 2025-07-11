@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /assets/
+Disallow: /api/
+
+Sitemap: https://www.clickreviews.com.br/sitemap.xml
