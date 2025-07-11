@@ -8,8 +8,16 @@ import express from 'express';
 import { join } from 'node:path';
 import fs from 'fs/promises';
 
-const browserDistFolder = join(import.meta.dirname, '../browser');
+
 const app = express();
+
+const browserDistFolder = join(import.meta.dirname, '../browser');
+
+// Get robots.txt from browser folder after build
+server.get('/robots.txt', (req, res) => {
+  res.sendFile(join(__dirname, 'browser', 'robots.txt'));
+});
+
 const angularApp = new AngularNodeAppEngine();
 
 async function streamToString(stream: ReadableStream<Uint8Array>): Promise<string> {
