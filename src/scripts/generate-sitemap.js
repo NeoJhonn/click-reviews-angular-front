@@ -2,7 +2,7 @@ import fs from 'fs/promises';
 import path from 'path';
 
 const products = JSON.parse(
-  await fs.readFile(new URL('../src/data/products.json', import.meta.url))
+  await fs.readFile(new URL('../data/products.json', import.meta.url))
 );
 
 const baseUrl = 'https://www.clickreviews.com.br';
