@@ -47,23 +47,9 @@ export class ProductReviewPageComponent {
       }
     });
   }
-    // Settando link canonicoe
+    // Settando link canonico
     const slug2 = this.route.snapshot.paramMap.get('slug');
     const canonicalUrl = `https://www.clickreviews.com.br/review/${slug2}`;
     this.canonicalService.setCanonicalURL(canonicalUrl);
   }
-
-  // loadProduct(slug: string): void {
-  //   this.http.get<any[]>('/assets/data/products.json').subscribe(products => {
-  //     const found = products.find(p => p.slug === slug);
-  //     this.product = found;
-
-  //     // Atualiza o título da aba
-  //     this.title.setTitle(`${this.product.productTitle} | ClickReviews`);
-
-
-  //     // força a atulização de estado do produtos
-  //     //this.cdr.detectChanges();
-  //   });
-  // }
 }

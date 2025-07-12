@@ -3,6 +3,7 @@ import { MaterialModule } from '../../material.module-module';
 import { ProductCardComponent } from '../product-card.component/product-card.component';
 import { Title } from '@angular/platform-browser';
 import { ProductData, ProductDataService  } from '../../services/product-data.service';
+import { CanonicalService } from '../../services/canonical.service';
 
 
 @Component({
@@ -17,7 +18,7 @@ import { ProductData, ProductDataService  } from '../../services/product-data.se
 export class HomeComponent {
   products: ProductData[] = [];
 
-  constructor(private title: Title, private productService: ProductDataService, private cdr: ChangeDetectorRef) {
+  constructor(private canonicalService: CanonicalService, private title: Title, private productService: ProductDataService, private cdr: ChangeDetectorRef) {
     // SEO Metadata
      this.title.setTitle(`Home | ClickReviews`);
    }
@@ -27,6 +28,9 @@ export class HomeComponent {
       this.products = data;
       this.cdr.detectChanges();
     });
-  }
 
+    // Settando link canonico
+    const canonicalUrl = `https://www.clickreviews.com.br/home`;
+    this.canonicalService.setCanonicalURL(canonicalUrl);
+  }
 }
