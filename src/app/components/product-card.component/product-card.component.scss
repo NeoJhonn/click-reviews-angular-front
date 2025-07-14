@@ -12,3 +12,15 @@ a:visited {
   color: inherit;
 }
 
+.custom-button {
+  background-color: #0a3369;
+  color: white;
+}
+
+.custom-button:hover {
+  background-color: #1166d4 !important;
+  /* O !important pode ser necessário para sobrescrever os estilos do Material */
+}
+
+
+

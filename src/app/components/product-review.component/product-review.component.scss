@@ -21,6 +21,16 @@ mat-card-actions {
   }
 }
 
+.custom-button {
+  background-color: #0a3369 !important;
+  color: white !important;
+}
+
+.custom-button:hover {
+  background-color: #1166d4 !important;
+  /* O !important pode ser necessário para sobrescrever os estilos do Material */
+}
+
 img[mat-card-image] {
   display: block;
   max-width: 250px;
