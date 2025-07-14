@@ -12,6 +12,6 @@ import { MaterialModule } from '../../material.module-module';
 export class FooterComponent {
   currentYear: number = new Date().getFullYear();
   socialLinks = [
-    { icon: 'assets/icons/instagram.svg', url: 'https://instagram.com/jhonny__azevedo' }
+    { icon: 'assets/icons/instagram.svg', url: 'https://www.instagram.com/click__reviews/' }
   ]
 }

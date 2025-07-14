@@ -27,7 +27,7 @@ export class ReachOutComponent {
     {
       alt: 'Instagram',
       icon: 'assets/icons/instagram.svg',
-      url: 'https://instagram.com/jhonny__azevedo',
+      url: 'https://www.instagram.com/click__reviews/',
     },
     {
       alt: 'WhatsApp',
