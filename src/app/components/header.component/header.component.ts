@@ -2,17 +2,25 @@ import { Component, inject } from '@angular/core';
 import { MaterialModule } from '../../material.module-module';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { RouterModule } from '@angular/router';
+import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 
 @Component({
   selector: 'app-header',
   imports: [
     RouterModule,
     MaterialModule,
+    FormsModule, ReactiveFormsModule
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  filters = new FormControl('');
+
+  filterList: string[] = ['Destaque', 'SmartPhones', 'Games', 'Acessórios', 'Beleza'];
+
+
   private snackBar = inject(MatSnackBar);
 
   sharePage(): void {
