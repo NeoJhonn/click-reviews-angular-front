@@ -87,7 +87,7 @@ app.use(async (req, res, next) => {
     let html = await streamToString(response.body);
 
     // HOME PAGE
-    if (req.url === '') {
+    if (req.url === '/home') {
       console.log('🏠 Injecting Home meta tags');
       const title = `<title>Home | ClickReviews</title>`;
       const metas = `

@@ -6,10 +6,12 @@ const products = JSON.parse(
 );
 
 const baseUrl = 'https://www.clickreviews.com.br';
+const homeUrl = 'https://www.clickreviews.com.br/home';
 const contactUrl = 'https://www.clickreviews.com.br/contato';
 
 const urls = [
   `<url><loc>${baseUrl}/</loc><changefreq>daily</changefreq><priority>0.9</priority></url>`,
+  `<url><loc>${homeUrl}/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>`,
   `<url><loc>${contactUrl}/</loc><changefreq>daily</changefreq><priority>0.5</priority></url>`,
   ...products.map(product =>
     `<url><loc>${baseUrl}/review/${product.slug}</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>`
