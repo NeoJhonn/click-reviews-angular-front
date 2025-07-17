@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MaterialModule } from '../../material.module-module';
 import { RouterModule } from '@angular/router';
 import { ProductData } from '../../services/product-data.service';
@@ -13,11 +13,6 @@ import { ProductData } from '../../services/product-data.service';
   styleUrl: './product-card.component.scss'
 })
 export class ProductCardComponent {
-  constructor(private cdr: ChangeDetectorRef) {
-
-   }
-
-
   @Input() product: ProductData = {
     slug: "",
     productTitle: "Produto Não econtrado",
@@ -30,9 +25,5 @@ export class ProductCardComponent {
     linkComprar: "",
     productType: "",
     price: 0
-  }
-
-  ngOnInit(): void {
-  this.cdr.detectChanges()
   }
 }
