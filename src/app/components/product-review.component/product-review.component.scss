@@ -32,41 +32,37 @@ mat-card-actions {
 
 .affiliate-button {
   display: inline-block;
-  background-color: #007bff; /* Azul inicial */
-  color: white; /* Texto branco */
-  padding: 16px 28px; /* Mais "gordinho" */
-  font-size: 18px;
+  padding: 12px 24px;
+  background-color: #007bff; /* azul inicial */
+  color: #fff!important;
   font-weight: bold;
-  border-radius: 10px;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
   text-decoration: none;
-  transition: background-color 0.5s ease, transform 0.5s ease;
-  animation: pulse 1.6s infinite;
-  box-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
+  transition: transform 0.3s ease-in-out;
+  animation: pulseColor 1.5s infinite;
+  box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
 }
 
 .affiliate-button:hover {
-  background-color: #00ff66; /* Verde neon ao passar o mouse */
-  color: white;
-  box-shadow: 0 0 20px #00ff66;
   transform: scale(1.05);
 }
 
-@keyframes pulse {
+@keyframes pulseColor {
   0% {
-    transform: scale(1);
-    box-shadow: 0 0 12px rgba(0, 255, 0, 0.4);
+    background-color: #007bff;
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
   }
   50% {
-    transform: scale(1.06);
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+    background-color: #28a745; /* verde */
+    box-shadow: 0 0 10px 8px rgba(40, 167, 69, 0.5);
   }
   100% {
-    transform: scale(1);
-    box-shadow: 0 0 12px rgba(0, 255, 0, 0.4);
+    background-color: #007bff;
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
   }
 }
-
-
 
 img[mat-card-image] {
   display: block;
