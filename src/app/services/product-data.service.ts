@@ -14,6 +14,7 @@ export interface ProductData {
   linkComprar: string;
   productType: string;
   opinionPreview:string;
+  price: number;
 }
 
 @Injectable({

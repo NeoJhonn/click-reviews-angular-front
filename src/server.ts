@@ -95,12 +95,14 @@ app.use(async (req, res, next) => {
         <meta property="og:title" content="Home | ClickReviews">
         <meta property="og:description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
         <meta property="og:image" content="https://www.clickreviews.com.br/assets/icons/logo_site.webp">
-        <meta property="og:url" content="https://www.clickreviews.com.br/">
+        <meta property="og:url" content="https://www.clickreviews.com.br/home">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="Home | ClickReviews">
         <meta name="twitter:description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
         <meta name="twitter:image" content="https://www.clickreviews.com.br/assets/icons/logo_site.webp">
-        <meta property="twitter:url" content="https://www.clickreviews.com.br/">
+        <meta property="twitter:url" content="https://www.clickreviews.com.br/home">
+        <!-- Canonical link -->
+        <link rel="canonical" href="https://www.clickreviews.com.br${pathname}" />
       `;
       html = html
         .replace(/<title[^>]*>.*?<\/title>/i, '')
@@ -126,6 +128,25 @@ app.use(async (req, res, next) => {
           <meta name="twitter:description" content="${product.subtitle}">
           <meta name="twitter:image" content="${product.imageUrl}">
           <meta property="twitter:url" content="https://clickreviews.com.br/review/${product.slug}">
+          <!-- Canonical link -->
+          <link rel="canonical" href="https://www.clickreviews.com.br${pathname}" />
+          <!-- JSON-LD -->
+          <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "${product.productTitle}",
+          "image": "${product.imageUrl}",
+          "description": "${product.subtitle}",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "BRL",
+            "price": "${product.price}",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.clickreviews.com.br/review/${product.slug}"
+          }
+        }
+      </script>
         `;
         html = html
           .replace(/<title[^>]*>.*?<\/title>/i, '')
@@ -149,6 +170,8 @@ app.use(async (req, res, next) => {
         <meta name="twitter:description" content="Fale com o time do ClickReviews!">
         <meta name="twitter:image" content="https://www.clickreviews.com.br/assets/icons/logo_site.webp">
         <meta property="twitter:url" content="https://www.clickreviews.com.br/contato">
+        <!-- Canonical link -->
+        <link rel="canonical" href="https://www.clickreviews.com.br${pathname}" />
       `;
       html = html
         .replace(/<title[^>]*>.*?<\/title>/i, '')

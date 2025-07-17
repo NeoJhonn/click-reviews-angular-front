@@ -28,7 +28,8 @@ export class ProductCardComponent {
     opinionPreview: "",
     opinion: "",
     linkComprar: "",
-    productType: ""
+    productType: "",
+    price: 0
   }
 
   ngOnInit(): void {

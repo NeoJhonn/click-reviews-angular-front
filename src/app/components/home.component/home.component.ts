@@ -28,9 +28,5 @@ export class HomeComponent {
       this.products = data;
       this.cdr.detectChanges();
     });
-
-    // Settando link canonico
-    const canonicalUrl = `https://www.clickreviews.com.br/home`;
-    this.canonicalService.setCanonicalURL(canonicalUrl);
   }
 }

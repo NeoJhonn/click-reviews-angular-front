@@ -17,10 +17,6 @@ export class ReachOutComponent {
   ) {
     // SEO Metadata
     this.title.setTitle(`Contato | ClickReviews`);
-
-    // Settando link canonico
-    const canonicalUrl = `https://www.clickreviews.com.br/contato`;
-    this.canonicalService.setCanonicalURL(canonicalUrl);
   }
 
   contactLinks = [
