@@ -1,6 +1,6 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "ClickReviews, maior site de reviews do Brasil",
+  "short_name": "ClickReviews",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
