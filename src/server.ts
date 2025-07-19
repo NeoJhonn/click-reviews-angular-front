@@ -87,7 +87,7 @@ app.use(async (req, res, next) => {
     let html = await streamToString(response.body);
 
     // Testing what route is this
-    if (req.url === '/') {
+    if (req.url === '/index.html') {
       console.log( req.url ,'🏠 Achou rota raiz');
     }
 
