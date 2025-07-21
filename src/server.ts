@@ -86,11 +86,6 @@ app.use(async (req, res, next) => {
 
     let html = await streamToString(response.body);
 
-    // Testing what route is this
-    if (req.url === '/') {
-      console.log( req.url ,'🏠 Achou rota raiz');
-    }
-
     // HOME PAGE
     if (req.url === '/home') {
       console.log('🏠 Injecting Home meta tags');
