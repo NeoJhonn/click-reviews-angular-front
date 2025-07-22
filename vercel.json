@@ -1,17 +1,4 @@
 {
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.clickreviews.com.br"
-        }
-      ],
-      "destination": "https://clickreviews.com.br/:1",
-      "permanent": true
-    }
-  ],
   "rewrites": [
     {
       "source": "/((?!.*\\.).*)",
