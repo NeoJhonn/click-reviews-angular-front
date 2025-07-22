@@ -25,7 +25,7 @@
               "src/favicon.ico",
               "src/assets",
                "src/robots.txt",
-              "src/ads.txt",
+              "src/assets/ads.txt",
               "src/sitemap.xml",
               "src/assets/data/products.json",
               {
