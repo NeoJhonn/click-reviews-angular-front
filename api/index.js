@@ -1,6 +1,8 @@
-// Inicia servidor SSR    
-  const { handler } = await import('../dist/click-reviews-angular-front/server/server.mjs');
-  return handler(req, res);
+ // Inicia servidor SSR    
+ export default async function handler(req, res) {
+  const { handler: angularHandler } = await import('../dist/click-reviews-angular-front/server/server.mjs');
+  await angularHandler(req, res);
+}
 
 
 
