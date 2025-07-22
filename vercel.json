@@ -1,11 +1,21 @@
 {
-  "version": 2,
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/api/index" }
-  ],
-  "functions": {
-    "api/index.js": {
-      "includeFiles": "dist/click-reviews-angular-front/**"
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.clickreviews.com.br"
+        }
+      ],
+      "destination": "https://clickreviews.com.br/:1",
+      "permanent": true
     }
-  }
+  ],
+  "rewrites": [
+    {
+      "source": "/((?!.*\\.).*)",
+      "destination": "/api/index"
+    }
+  ]
 }
