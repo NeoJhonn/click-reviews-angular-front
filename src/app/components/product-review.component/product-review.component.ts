@@ -1,7 +1,7 @@
 import { Component, Input, Inject, PLATFORM_ID, AfterViewInit } from '@angular/core';
 import { SafePipe } from '../safe-pipe';
 import { MaterialModule } from '../../material.module-module';
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common'; 
 
 @Component({
   selector: 'app-product-review',
