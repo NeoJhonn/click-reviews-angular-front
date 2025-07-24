@@ -21,6 +21,7 @@ export class ProductReviewComponent {
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
+  
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       try {
