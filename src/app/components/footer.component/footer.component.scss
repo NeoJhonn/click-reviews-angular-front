@@ -2,6 +2,14 @@
   margin-top: auto; /* Empurra o footer para baixo */
 }
 
+.ads-container {
+  border: 1px solid #ccc; /* tom prateado sutil */
+  border-radius: 4px;
+  padding: 8px;
+  margin-top: 1rem;
+  background-color: #fafafa; /* opcional: dá um contraste leve */
+}
+
 .footer {
   bottom: 0;
   left: 0;
