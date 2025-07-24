@@ -4,7 +4,12 @@
     <mat-card-subtitle>{{ subtitle }}</mat-card-subtitle>
   </mat-card-header>
 
-  <img mat-card-image id="thumbnail" [src]="imageUrl" alt="{{ productTitle }}" />
+  <img
+    mat-card-image
+    id="thumbnail"
+    [src]="imageUrl"
+    alt="{{ productTitle }}"
+  />
 
   <mat-card-content>
     <h3>✨ Principais Benefícios</h3>
@@ -17,7 +22,8 @@
       }
     </div>
 
-    <a class="affiliate-button"
+    <a
+      class="affiliate-button"
       mat-stroked-button
       color="accent"
       [href]="linkComprar"
@@ -26,7 +32,27 @@
     >
       💰 Ver Preço Atual no Mercado Livre
     </a>
-    <p class="preco"> Preço a partir de {{ precoFormatado(price) }}</p>
+    <p class="preco">Preço a partir de {{ precoFormatado(price) }}</p>
+
+    <!-- AdSense Banner-->
+    <div class="ads-container" style="margin-top: 1rem;">
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8235228978821445"
+        crossorigin="anonymous"
+      ></script>
+      <ins
+        class="adsbygoogle"
+        style="display: block"
+        data-ad-format="fluid"
+        data-ad-layout-key="-fb+5w+4e-db+86"
+        data-ad-client="ca-pub-8235228978821445"
+        data-ad-slot="2052757110"
+      ></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
 
     <h3>🎥 Review em vídeo</h3>
     <div class="video-container">
@@ -49,7 +75,8 @@
   </mat-card-content>
 
   <mat-card-actions>
-    <a class="affiliate-button"
+    <a
+      class="affiliate-button"
       mat-raised-button
       color="primary"
       [href]="linkComprar"
