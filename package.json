@@ -9,7 +9,7 @@
     "build": "npm run generate:sitemap && npm run build:ssr",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:click-reviews-angular-front": "node dist/click-reviews-angular-front/server/server.mjs",
+    "serve:ssr": "node dist/click-reviews-angular-front/server/server.mjs",
     "build:ssr": "ng build"
   },
   "private": true,
@@ -21,7 +21,7 @@
     "@angular/forms": "^20.0.0",
     "@angular/material": "^20.0.5",
     "@angular/platform-browser": "^20.0.0",
-    "@angular/platform-server": "^20.0.0",
+    "@angular/platform-server": "^20.0.6",
     "@angular/router": "^20.0.0",
     "@angular/ssr": "^20.0.5",
     "express": "^5.1.0",

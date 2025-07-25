@@ -40,7 +40,7 @@ export class ProductReviewPageComponent {
     this.productService.getProductBySlug(slug).subscribe(product => {
       if (product) {
         this.product = product;
-        this.cdr.detectChanges();
+        //this.cdr.detectChanges();
       } else {
         console.error('Produto não encontrado');
       }

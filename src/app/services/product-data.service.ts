@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { ProductDataLoaderService } from './product-data-loader.service';
 
 
 export interface ProductData {
@@ -21,21 +21,13 @@ export interface ProductData {
   providedIn: 'root'
 })
 export class ProductDataService {
-  private jsonUrl = 'assets/data/products.json';
-
-  constructor(private http: HttpClient) {}
+  constructor(private loader: ProductDataLoaderService) {}
 
   getAllProducts(): Observable<ProductData[]> {
-    return this.http.get<ProductData[]>(this.jsonUrl);
+    return of(this.loader.getProducts());
   }
 
   getProductBySlug(slug: string): Observable<ProductData | undefined> {
-    return new Observable(observer => {
-      this.getAllProducts().subscribe(products => {
-        const product = products.find(p => p.slug === slug);
-        observer.next(product);
-        observer.complete();
-      });
-    });
+    return of(this.loader.getBySlug(slug));
   }
 }

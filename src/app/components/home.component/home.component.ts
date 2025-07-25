@@ -26,7 +26,7 @@ export class HomeComponent {
    ngOnInit(): void {
     this.productService.getAllProducts().subscribe(data => {
       this.products = data;
-      this.cdr.detectChanges();
+      //this.cdr.detectChanges();
     });
   }
 }
