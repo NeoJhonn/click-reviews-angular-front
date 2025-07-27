@@ -1,7 +1,7 @@
 import { Component, Input, Inject, PLATFORM_ID, AfterViewInit } from '@angular/core';
 import { SafePipe } from '../safe-pipe';
 import { MaterialModule } from '../../material.module-module';
-import { isPlatformBrowser } from '@angular/common'; 
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-product-review',
@@ -21,11 +21,11 @@ export class ProductReviewComponent {
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
-  
+
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       try {
-        ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
       } catch (e) {
         console.error('Erro ao carregar anúncio do AdSense:', e);
       }

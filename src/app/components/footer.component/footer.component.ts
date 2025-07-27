@@ -2,7 +2,6 @@ import { Component, Inject, PLATFORM_ID, AfterViewInit } from '@angular/core';
 import { MaterialModule } from '../../material.module-module';
 import { isPlatformBrowser } from '@angular/common';
 
-
 @Component({
   selector: 'app-footer',
   imports: [
@@ -18,7 +17,7 @@ export class FooterComponent {
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       try {
-        ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
       } catch (e) {
         console.error('Erro ao carregar anúncio do AdSense:', e);
       }
