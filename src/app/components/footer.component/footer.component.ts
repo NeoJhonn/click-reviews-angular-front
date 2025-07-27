@@ -17,7 +17,8 @@ export class FooterComponent {
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       try {
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        window.adsbygoogle = window.adsbygoogle || [];
+        window.adsbygoogle.push({});
       } catch (e) {
         console.error('Erro ao carregar anúncio do AdSense:', e);
       }
