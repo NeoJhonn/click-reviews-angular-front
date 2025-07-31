@@ -17,12 +17,12 @@ export class ProductCardComponent {
     slug: "",
     productTitle: "Produto Não econtrado",
     subtitle: "Produto Não econtrado",
-    imageUrl: "",
+    imageUrl: [],
     benefits: [],
     videoUrl: "",
     opinionPreview: "",
     opinion: "",
-    linkComprar: "",
+    linkComprar: [],
     productType: "",
     price: 0
   }

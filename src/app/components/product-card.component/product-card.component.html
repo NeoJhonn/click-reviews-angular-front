@@ -1,13 +1,13 @@
 <mat-card class="example-card" appearance="outlined">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"
-    [style]="{'background-image': 'url(' + product.imageUrl + ')',
+    [style]="{'background-image': 'url(' + product.imageUrl[0] + ')',
   'background-size': 'cover'}"></div>
     <mat-card-title>{{ product.productTitle }}</mat-card-title>
     <mat-card-subtitle>{{ product.productType }}</mat-card-subtitle>
   </mat-card-header>
 
-  <img mat-card-image [attr.loading]="'lazy'" [src]="product.imageUrl" [alt]="product.productTitle" [style]="{'width': '15rem', 'text-align': 'center'}">
+  <img mat-card-image [attr.loading]="'lazy'" [src]="product.imageUrl[0]" [alt]="product.productTitle" [style]="{'width': '15rem', 'text-align': 'center'}">
 
   <mat-card-content>
     <p>{{ product.opinionPreview }}</p>
@@ -18,7 +18,7 @@
       <a [routerLink]="['/review', product.slug]">Review/Análise</a>
     </button>
     <button matButton class="custom-button">
-      <a [href]="product.linkComprar" target="_blank">Comprar no Mercado Livre</a>
+      <a [href]="product.linkComprar[0]" target="_blank">Comprar no Mercado Livre</a>
     </button>
   </mat-card-actions>
 </mat-card>

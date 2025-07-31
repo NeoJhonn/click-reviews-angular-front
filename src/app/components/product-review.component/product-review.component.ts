@@ -12,11 +12,11 @@ import { isPlatformBrowser } from '@angular/common';
 export class ProductReviewComponent {
   @Input() productTitle = '';
   @Input() subtitle = '';
-  @Input() imageUrl = '';
+  @Input() imageUrl: string[] = [];
   @Input() benefits: string[] = [];
   @Input() videoUrl = '';
   @Input() opinion = '';
-  @Input() linkComprar = '';
+  @Input() linkComprar: string[] = [];
   @Input() price = 0;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}

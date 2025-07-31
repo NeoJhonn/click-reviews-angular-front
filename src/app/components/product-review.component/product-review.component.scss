@@ -21,6 +21,13 @@ mat-card-actions {
   }
 }
 
+.afiliate-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: start;
+}
+
 .preco {
   font-size: 0.9rem;
   color: #1a73e8; // azul estilo Google / tech

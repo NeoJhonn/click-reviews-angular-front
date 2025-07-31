@@ -7,11 +7,11 @@ export interface ProductData {
   slug: string;
   productTitle: string;
   subtitle: string;
-  imageUrl: string;
+  imageUrl: string[];
   benefits: string[];
   videoUrl: string;
   opinion: string;
-  linkComprar: string;
+  linkComprar: string[];
   productType: string;
   opinionPreview:string;
   price: number;
