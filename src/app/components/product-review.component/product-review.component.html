@@ -4,13 +4,37 @@
     <mat-card-subtitle>{{ subtitle }}</mat-card-subtitle>
   </mat-card-header>
 
-  <img
-    mat-card-image
-    [attr.loading]="'lazy'"
-    id="thumbnail"
-    [src]="imageUrl[0]"
-    alt="{{ productTitle }}"
-  />
+  <!-- Carrosel de imagens-->
+  <div class="carousel-wrapper">
+  <!-- 🖼️ Imagem principal -->
+  <div class="carousel-image" (click)="openModal(currentImage)">
+    <img [src]="currentImage" alt="Imagem do produto" />
+  </div>
+
+  <!-- ◀️ ▶️ Botões de navegação -->
+  <div class="carousel-controls">
+    <button (click)="previousImage()">❮</button>
+    <button (click)="nextImage()">❯</button>
+  </div>
+
+  <!-- 🟢 Miniaturas -->
+  <div class="carousel-thumbnails">
+    @for (img of imageUrl; let i = $index; track img) {
+      <img
+        [src]="img"
+        [class.active]="i === currentIndex"
+        (click)="setCurrentIndex(i)"
+        alt="Thumb"
+      />
+    }
+  </div>
+</div>
+
+<!-- 🔍 Modal -->
+<div class="image-modal" *ngIf="modalImage" (click)="modalImage = null">
+  <img [src]="modalImage" />
+</div>
+
 
   <mat-card-content>
     <h3>✨ Principais Benefícios</h3>

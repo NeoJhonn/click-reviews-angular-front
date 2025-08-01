@@ -134,3 +134,92 @@ a {
   width: 100%;
   max-width: 100%;
 }
+
+//carrosel de imagens
+.carousel-wrapper {
+  position: relative;
+  text-align: center;
+  max-width: 60rem;
+  width: 100%;
+}
+
+.carousel-image img {
+  max-width: 18rem;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.carousel-image img:hover {
+  transform: scale(1.02);
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 45%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+
+.carousel-controls button {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 22px;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.carousel-controls button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-thumbnails {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.carousel-thumbnails img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.carousel-thumbnails img.active,
+.carousel-thumbnails img:hover {
+  opacity: 1;
+  border-color: #007bff;
+}
+
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+}
+

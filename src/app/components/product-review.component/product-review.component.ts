@@ -39,6 +39,31 @@ export class ProductReviewComponent {
     currency: 'BRL',
   }).format(Number(price));
   }
+
+  //Carrosel de fotos
+  currentIndex = 0;
+  modalImage: string | null = null;
+
+  get currentImage(): string {
+    return this.imageUrl[this.currentIndex];
+  }
+
+  nextImage(): void {
+    this.currentIndex = (this.currentIndex + 1) % this.imageUrl.length;
+  }
+
+  previousImage(): void {
+    this.currentIndex =
+      (this.currentIndex - 1 + this.imageUrl.length) % this.imageUrl.length;
+  }
+
+  setCurrentIndex(index: number): void {
+    this.currentIndex = index;
+  }
+
+  openModal(image: string): void {
+    this.modalImage = image;
+  }
 }
 
 
