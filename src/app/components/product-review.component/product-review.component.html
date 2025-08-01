@@ -6,35 +6,34 @@
 
   <!-- Carrosel de imagens-->
   <div class="carousel-wrapper">
-  <!-- 🖼️ Imagem principal -->
-  <div class="carousel-image" (click)="openModal(currentImage)">
-    <img [src]="currentImage" alt="Imagem do produto" />
-  </div>
+    <!-- 🖼️ Imagem principal -->
+    <div class="carousel-image" (click)="openModal(currentImage)">
+      <img [src]="currentImage" alt="Imagem do produto" />
+    </div>
 
-  <!-- ◀️ ▶️ Botões de navegação -->
-  <div class="carousel-controls">
-    <button (click)="previousImage()">❮</button>
-    <button (click)="nextImage()">❯</button>
-  </div>
+    <!-- ◀️ ▶️ Botões de navegação -->
+    <div class="carousel-controls">
+      <button (click)="previousImage()">❮</button>
+      <button (click)="nextImage()">❯</button>
+    </div>
 
-  <!-- 🟢 Miniaturas -->
-  <div class="carousel-thumbnails">
-    @for (img of imageUrl; let i = $index; track img) {
+    <!-- 🟢 Miniaturas -->
+    <div class="carousel-thumbnails">
+      @for (img of imageUrl; let i = $index; track img) {
       <img
         [src]="img"
         [class.active]="i === currentIndex"
         (click)="setCurrentIndex(i)"
         alt="Thumb"
       />
-    }
+      }
+    </div>
   </div>
-</div>
 
-<!-- 🔍 Modal -->
-<div class="image-modal" *ngIf="modalImage" (click)="modalImage = null">
-  <img [src]="modalImage" />
-</div>
-
+  <!-- 🔍 Modal -->
+  <div class="image-modal" *ngIf="modalImage" (click)="modalImage = null">
+    <img [src]="modalImage" />
+  </div>
 
   <mat-card-content>
     <h3>✨ Principais Benefícios</h3>
@@ -100,14 +99,16 @@
     <p class="preco">Preço a partir de {{ precoFormatado(price) }}</p>
 
     <!-- AdSense Banner-->
-    <ins
-      class="adsbygoogle"
-      style="display: block; width: 100%; margin-top: 1rem"
-      data-ad-format="fluid"
-      data-ad-layout-key="-fb+5w+4e-db+86"
-      data-ad-client="ca-pub-8235228978821445"
-      data-ad-slot="2052757110"
-    ></ins>
+    <div class="ads-container">
+      <ins
+        class="adsbygoogle"
+        style="display: block; width: 100%; margin-top: 1rem"
+        data-ad-format="fluid"
+        data-ad-layout-key="-fb+5w+4e-db+86"
+        data-ad-client="ca-pub-8235228978821445"
+        data-ad-slot="2052757110"
+      ></ins>
+    </div>
 
     <h3>🎥 Review em vídeo</h3>
     <div class="video-container">
@@ -129,7 +130,7 @@
     </p>
   </mat-card-content>
 
-  <div class="afiliate-buttons" style="margin-bottom: 1rem; margin-top: 1rem;">
+  <div class="afiliate-buttons" style="margin-bottom: 1rem; margin-top: 1rem">
     <a
       class="affiliate-button"
       mat-raised-button
@@ -137,42 +138,44 @@
       [href]="linkComprar[0]"
       target="_blank"
       aria-label="Comprar com desconto"
-      style="background-color: rgb(205, 205, 4) !important;
-      color: rgb(31, 29, 29) !important;"
+      style="
+        background-color: rgb(205, 205, 4) !important;
+        color: rgb(31, 29, 29) !important;
+      "
     >
       👉 Comprar com Desconto no Mercado Livre
     </a>
 
+    <a
+      class="affiliate-button"
+      mat-stroked-button
+      color="accent"
+      [href]="linkComprar[1]"
+      target="_blank"
+      aria-label="Ver preço no Mercado Livre"
+      style="
+        margin-bottom: 0.5rem;
+        background-color: orangered !important;
+        color: #ffffff !important;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+      "
+    >
+      👉 Comprar com Desconto na Shopee
+    </a>
 
     <a
-        class="affiliate-button"
-        mat-stroked-button
-        color="accent"
-        [href]="linkComprar[1]"
-        target="_blank"
-        aria-label="Ver preço no Mercado Livre"
-        style="
-          margin-bottom: 0.5rem;
-          background-color: orangered !important;
-          color: #ffffff !important;
-          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-        "
-      >
-        👉 Comprar com Desconto na Shopee
-      </a>
-
-      <a
-        class="affiliate-button"
-        mat-stroked-button
-        color="accent"
-        [href]="linkComprar[2]"
-        target="_blank"
-        aria-label="Ver preço no Mercado Livre"
-        style="
-          background-color: burlywood !important;
-          color: rgb(31, 29, 29) !important;"
-      >
-        👉 Comprar com Desconto na Amazon
-      </a>
-    </div>
+      class="affiliate-button"
+      mat-stroked-button
+      color="accent"
+      [href]="linkComprar[2]"
+      target="_blank"
+      aria-label="Ver preço no Mercado Livre"
+      style="
+        background-color: burlywood !important;
+        color: rgb(31, 29, 29) !important;
+      "
+    >
+      👉 Comprar com Desconto na Amazon
+    </a>
+  </div>
 </mat-card>
