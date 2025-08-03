@@ -1,5 +1,61 @@
 [
   {
+  "slug": "fire-tv-stick-3-geracao",
+  "productType": "Eletroportáteis",
+  "productTitle": "Amazon Fire TV Stick 3ª Geração - Review Completo",
+  "subtitle": "Transforme sua TV em um centro de entretenimento inteligente com o poder da Alexa!",
+  "imageUrl": [
+    "https://http2.mlstatic.com/D_NQ_NP_2X_807497-MLA84182253688_052025-F.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_2X_636290-MLA84478943221_052025-F.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_2X_652866-MLA84478943235_052025-F.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_2X_971312-MLA84478991817_052025-F.webp"
+  ],
+  "price": "255.00",
+  "benefits": [
+    "Streaming em Full HD 1080p com alta performance e fluidez",
+    "Controle remoto com Alexa integrada: comandos por voz para facilitar sua vida",
+    "Compatível com qualquer TV com entrada HDMI",
+    "Dolby Audio para uma experiência sonora imersiva",
+    "8 GB de armazenamento e conectividade Bluetooth e Wi-Fi"
+  ],
+  "videoUrl": "https://www.youtube.com/embed/QSR_UGUhBKQ",
+  "opinionPreview": "O Fire TV Stick 3ª geração é a escolha ideal para transformar sua TV em uma central inteligente de entretenimento.",
+  "opinion": "O Amazon Fire TV Stick 3ª Geração oferece uma solução completa para quem deseja transformar qualquer TV em uma Smart TV. Com desempenho rápido, sistema fluido e uma interface intuitiva, ele permite acessar plataformas como Prime Video, Netflix, YouTube e muito mais. O controle com Alexa dá um toque moderno, permitindo controlar tudo por voz — desde pausar filmes até perguntar a previsão do tempo. É perfeito para quem busca praticidade, qualidade de som com Dolby Audio e uma instalação simples, apenas conectando à entrada HDMI. Uma excelente opção para modernizar sua experiência de assistir TV sem gastar muito.",
+  "linkComprar": [
+    "https://mercadolivre.com/sec/2EbCkXP",
+    "https://s.shopee.com.br/8fHt82M7Y4",
+    "https://amzn.to/3UGx69R"
+  ]
+},
+  {
+  "slug": "lavadora-portatil-pressao-2-baterias",
+  "productType": "Eletroportáteis",
+  "productTitle": "Lavadora Lava Jato Portátil Pressão 2 Baterias + Maleta - Review Completo",
+  "subtitle": "Potência e mobilidade para uma limpeza prática e eficiente em qualquer lugar!",
+  "imageUrl": [
+    "https://http2.mlstatic.com/D_NQ_NP_710675-MLB89102120983_082025-O-lavadora-lava-jato-portatil-presso-2-baterias-maleta.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_837680-MLB75907654555_042024-O-lavadora-lava-jato-portatil-presso-2-baterias-maleta.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_718735-MLB76156453176_052024-O-lavadora-lava-jato-portatil-presso-2-baterias-maleta.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_766225-MLB76343206837_052024-O-lavadora-lava-jato-portatil-presso-2-baterias-maleta.webp"
+  ],
+  "price": "140.49",
+  "benefits": [
+    "Alta pressão ajustável para diferentes tipos de sujeira",
+    "Duas baterias recarregáveis para maior autonomia e mobilidade",
+    "Maleta resistente para facilitar o transporte e armazenamento",
+    "Acessórios completos, incluindo mangueira, bicos e dispenser de sabão",
+    "Ecológica e econômica: consome apenas 4 L de água por minuto"
+  ],
+  "videoUrl": "https://www.youtube.com/embed/x6BbmmYdaAM",
+  "opinionPreview": "Com excelente mobilidade e potência, a Lavadora Portátil é ideal para quem busca praticidade na limpeza do dia a dia.",
+  "opinion": "A Lavadora Lava Jato Portátil com Pressão e duas baterias recarregáveis é uma solução eficiente para quem precisa de limpeza potente em qualquer lugar. Seu grande diferencial está na praticidade: sem fios e com uma maleta completa, ela pode ser usada para lavar carros, calçadas, bicicletas e muito mais. Os acessórios inclusos e a possibilidade de ajustar a pressão tornam o uso versátil e funcional. Além disso, o consumo controlado de água a torna uma escolha ecológica e econômica. Um ótimo investimento para quem quer praticidade e desempenho.",
+  "linkComprar": [
+    "https://mercadolivre.com/sec/1DgnfGm",
+    "https://s.shopee.com.br/9pTqUeC3cC",
+    "https://amzn.to/40NaCrp"
+  ]
+},
+  {
     "slug": "galaxy-a06",
     "productType": "Smartphone",
     "productTitle": "Samsung Galaxy A06 - Review Completo",
