@@ -16,6 +16,8 @@
 
   <span class="example-spacer"></span>
   <!-- Filtro de categoria de produtos -->
+  <!-- Só aparece na rota Home -->
+  @if (showFilter) {
   <div class="category-dropdown">
   <button (click)="toggleDropdown()" class="dropdown-button">
     <span class="label">{{ getSelectedLabel() }}</span>
@@ -33,8 +35,9 @@
         </li>
       }
     </ul>
+    }
+    </div>
   }
-</div>
 
 
   <!-- <span class="example-spacer"></span> -->
