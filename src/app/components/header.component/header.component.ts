@@ -2,26 +2,50 @@ import { Component, inject } from '@angular/core';
 import { MaterialModule } from '../../material.module-module';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { RouterModule } from '@angular/router';
-import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
-
+import { FilterService } from '../../services/filter.service';
 
 @Component({
   selector: 'app-header',
-  imports: [
-    RouterModule,
-    MaterialModule,
-    FormsModule, ReactiveFormsModule
-  ],
+  imports: [RouterModule, MaterialModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  filters = new FormControl('');
-
-  filterList: string[] = ['Destaque', 'SmartPhones', 'Games', 'Acessórios', 'Beleza'];
-
-
   private snackBar = inject(MatSnackBar);
+  private filterService = inject(FilterService);
+
+  selectedCategory: string = '';
+  isOpen: boolean = false;
+
+  categories = [
+    { label: 'Em destaque', value: 'destaque' },
+    { label: 'Todos', value: '' },
+    { label: 'Smartphones', value: 'Smartphone' },
+    { label: 'Beleza', value: 'beleza' },
+    { label: 'Eletroportáteis', value: 'Eletroportátil' },
+    { label: 'Acessórios Gamer', value: 'Acessório Gamer' },
+    { label: 'Acessórios bebê', value: 'Acessório bebê' },
+    { label: 'Jogos PS5', value: 'Jogo PS5' },
+  ];
+
+  ngOnInit(): void {
+    this.filterService.category$.subscribe((category) => {
+      this.selectedCategory = category;
+    });
+  }
+
+  toggleDropdown() {
+    this.isOpen = !this.isOpen;
+  }
+
+  selectCategory(value: string) {
+    this.isOpen = false;
+    this.filterService.setCategory(value);
+  }
+
+  getSelectedLabel(): string {
+    return this.categories.find(c => c.value === this.selectedCategory)?.label || 'Todos';
+  }
 
   sharePage(): void {
     const shareData = {
@@ -31,18 +55,24 @@ export class HeaderComponent {
     };
 
     if (navigator.share) {
-      navigator.share(shareData)
+      navigator
+        .share(shareData)
         .then(() => console.log('Compartilhado com sucesso!'))
-        .catch(err => console.error('Erro ao compartilhar:', err));
+        .catch((err) => console.error('Erro ao compartilhar:', err));
     } else {
       // Fallback para copiar o link no desktop
-      navigator.clipboard.writeText(window.location.href)
+      navigator.clipboard
+        .writeText(window.location.href)
         .then(() => {
-          this.snackBar.open('Link copiado para a área de transferência!', 'Fechar', {
-            duration: 3000,
-            horizontalPosition: 'center',
-            verticalPosition: 'bottom'
-          });
+          this.snackBar.open(
+            'Link copiado para a área de transferência!',
+            'Fechar',
+            {
+              duration: 3000,
+              horizontalPosition: 'center',
+              verticalPosition: 'bottom',
+            }
+          );
         })
         .catch(() => {
           alert('Não foi possível copiar o link. Copie manualmente.');

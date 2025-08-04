@@ -4,7 +4,7 @@
     [style]="{'background-image': 'url(' + product.imageUrl[0] + ')',
   'background-size': 'cover'}"></div>
     <mat-card-title>{{ product.productTitle }}</mat-card-title>
-    <mat-card-subtitle>{{ product.productType }}</mat-card-subtitle>
+    <mat-card-subtitle>{{ product.productCategory }}</mat-card-subtitle>
   </mat-card-header>
 
   <img mat-card-image [attr.loading]="'lazy'" [src]="product.imageUrl[0]" [alt]="product.productTitle" [style]="{'width': '15rem', 'text-align': 'center', 'margin-left': '2rem'}">

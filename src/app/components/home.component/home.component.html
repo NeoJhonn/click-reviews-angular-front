@@ -1,6 +1,6 @@
 @defer (when products != []) {
 <section class="featured-products">
-  @for (product of products; track product.slug) {
+  @for (product of filteredProducts; track product.slug) {
     <app-product-card [product]= "product"></app-product-card>
   }
 </section>

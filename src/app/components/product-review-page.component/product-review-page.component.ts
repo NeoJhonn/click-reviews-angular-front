@@ -25,8 +25,9 @@ export class ProductReviewPageComponent {
   opinionPreview: "",
   opinion: "",
   linkComprar: [],
-  productType: "",
-  price: 0
+  productCategory: "",
+  price: 0,
+  isFeatured:false
   };
 
   constructor(private route: ActivatedRoute,

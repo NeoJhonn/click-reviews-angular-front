@@ -1,7 +1,7 @@
 [
   {
   "slug": "fire-tv-stick-3-geracao",
-  "productType": "Eletroportáteis",
+  "productCategory": "Eletroportátil",
   "productTitle": "Amazon Fire TV Stick 3ª Geração - Review Completo",
   "subtitle": "Transforme sua TV em um centro de entretenimento inteligente com o poder da Alexa!",
   "imageUrl": [
@@ -25,11 +25,12 @@
     "https://mercadolivre.com/sec/2EbCkXP",
     "https://s.shopee.com.br/8fHt82M7Y4",
     "https://amzn.to/3UGx69R"
-  ]
+  ],
+  "isFeatured": true
 },
   {
   "slug": "lavadora-portatil-pressao-2-baterias",
-  "productType": "Eletroportáteis",
+  "productCategory": "Eletroportátil",
   "productTitle": "Lavadora Lava Jato Portátil Pressão 2 Baterias + Maleta - Review Completo",
   "subtitle": "Potência e mobilidade para uma limpeza prática e eficiente em qualquer lugar!",
   "imageUrl": [
@@ -53,11 +54,12 @@
     "https://mercadolivre.com/sec/1DgnfGm",
     "https://s.shopee.com.br/9pTqUeC3cC",
     "https://amzn.to/40NaCrp"
-  ]
+  ],
+  "isFeatured": true
 },
   {
     "slug": "galaxy-a06",
-    "productType": "Smartphone",
+    "productCategory": "Smartphone",
     "productTitle": "Samsung Galaxy A06 - Review Completo",
     "subtitle": "Conheça o Galaxy A06: simplicidade, economia e eficiência no seu dia a dia!",
     "imageUrl": [
@@ -81,11 +83,12 @@
       "https://mercadolivre.com/sec/1ahbnhG",
       "https://s.shopee.com.br/709ZUrBXfM",
       "https://amzn.to/41f23FJ"
-    ]
+    ],
+    "isFeatured": true
   },
   {
     "slug": "iphone-16",
-    "productType": "Smartphone",
+    "productCategory": "Smartphone",
     "productTitle": "Apple iPhone 16 - Review Completo",
     "subtitle": "Conheça o novo iPhone 16, inovação e desempenho em suas mãos!",
     "imageUrl": [
@@ -110,11 +113,12 @@
       "https://mercadolivre.com/sec/2TRrhWb",
       "https://s.shopee.com.br/7pihJrC483",
       "https://amzn.to/4ogXlBs"
-      ]
+      ],
+    "isFeatured": true
   },
   {
     "slug": "death-stranding-2-ps5",
-    "productType": "Jogo PS5",
+    "productCategory": "Jogo PS5",
     "productTitle": "Death Stranding 2: On the Beach - Review Completo",
     "subtitle": "Descubra se esta experiência é para você!",
     "imageUrl": [
@@ -138,11 +142,12 @@
       "https://mercadolivre.com/sec/2K9KfXo",
       "https://s.shopee.com.br/gFWtd62PP",
       "https://amzn.to/3GTB7ES"
-    ]
+    ],
+    "isFeatured": false
   },
   {
     "slug": "controle-xbox-wireless-carbon-black",
-    "productType": "Acessório Gamer",
+    "productCategory": "Acessório Gamer",
     "productTitle": "Controle Xbox Wireless Series X|S Carbon Black - Review Completo",
     "subtitle": "Controle premium para elevar sua jogabilidade!",
     "imageUrl": [
@@ -166,11 +171,12 @@
       "https://mercadolivre.com/sec/18yJ2ap",
       "https://s.shopee.com.br/8UyOESwvwL",
       "https://amzn.to/4fdTpx3"
-      ]
+      ],
+    "isFeatured": true
   },
   {
     "slug": "galaxy-a15",
-    "productType": "SmartPhone",
+    "productCategory": "Smartphone",
     "productTitle": "Samsung Galaxy A15 - Review Completo",
     "subtitle": "Descubra se este celular é ideal para você!",
     "imageUrl": [
@@ -194,11 +200,12 @@
       "https://mercadolivre.com/sec/2P7vRSG",
       "https://s.shopee.com.br/6VDJrNSmH1",
       "https://amzn.to/3UCN70v"
-      ]
+      ],
+    "isFeatured": true
   },
   {
     "slug": "cadeira-bebe-multifix",
-    "productType": "Cadeira bebê automotiva",
+    "productCategory": "Acessório bebê",
     "productTitle": "Cadeira de Bebê Multifix Black Urban - Safety 1st",
     "subtitle": "Conforto, segurança e praticidade para o seu bebê desde o nascimento até os 36kg.",
     "imageUrl": [
@@ -222,6 +229,7 @@
       "https://mercadolivre.com/sec/1Nz3jfp",
       "https://s.shopee.com.br/1LVDijIEpn",
       "https://amzn.to/40JQ9Ue"
-      ]
+      ],
+    "isFeatured": false
   }
 ]

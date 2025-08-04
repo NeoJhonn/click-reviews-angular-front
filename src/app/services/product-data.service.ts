@@ -12,9 +12,10 @@ export interface ProductData {
   videoUrl: string;
   opinion: string;
   linkComprar: string[];
-  productType: string;
+  productCategory: string;
   opinionPreview:string;
   price: number;
+  isFeatured: boolean
 }
 
 @Injectable({

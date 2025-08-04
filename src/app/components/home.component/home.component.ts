@@ -4,6 +4,7 @@ import { ProductCardComponent } from '../product-card.component/product-card.com
 import { Title } from '@angular/platform-browser';
 import { ProductData, ProductDataService  } from '../../services/product-data.service';
 import { CanonicalService } from '../../services/canonical.service';
+import { FilterService } from '../../services/filter.service';
 
 
 @Component({
@@ -17,8 +18,9 @@ import { CanonicalService } from '../../services/canonical.service';
 })
 export class HomeComponent {
   products: ProductData[] = [];
+  filteredProducts: ProductData[] = [];
 
-  constructor(private canonicalService: CanonicalService, private title: Title, private productService: ProductDataService, private cdr: ChangeDetectorRef) {
+  constructor(private title: Title, private productService: ProductDataService, private filterService: FilterService) {
     // SEO Metadata
      this.title.setTitle(`Home | ClickReviews`);
    }
@@ -26,7 +28,21 @@ export class HomeComponent {
    ngOnInit(): void {
     this.productService.getAllProducts().subscribe(data => {
       this.products = data;
-      //this.cdr.detectChanges();
+      this.filteredProducts = data;
+
+    this.filterService.category$.subscribe(category => {
+      this.applyFilter(category);
+    });
     });
   }
+
+  applyFilter(category: string) {
+  if (!category) {
+    this.filteredProducts = this.products;
+  } else if (category === 'destaque') {
+    this.filteredProducts = this.products.filter(p => p.isFeatured);
+  } else {
+    this.filteredProducts = this.products.filter(p => p.productCategory === category);
+  }
+}
 }
