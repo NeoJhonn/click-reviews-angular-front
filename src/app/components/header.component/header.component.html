@@ -18,7 +18,7 @@
   <!-- Filtro de categoria de produtos -->
   <div class="category-dropdown">
   <button (click)="toggleDropdown()" class="dropdown-button">
-    <span class="label">▼ {{ getSelectedLabel() }}</span>
+    <span class="label">{{ getSelectedLabel() }}</span>
   <span class="arrow" [class.open]="isOpen">&#9662;</span>
   </button>
 
