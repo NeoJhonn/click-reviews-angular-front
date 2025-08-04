@@ -32,7 +32,7 @@ a:visited {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    min-width: 180px;
+    min-width: 5rem;
 
     .label {
     font-weight: 600;
@@ -42,7 +42,7 @@ a:visited {
 
   .arrow {
     transition: transform 0.3s ease;
-    font-size: 2rem;
+    font-size: 1rem;
   }
 
   .arrow.open {
