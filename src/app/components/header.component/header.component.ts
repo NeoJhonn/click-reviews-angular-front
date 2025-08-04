@@ -3,6 +3,7 @@ import { MaterialModule } from '../../material.module-module';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { RouterModule } from '@angular/router';
 import { FilterService } from '../../services/filter.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -13,6 +14,8 @@ import { FilterService } from '../../services/filter.service';
 export class HeaderComponent {
   private snackBar = inject(MatSnackBar);
   private filterService = inject(FilterService);
+  private router = inject(Router);
+  showFilter = false;
 
   selectedCategory: string = '';
   isOpen: boolean = false;
@@ -31,6 +34,12 @@ export class HeaderComponent {
   ngOnInit(): void {
     this.filterService.category$.subscribe((category) => {
       this.selectedCategory = category;
+    });
+
+     // Escuta as mudanças de rota
+    this.router.events.subscribe(() => {
+      const currentRoute = this.router.url;
+      this.showFilter = currentRoute === '/home';
     });
   }
 
