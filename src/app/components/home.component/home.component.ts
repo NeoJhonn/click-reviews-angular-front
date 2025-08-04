@@ -30,7 +30,8 @@ export class HomeComponent {
       this.products = data;
       this.filteredProducts = data;
 
-    this.filterService.category$.subscribe(category => {
+      this.filterService.setCategory('destaque'); // força o reset sempre que voltar pra Home
+      this.filterService.category$.subscribe(category => {
       this.applyFilter(category);
     });
     });
