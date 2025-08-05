@@ -1,62 +1,149 @@
 [
   {
-  "slug": "fire-tv-stick-3-geracao",
-  "productCategory": "Eletroportátil",
-  "productTitle": "Amazon Fire TV Stick 3ª Geração - Review Completo",
-  "subtitle": "Transforme sua TV em um centro de entretenimento inteligente com o poder da Alexa!",
-  "imageUrl": [
-    "https://http2.mlstatic.com/D_NQ_NP_2X_807497-MLA84182253688_052025-F.webp",
-    "https://http2.mlstatic.com/D_NQ_NP_2X_636290-MLA84478943221_052025-F.webp",
-    "https://http2.mlstatic.com/D_NQ_NP_2X_652866-MLA84478943235_052025-F.webp",
-    "https://http2.mlstatic.com/D_NQ_NP_2X_971312-MLA84478991817_052025-F.webp"
-  ],
-  "price": "255.00",
-  "benefits": [
-    "Streaming em Full HD 1080p com alta performance e fluidez",
-    "Controle remoto com Alexa integrada: comandos por voz para facilitar sua vida",
-    "Compatível com qualquer TV com entrada HDMI",
-    "Dolby Audio para uma experiência sonora imersiva",
-    "8 GB de armazenamento e conectividade Bluetooth e Wi-Fi"
-  ],
-  "videoUrl": "https://www.youtube.com/embed/QSR_UGUhBKQ",
-  "opinionPreview": "O Fire TV Stick 3ª geração é a escolha ideal para transformar sua TV em uma central inteligente de entretenimento.",
-  "opinion": "O Amazon Fire TV Stick 3ª Geração oferece uma solução completa para quem deseja transformar qualquer TV em uma Smart TV. Com desempenho rápido, sistema fluido e uma interface intuitiva, ele permite acessar plataformas como Prime Video, Netflix, YouTube e muito mais. O controle com Alexa dá um toque moderno, permitindo controlar tudo por voz — desde pausar filmes até perguntar a previsão do tempo. É perfeito para quem busca praticidade, qualidade de som com Dolby Audio e uma instalação simples, apenas conectando à entrada HDMI. Uma excelente opção para modernizar sua experiência de assistir TV sem gastar muito.",
-  "linkComprar": [
-    "https://mercadolivre.com/sec/2EbCkXP",
-    "https://s.shopee.com.br/8fHt82M7Y4",
-    "https://amzn.to/3UGx69R"
-  ],
-  "isFeatured": true
-},
+    "slug": "fire-tv-stick-3-geracao",
+    "productCategory": "Eletroportátil",
+    "productTitle": "Amazon Fire TV Stick 3ª Geração - Review Completo",
+    "subtitle": "Transforme sua TV em um centro de entretenimento inteligente com o poder da Alexa!",
+    "imageUrl": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_807497-MLA84182253688_052025-F.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_2X_636290-MLA84478943221_052025-F.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_2X_652866-MLA84478943235_052025-F.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_2X_971312-MLA84478991817_052025-F.webp"
+    ],
+    "price": "255.00",
+    "benefits": [
+      "Streaming em Full HD 1080p com alta performance e fluidez",
+      "Controle remoto com Alexa integrada: comandos por voz para facilitar sua vida",
+      "Compatível com qualquer TV com entrada HDMI",
+      "Dolby Audio para uma experiência sonora imersiva",
+      "8 GB de armazenamento e conectividade Bluetooth e Wi-Fi"
+    ],
+    "videoUrl": "https://www.youtube.com/embed/QSR_UGUhBKQ",
+    "opinionPreview": "O Fire TV Stick 3ª geração é a escolha ideal para transformar sua TV em uma central inteligente de entretenimento.",
+    "opinion": "O Amazon Fire TV Stick 3ª Geração oferece uma solução completa para quem deseja transformar qualquer TV em uma Smart TV. Com desempenho rápido, sistema fluido e uma interface intuitiva, ele permite acessar plataformas como Prime Video, Netflix, YouTube e muito mais. O controle com Alexa dá um toque moderno, permitindo controlar tudo por voz — desde pausar filmes até perguntar a previsão do tempo. É perfeito para quem busca praticidade, qualidade de som com Dolby Audio e uma instalação simples, apenas conectando à entrada HDMI. Uma excelente opção para modernizar sua experiência de assistir TV sem gastar muito.",
+    "linkComprar": [
+      "https://mercadolivre.com/sec/2EbCkXP",
+      "https://s.shopee.com.br/8fHt82M7Y4",
+      "https://amzn.to/3UGx69R"
+    ],
+    "isFeatured": true
+  },
   {
-  "slug": "lavadora-portatil-pressao-2-baterias",
-  "productCategory": "Eletroportátil",
-  "productTitle": "Lavadora Lava Jato Portátil Pressão 2 Baterias + Maleta - Review Completo",
-  "subtitle": "Potência e mobilidade para uma limpeza prática e eficiente em qualquer lugar!",
-  "imageUrl": [
-    "https://http2.mlstatic.com/D_NQ_NP_710675-MLB89102120983_082025-O-lavadora-lava-jato-portatil-presso-2-baterias-maleta.webp",
-    "https://http2.mlstatic.com/D_NQ_NP_837680-MLB75907654555_042024-O-lavadora-lava-jato-portatil-presso-2-baterias-maleta.webp",
-    "https://http2.mlstatic.com/D_NQ_NP_718735-MLB76156453176_052024-O-lavadora-lava-jato-portatil-presso-2-baterias-maleta.webp",
-    "https://http2.mlstatic.com/D_NQ_NP_766225-MLB76343206837_052024-O-lavadora-lava-jato-portatil-presso-2-baterias-maleta.webp"
-  ],
-  "price": "140.49",
-  "benefits": [
-    "Alta pressão ajustável para diferentes tipos de sujeira",
-    "Duas baterias recarregáveis para maior autonomia e mobilidade",
-    "Maleta resistente para facilitar o transporte e armazenamento",
-    "Acessórios completos, incluindo mangueira, bicos e dispenser de sabão",
-    "Ecológica e econômica: consome apenas 4 L de água por minuto"
-  ],
-  "videoUrl": "https://www.youtube.com/embed/x6BbmmYdaAM",
-  "opinionPreview": "Com excelente mobilidade e potência, a Lavadora Portátil é ideal para quem busca praticidade na limpeza do dia a dia.",
-  "opinion": "A Lavadora Lava Jato Portátil com Pressão e duas baterias recarregáveis é uma solução eficiente para quem precisa de limpeza potente em qualquer lugar. Seu grande diferencial está na praticidade: sem fios e com uma maleta completa, ela pode ser usada para lavar carros, calçadas, bicicletas e muito mais. Os acessórios inclusos e a possibilidade de ajustar a pressão tornam o uso versátil e funcional. Além disso, o consumo controlado de água a torna uma escolha ecológica e econômica. Um ótimo investimento para quem quer praticidade e desempenho.",
-  "linkComprar": [
-    "https://mercadolivre.com/sec/1DgnfGm",
-    "https://s.shopee.com.br/9pTqUeC3cC",
-    "https://amzn.to/40NaCrp"
-  ],
-  "isFeatured": true
-},
+    "slug": "lavadora-portatil-pressao-2-baterias",
+    "productCategory": "Eletroportátil",
+    "productTitle": "Lavadora Lava Jato Portátil Pressão 2 Baterias + Maleta - Review Completo",
+    "subtitle": "Potência e mobilidade para uma limpeza prática e eficiente em qualquer lugar!",
+    "imageUrl": [
+      "https://http2.mlstatic.com/D_NQ_NP_710675-MLB89102120983_082025-O-lavadora-lava-jato-portatil-presso-2-baterias-maleta.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_837680-MLB75907654555_042024-O-lavadora-lava-jato-portatil-presso-2-baterias-maleta.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_718735-MLB76156453176_052024-O-lavadora-lava-jato-portatil-presso-2-baterias-maleta.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_766225-MLB76343206837_052024-O-lavadora-lava-jato-portatil-presso-2-baterias-maleta.webp"
+    ],
+    "price": "140.49",
+    "benefits": [
+      "Alta pressão ajustável para diferentes tipos de sujeira",
+      "Duas baterias recarregáveis para maior autonomia e mobilidade",
+      "Maleta resistente para facilitar o transporte e armazenamento",
+      "Acessórios completos, incluindo mangueira, bicos e dispenser de sabão",
+      "Ecológica e econômica: consome apenas 4 L de água por minuto"
+    ],
+    "videoUrl": "https://www.youtube.com/embed/x6BbmmYdaAM",
+    "opinionPreview": "Com excelente mobilidade e potência, a Lavadora Portátil é ideal para quem busca praticidade na limpeza do dia a dia.",
+    "opinion": "A Lavadora Lava Jato Portátil com Pressão e duas baterias recarregáveis é uma solução eficiente para quem precisa de limpeza potente em qualquer lugar. Seu grande diferencial está na praticidade: sem fios e com uma maleta completa, ela pode ser usada para lavar carros, calçadas, bicicletas e muito mais. Os acessórios inclusos e a possibilidade de ajustar a pressão tornam o uso versátil e funcional. Além disso, o consumo controlado de água a torna uma escolha ecológica e econômica. Um ótimo investimento para quem quer praticidade e desempenho.",
+    "linkComprar": [
+      "https://mercadolivre.com/sec/1DgnfGm",
+      "https://s.shopee.com.br/9pTqUeC3cC",
+      "https://amzn.to/40NaCrp"
+    ],
+    "isFeatured": true
+  },
+  {
+    "slug": "alfaparf-oil-curls-100ml",
+    "productCategory": "Beleza",
+    "productTitle": "Alfaparf Milano Semi Di Lino Multi-benefit Oil Curls 100ml - Review Completo",
+    "subtitle": "Óleo leve e multifuncional para cachos definidos, nutridos e com brilho natural.",
+    "imageUrl": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_920143-MLB49853662656_052022-F.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_2X_752701-MLB50375211762_062022-F.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_2X_821505-MLU73128703330_122023-F.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_2X_936732-MLB49063366457_022022-F.webp"
+    ],
+    "price": "144.99",
+    "benefits": [
+      "Textura fluida que não pesa nos fios, ideal para finalização",
+      "Realça e define cachos com leveza e naturalidade",
+      "Fragrância suave e agradável para o uso diário",
+      "Alta qualidade e rendimento com fórmula profissional",
+      "Brilho intenso e nutrição profunda sem efeito oleoso"
+    ],
+    "videoUrl": "https://www.youtube.com/embed/1fHbhGdnwoI",
+    "opinionPreview": "Um óleo finalizador premium que entrega definição, brilho e leveza para os cabelos cacheados.",
+    "opinion": "O Alfaparf Milano Semi Di Lino Multi-benefit Oil Curls é uma excelente escolha para quem busca um finalizador de alta performance, especialmente para cabelos cacheados. Sua fórmula leve proporciona definição e controle sem pesar, sendo perfeito para uso diário. A fragrância é sutil e agradável, deixando os fios perfumados sem exagero. Além disso, o óleo oferece brilho intenso e toque sedoso, ideal para quem valoriza praticidade e resultados visíveis. É um produto que cumpre o que promete e entrega um cuidado profissional para os seus cachos.",
+    "linkComprar": [
+      "https://mercadolivre.com/sec/2i2Gifn",
+      "https://s.shopee.com.br/AKQ3ZSHuVK",
+      "https://amzn.to/4m7xZUU"
+    ],
+    "isFeatured": true
+  },
+  {
+    "slug": "aparador-philips-oneblade",
+    "productCategory": "Eletroportátil",
+    "productTitle": "Aparador de Pelos Philips OneBlade - Review Completo",
+    "subtitle": "Tecnologia exclusiva para aparar, raspar e contornar com conforto e sem irritações.",
+    "imageUrl": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_636231-MLU77149869466_062024-F.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_2X_678101-MLU77363066949_062024-F.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_2X_967998-MLU77150036600_062024-F.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_2X_634591-MLU77363066981_062024-F.webp"
+    ],
+    "price": "149.90",
+    "benefits": [
+      "Tecnologia OneBlade para raspar, aparar e contornar sem agredir a pele",
+      "Uso a seco ou molhado, inclusive no banho (100% à prova d’água)",
+      "Inclui 2 pentes: 1 mm para barba por fazer e 3 mm para barba curta",
+      "Cabeça flexível que acompanha os contornos do rosto com precisão",
+      "Lâmina durável com indicador de troca e fácil substituição"
+    ],
+    "videoUrl": "https://www.youtube.com/embed/w3fKSSsNh-s",
+    "opinionPreview": "Tecnologia moderna, conforto e precisão em um único aparador versátil para todos os estilos de barba.",
+    "opinion": "O Philips OneBlade é uma revolução no cuidado pessoal masculino. Com sua tecnologia exclusiva, ele proporciona um barbear prático e confortável, sem cortes ou irritações. Ideal para quem busca praticidade, o aparelho pode ser usado a seco ou molhado, e ainda conta com uma cabeça flexível que se adapta perfeitamente ao contorno do rosto. Os pentes inclusos ajudam a manter a barba sempre alinhada e no estilo desejado. Com boa autonomia e lâmina de longa duração, é a escolha certa para quem quer manter a aparência impecável com agilidade e segurança.",
+    "linkComprar": [
+      "https://mercadolivre.com/sec/2K4BNM5",
+      "https://s.shopee.com.br/gFdj1FMQc",
+      "https://amzn.to/3J1VfFm"
+    ],
+    "isFeatured": true
+  },
+  {
+    "slug": "kit-alfaparf-real-rigen-nutritive-1000ml",
+    "productCategory": "Beleza",
+    "productTitle": "Kit Alfaparf Real Rigen Nutritive Shampoo e Condicionador 1000ml - Review Completo",
+    "subtitle": "Nutrição profunda e diária com fórmula vegana para cabelos normais ou secos.",
+    "imageUrl": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_932801-MLB78651922209_082024-F-alfaparf-real-rigen-nutritive-shampoo-e-condicionador-1000ml.webp",
+      "",
+      "",
+      ""
+    ],
+    "price": "205.99",
+    "benefits": [
+      "Shampoo e condicionador com fórmula vegana para uso diário",
+      "Nutrição profunda para cabelos normais ou secos",
+      "Ajuda a restaurar o brilho e a maciez dos fios",
+      "Ideal para manter a saúde capilar sem pesar",
+      "Versões de 1000ml com excelente rendimento"
+    ],
+    "videoUrl": "https://www.youtube.com/embed/vlSYzXvewUM",
+    "opinionPreview": "Uma linha nutritiva e de alto rendimento, perfeita para quem busca hidratação diária com leveza e qualidade profissional.",
+    "opinion": "O Kit Alfaparf Real Rigen Nutritive é uma excelente opção para quem deseja cuidar dos cabelos com um tratamento nutritivo e eficiente. O shampoo limpa suavemente ao mesmo tempo que hidrata, e o condicionador proporciona um desembaraço fácil e toque sedoso. A nova fórmula vegana mostra o compromisso da marca com a qualidade e a sustentabilidade. Com 1000ml em cada embalagem, o kit oferece ótimo custo-benefício e é ideal para quem busca um cuidado diário de salão em casa. Indicado especialmente para cabelos normais a secos.",
+    "linkComprar": [
+      "https://mercadolivre.com/sec/1mf3fMw",
+      "https://s.shopee.com.br/1BBuKrKPCN",
+      "https://amzn.to/3Hbh2tO"
+    ],
+    "isFeatured": true
+  },
   {
     "slug": "galaxy-a06",
     "productCategory": "Smartphone",
@@ -97,8 +184,7 @@
       "https://http2.mlstatic.com/D_NQ_NP_2X_801732-MLA78900901180_092024-F.webp",
       "https://http2.mlstatic.com/D_NQ_NP_2X_781685-MLA79138740755_092024-F.webp"
     ],
-    "price": "4899.00"
-    ,
+    "price": "4899.00",
     "benefits": [
       "Tela Super Retina XDR com tecnologia ProMotion",
       "Processador A18 Bionic para desempenho máximo",
@@ -113,7 +199,7 @@
       "https://mercadolivre.com/sec/2TRrhWb",
       "https://s.shopee.com.br/7pihJrC483",
       "https://amzn.to/4ogXlBs"
-      ],
+    ],
     "isFeatured": true
   },
   {
@@ -126,7 +212,7 @@
       "https://http2.mlstatic.com/D_NQ_NP_2X_686138-MLA85117885192_052025-F.webp",
       "https://http2.mlstatic.com/D_NQ_NP_2X_655073-MLA85420499233_052025-F.webp",
       "https://http2.mlstatic.com/D_NQ_NP_2X_917237-MLA85420545485_052025-F.webp"
-      ],
+    ],
     "price": "319.90",
     "benefits": [
       "Mundo aberto vasto e conectado, com ambientes dinâmicos",
@@ -155,7 +241,7 @@
       "https://http2.mlstatic.com/D_NQ_NP_2X_932200-MLA54147001786_032023-F.webp",
       "https://http2.mlstatic.com/D_NQ_NP_2X_760543-MLU75976359927_042024-F.webp",
       "https://http2.mlstatic.com/D_NQ_NP_2X_706410-MLA54692702580_032023-F.webp"
-      ],
+    ],
     "price": "391.59",
     "benefits": [
       "Design ergonômico para conforto prolongado",
@@ -171,7 +257,7 @@
       "https://mercadolivre.com/sec/18yJ2ap",
       "https://s.shopee.com.br/8UyOESwvwL",
       "https://amzn.to/4fdTpx3"
-      ],
+    ],
     "isFeatured": true
   },
   {
@@ -184,7 +270,7 @@
       "https://http2.mlstatic.com/D_NQ_NP_2X_628994-MLA75319480269_032024-F.webp",
       "https://http2.mlstatic.com/D_NQ_NP_2X_728945-MLA75319578251_032024-F.webp",
       "https://http2.mlstatic.com/D_NQ_NP_2X_703787-MLA75319578211_032024-F.webp"
-      ],
+    ],
     "price": "849.00",
     "benefits": [
       "Preço inicial a partir de R$899 (versão 4G)",
@@ -200,7 +286,7 @@
       "https://mercadolivre.com/sec/2P7vRSG",
       "https://s.shopee.com.br/6VDJrNSmH1",
       "https://amzn.to/3UCN70v"
-      ],
+    ],
     "isFeatured": true
   },
   {
@@ -213,7 +299,7 @@
       "https://http2.mlstatic.com/D_NQ_NP_2X_672850-MLA83150027584_032025-F.webp",
       "https://http2.mlstatic.com/D_NQ_NP_2X_981468-MLA83150065960_032025-F.webp",
       "https://http2.mlstatic.com/D_NQ_NP_2X_818743-MLA83149969914_032025-F.webp"
-      ],
+    ],
     "price": "1000.96",
     "benefits": [
       "Indicada desde o nascimento até 36kg (Grupo 0+, 1, 2 e 3)",
@@ -229,7 +315,7 @@
       "https://mercadolivre.com/sec/1Nz3jfp",
       "https://s.shopee.com.br/1LVDijIEpn",
       "https://amzn.to/40JQ9Ue"
-      ],
+    ],
     "isFeatured": false
   }
 ]
