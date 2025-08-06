@@ -2,13 +2,23 @@
   margin-top: auto; /* Empurra o footer para baixo */
 }
 
-.ads-container {
-  //border: 1px solid #ccc; /* tom prateado sutil */
-  //border-radius: 4px;
-  background-color: #fafafa; /* opcional: dá um contraste leve */
-  width: 50%;
-  max-height: 5px!important;
+a {
+  text-decoration: none;
+  color: inherit;
 }
+
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+// .ads-container {
+//   //border: 1px solid #ccc; /* tom prateado sutil */
+//   //border-radius: 4px;
+//   background-color: #fafafa; /* opcional: dá um contraste leve */
+//   width: 50%;
+//   max-height: 5px!important;
+// }
 
 .footer {
   bottom: 0;

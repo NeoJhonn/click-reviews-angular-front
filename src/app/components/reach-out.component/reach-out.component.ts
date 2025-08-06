@@ -30,5 +30,10 @@ export class ReachOutComponent {
       icon: 'assets/icons/whatsapp.svg',
       url: 'https://wa.me/5547991803680', // Substitua pelo seu número
     },
+    {
+    alt: 'Email',
+    icon: 'assets/icons/gmail-icon.svg',
+    url: 'mailto:click.reviews.contact@gmail.com',
+    }
   ];
 }

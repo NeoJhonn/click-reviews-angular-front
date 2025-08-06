@@ -1,7 +1,7 @@
 [
   {
     "slug": "fire-tv-stick-3-geracao",
-    "productCategory": "Eletroportátil",
+    "productCategory": "eletroportatil",
     "productTitle": "Amazon Fire TV Stick 3ª Geração - Review Completo",
     "subtitle": "Transforme sua TV em um centro de entretenimento inteligente com o poder da Alexa!",
     "imageUrl": [
@@ -30,7 +30,7 @@
   },
   {
     "slug": "lavadora-portatil-pressao-2-baterias",
-    "productCategory": "Eletroportátil",
+    "productCategory": "eletroportatil",
     "productTitle": "Lavadora Lava Jato Portátil Pressão 2 Baterias + Maleta - Review Completo",
     "subtitle": "Potência e mobilidade para uma limpeza prática e eficiente em qualquer lugar!",
     "imageUrl": [
@@ -88,7 +88,7 @@
   },
   {
     "slug": "aparador-philips-oneblade",
-    "productCategory": "Eletroportátil",
+    "productCategory": "eletroportatil",
     "productTitle": "Aparador de Pelos Philips OneBlade - Review Completo",
     "subtitle": "Tecnologia exclusiva para aparar, raspar e contornar com conforto e sem irritações.",
     "imageUrl": [
@@ -143,7 +143,7 @@
   },
   {
     "slug": "galaxy-a06",
-    "productCategory": "Smartphone",
+    "productCategory": "smartphone",
     "productTitle": "Samsung Galaxy A06 - Review Completo",
     "subtitle": "Conheça o Galaxy A06: simplicidade, economia e eficiência no seu dia a dia!",
     "imageUrl": [
@@ -172,7 +172,7 @@
   },
   {
     "slug": "iphone-16",
-    "productCategory": "Smartphone",
+    "productCategory": "smartphone",
     "productTitle": "Apple iPhone 16 - Review Completo",
     "subtitle": "Conheça o novo iPhone 16, inovação e desempenho em suas mãos!",
     "imageUrl": [
@@ -201,7 +201,7 @@
   },
   {
     "slug": "death-stranding-2-ps5",
-    "productCategory": "Jogo PS5",
+    "productCategory": "acessorio-Gamer",
     "productTitle": "Death Stranding 2: On the Beach - Review Completo",
     "subtitle": "Descubra se esta experiência é para você!",
     "imageUrl": [
@@ -230,7 +230,7 @@
   },
   {
     "slug": "controle-xbox-wireless-carbon-black",
-    "productCategory": "Acessório Gamer",
+    "productCategory": "acessorio-Gamer",
     "productTitle": "Controle Xbox Wireless Series X|S Carbon Black - Review Completo",
     "subtitle": "Controle premium para elevar sua jogabilidade!",
     "imageUrl": [
@@ -259,7 +259,7 @@
   },
   {
     "slug": "galaxy-a15",
-    "productCategory": "Smartphone",
+    "productCategory": "smartphone",
     "productTitle": "Samsung Galaxy A15 - Review Completo",
     "subtitle": "Descubra se este celular é ideal para você!",
     "imageUrl": [
@@ -288,7 +288,7 @@
   },
   {
     "slug": "cadeira-bebe-multifix",
-    "productCategory": "Acessório bebê",
+    "productCategory": "acessorio-bebe",
     "productTitle": "Cadeira de Bebê Multifix Black Urban - Safety 1st",
     "subtitle": "Conforto, segurança e praticidade para o seu bebê desde o nascimento até os 36kg.",
     "imageUrl": [
