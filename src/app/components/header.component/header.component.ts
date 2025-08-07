@@ -39,7 +39,7 @@ export class HeaderComponent {
      // Escuta as mudanças de rota
     this.router.events.subscribe(() => {
       const currentRoute = this.router.url;
-      this.showFilter = currentRoute === '/home';
+      this.showFilter = currentRoute === '/';
     });
   }
 
