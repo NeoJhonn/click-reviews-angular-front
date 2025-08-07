@@ -86,23 +86,23 @@ app.use(async (req, res, next) => {
 
     let html = await streamToString(response.body);
 
-    // HOME PAGE
-    if (req.url === '/home') {
-      console.log('🏠 Injecting Home meta tags');
-      const title = `<title>Home | ClickReviews</title>`;
+    // Privacidade PAGE
+    if (req.url === '/privacidade') {
+      console.log('🏠 Injecting Privacidade meta tags');
+      const title = `<title>Política de Privacidade | ClickReviews</title>`;
       const metas = `
-        <meta name="description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
-        <meta property="og:title" content="Home | ClickReviews">
-        <meta property="og:description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
+        <meta name="description" content="ClickReviews | Política de Privacidade">
+        <meta property="og:title" content="Política de Privacidade | ClickReviews">
+        <meta property="og:description" content="Política de Privacidade | ClickReviews</title">
         <meta property="og:image" content="https://www.clickreviews.com.br/assets/icons/logo_site.webp">
-        <meta property="og:url" content="https://www.clickreviews.com.br/home">
+        <meta property="og:url" content="https://www.clickreviews.com.br/privacidade">
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Home | ClickReviews">
-        <meta name="twitter:description" content="ClickReviews, o melhor site de Análises/Reviews do Brasil!">
+        <meta name="twitter:title" content="Política de Privacidade | ClickReviews</title">
+        <meta name="twitter:description" content="Política de Privacidade | ClickReviews">
         <meta name="twitter:image" content="https://www.clickreviews.com.br/assets/icons/logo_site.webp">
-        <meta property="twitter:url" content="https://www.clickreviews.com.br/home">
+        <meta property="twitter:url" content="https://www.clickreviews.com.br/privacidade">
         <!-- Canonical link -->
-        <link rel="canonical" href="https://www.clickreviews.com.br${pathname}" />
+        <link rel="canonical" href="https://www.clickreviews.com.br/privacidade}" />
       `;
       html = html
         .replace(/<title[^>]*>.*?<\/title>/i, '')

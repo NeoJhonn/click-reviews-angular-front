@@ -6,8 +6,7 @@ import { NotFoundComponent } from './components/not-found.component/not-found.co
 import { PrivacyComponent } from './components/privacy.component/privacy.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'privacidade', component: PrivacyComponent},
   { path: 'review/:slug', component: ProductReviewPageComponent },
   { path: 'contato', component: ReachOutComponent },
