@@ -1,7 +1,7 @@
 <mat-toolbar>
   <mat-menu #appMenu="matMenu">
     <ng-template matMenuContent>
-      <a [routerLink]="['/home']"><button mat-menu-item>Análises</button></a>
+      <a [routerLink]="['/']"><button mat-menu-item>Análises</button></a>
       <a [routerLink]="['/contato']"><button mat-menu-item>Contato</button></a>
     </ng-template>
   </mat-menu>
@@ -11,7 +11,7 @@
   </button>
 
   <span
-    ><strong><a routerLink="/home">ClickReviews </a></strong></span
+    ><strong><a [routerLink]="['/']">ClickReviews </a></strong></span
   >
 
   <span class="example-spacer"></span>
