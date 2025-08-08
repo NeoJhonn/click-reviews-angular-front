@@ -7,8 +7,10 @@
     <mat-card-subtitle>{{ product.productCategory }}</mat-card-subtitle>
   </mat-card-header>
 
-  <img mat-card-image [attr.loading]="'lazy'" [src]="product.imageUrl[0]" [alt]="product.productTitle" [style]="{'width': '15rem', 'text-align': 'center', 'margin-left': '2rem'}">
-
+  <a [routerLink]="['/review', product.slug]">
+    <img mat-card-image [attr.loading]="'lazy'" [src]="product.imageUrl[0]" [alt]="product.productTitle" [style]="{'width': '15rem', 'text-align': 'center', 'margin-left': '2rem'}">
+  </a>
+  
   <mat-card-content>
     <p>{{ product.opinionPreview }}</p>
   </mat-card-content>
