@@ -29,6 +29,93 @@
     "isFeatured": true
   },
   {
+    "slug": "purificador-electrolux-pe12g",
+    "productCategory": "eletroportatil",
+    "productTitle": "Purificador de Água Electrolux PE12G - Review Completo",
+    "subtitle": "Design compacto, água pura em 3 temperaturas e muito mais praticidade para seu dia a dia.",
+    "imageUrl": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_993788-MLA88121750145_072025-F.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_2X_774953-MLU73213715577_122023-F.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_2X_942363-MLU73213696565_122023-F.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_2X_998853-MLU73129695860_122023-F.webp"
+    ],
+    "price": "590.00",
+    "benefits": [
+      "Oferece 3 temperaturas: natural, fria e gelada para todos os gostos",
+      "Painel Touch com LED: fácil de usar, até em ambientes escuros",
+      "Tecnologia Powerjet: enche o copo até 4x mais rápido",
+      "Filtro Acqua Pure com carvão ativado e íons de prata, ideal para água mais pura",
+      "Alerta automático de troca de refil e bandeja removível para facilitar a limpeza"
+    ],
+    "videoUrl": "https://www.youtube.com/embed/sWUa5lshRRs",
+    "opinionPreview": "Design moderno, painel touch e água purificada com praticidade: um purificador completo para sua cozinha.",
+    "opinion": "O Purificador de Água Electrolux PE12G é uma escolha inteligente para quem busca saúde, praticidade e sofisticação na cozinha. Com três níveis de temperatura e tecnologia Powerjet, ele entrega agilidade no dia a dia e água sempre fresca. O filtro Acqua Pure garante a remoção de impurezas, cloro e bactérias, trazendo mais segurança para sua família. Além disso, o painel touch com LED facilita o uso, e o alerta de troca de refil evita esquecimentos. Compacto e com visual moderno, ele se adapta a qualquer ambiente e é ideal para quem quer aliar funcionalidade com estilo.",
+    "linkComprar": [
+      "https://mercadolivre.com/sec/2LwhEi9",
+      "https://s.shopee.com.br/9znNeWdVMm",
+      "https://amzn.to/4osKCLQ"
+    ],
+    "isFeatured": true
+  },
+  {
+    "slug": "aspirador-electrolux-stk15",
+    "productCategory": "eletroportatil",
+    "productTitle": "Aspirador de Pó Electrolux STK15 2 em 1 - Review Completo",
+    "subtitle": "Alta potência, versatilidade e praticidade para uma limpeza eficiente em qualquer ambiente.",
+    "imageUrl": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_685888-MLU72675219022_112023-F.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_2X_917196-MLA89635148287_082025-F.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_836734-MLA89269388252_082025-O.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_2X_897886-MLA89634990253_082025-F.webp"
+    ],
+    "price": "219.00",
+    "benefits": [
+      "2 em 1: pode ser usado como aspirador vertical ou de mão",
+      "Potente motor de 1450W com 2x mais poder de sucção",
+      "Filtro HEPA Allergy Protect que retém impurezas e alergênicos",
+      "Reservatório de 1,6L — 70% maior comparado a outros modelos",
+      "Cabo elétrico longo de 6 metros com suporte para guardar"
+    ],
+    "videoUrl": "https://www.youtube.com/embed/ctHNsCo9NqA",
+    "opinionPreview": "Prático, potente e versátil: o Electrolux STK15 é ideal para quem quer facilidade na hora de limpar a casa.",
+    "opinion": "O Aspirador de Pó Electrolux STK15 combina praticidade e alto desempenho em um único aparelho. Com função 2 em 1, pode ser usado como aspirador vertical ou de mão, perfeito para limpar desde pisos até móveis e estofados. O motor potente de 1450W garante uma sucção eficiente, enquanto o filtro HEPA ajuda a manter o ar mais puro, ideal para quem sofre com alergias. O reservatório grande e o cabo longo oferecem autonomia e praticidade durante a limpeza. Um excelente custo-benefício para quem busca um aspirador compacto, eficaz e fácil de manusear.",
+    "linkComprar": [
+      "https://mercadolivre.com/sec/1Y2TVxa",
+      "https://s.shopee.com.br/60HEuMy2Qk",
+      "https://amzn.to/4m9ZcGP"
+    ],
+    "isFeatured": true
+  },
+  {
+    "slug": "aspirador-automotivo-wap-car",
+    "productCategory": "eletroportatil",
+    "productTitle": "Aspirador Automotivo WAP Car Portátil 420ml - Review Completo",
+    "subtitle": "Leve, eficiente e ideal para manter seu carro sempre limpo, onde estiver.",
+    "imageUrl": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_736298-MLU75357969839_032024-F.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_2X_657354-MLU73031207042_112023-F.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_2X_602698-MLU75357931105_032024-F.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_2X_602396-MLU74128457009_012024-F.webp"
+    ],
+    "price": "139.90",
+    "benefits": [
+      "Funciona com 12V — ideal para uso no carro via adaptador veicular",
+      "Filtro HEPA que retém poeira e alérgenos, proporcionando um ambiente mais saudável",
+      "Acompanha bico escova, bico canto e mangueira flexível para alcançar todos os cantos",
+      "Cabo longo de 3,7 metros para maior alcance durante a limpeza",
+      "Reservatório removível de 420ml fácil de esvaziar e lavar"
+    ],
+    "videoUrl": "https://www.youtube.com/embed/5E_pnaMCovM",
+    "opinionPreview": "Um aspirador automotivo leve, prático e eficiente, perfeito para manter o interior do carro sempre limpo.",
+    "opinion": "O Aspirador de Pó Automotivo WAP Car é uma solução prática e inteligente para quem deseja manter o carro limpo com rapidez e eficiência. Seu funcionamento direto na tomada 12V do veículo garante praticidade em qualquer lugar. O filtro HEPA proporciona uma limpeza mais higiênica, capturando até os menores alérgenos. Com seus acessórios versáteis — como o bico escova e a mangueira flexível — você alcança até os cantos mais difíceis com facilidade. O reservatório de 420ml é suficiente para limpezas rápidas, e sua remoção facilita o descarte da sujeira. Ideal para quem preza por conforto e organização no dia a dia.",
+    "linkComprar": [
+      "https://mercadolivre.com/sec/1pHa2Xg",
+      "https://s.shopee.com.br/7fPSuR2fhY",
+      "https://amzn.to/4mCZ6Hz"
+    ],
+    "isFeatured": true
+  },
+  {
     "slug": "lavadora-portatil-pressao-2-baterias",
     "productCategory": "eletroportatil",
     "productTitle": "Lavadora Lava Jato Portátil Pressão 2 Baterias + Maleta - Review Completo",
@@ -171,34 +258,34 @@
     "isFeatured": true
   },
   {
-  "slug": "cercadinho-tapete-bebe-180x120",
-  "productCategory": "acessorio-bebe",
-  "productTitle": "Cercadinho Para Crianças + Tapete Para Engatinhar 180x120 - Review Completo",
-  "subtitle": "Segurança, conforto e diversão garantidos para o seu bebê em qualquer ambiente!",
-  "imageUrl": [
-    "https://http2.mlstatic.com/D_NQ_NP_2X_647002-MLB82525257341_022025-F-cercadinho-para-criancas-tapete-para-engatinhar-180x120.webp",
-    "https://http2.mlstatic.com/D_NQ_NP_2X_780655-MLB82524911913_022025-F-cercadinho-para-criancas-tapete-para-engatinhar-180x120.webp",
-    "https://http2.mlstatic.com/D_NQ_NP_2X_957230-MLB82241645306_022025-F-cercadinho-para-criancas-tapete-para-engatinhar-180x120.webp",
-    "https://http2.mlstatic.com/D_NQ_NP_2X_981921-MLB82524911911_022025-F-cercadinho-para-criancas-tapete-para-engatinhar-180x120.webp"
-  ],
-  "price": "580.90",
-  "benefits": [
-    "Cercadinho com estrutura reforçada em aço inox e tecido Oxford resistente",
-    "Tapete dupla face, macio, impermeável e antialérgico para maior conforto do bebê",
-    "Espaço amplo: 180x120cm ideal para brincar com segurança e liberdade",
-    "Fácil de montar, desmontar e transportar — ideal para qualquer ambiente",
-    "Isolante térmico, antiderrapante e fácil de limpar, sem cheiro e super durável"
-  ],
-  "videoUrl": "https://www.youtube.com/embed/Y_pMru5goAk",
-  "opinionPreview": "Um cercadinho completo, resistente e com tapete confortável: a solução ideal para a segurança e diversão do seu bebê.",
-  "opinion": "Este cercadinho com tapete para engatinhar é a escolha perfeita para pais que buscam segurança, praticidade e conforto em um só produto. A estrutura em aço inox oferece firmeza, enquanto o tecido Oxford garante durabilidade. O grande diferencial está no tapete dupla face de 8mm de espessura: macio, impermeável, antialérgico e fácil de limpar, ele proporciona um ambiente seguro e confortável para o bebê brincar e se desenvolver. Ótimo para uso interno e externo, o conjunto é fácil de montar e transportar, tornando-se uma excelente opção para manter a criança protegida enquanto os pais realizam suas tarefas com mais tranquilidade.",
-  "linkComprar": [
-    "https://mercadolivre.com/sec/2Jz17Po",
-    "https://s.shopee.com.br/Lcq1tjlgt",
-    "https://amzn.to/4ljEMcV"
-  ],
-  "isFeatured": true
-},
+    "slug": "cercadinho-tapete-bebe-180x120",
+    "productCategory": "acessorio-bebe",
+    "productTitle": "Cercadinho Para Crianças + Tapete Para Engatinhar 180x120 - Review Completo",
+    "subtitle": "Segurança, conforto e diversão garantidos para o seu bebê em qualquer ambiente!",
+    "imageUrl": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_647002-MLB82525257341_022025-F-cercadinho-para-criancas-tapete-para-engatinhar-180x120.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_2X_780655-MLB82524911913_022025-F-cercadinho-para-criancas-tapete-para-engatinhar-180x120.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_2X_957230-MLB82241645306_022025-F-cercadinho-para-criancas-tapete-para-engatinhar-180x120.webp",
+      "https://http2.mlstatic.com/D_NQ_NP_2X_981921-MLB82524911911_022025-F-cercadinho-para-criancas-tapete-para-engatinhar-180x120.webp"
+    ],
+    "price": "580.90",
+    "benefits": [
+      "Cercadinho com estrutura reforçada em aço inox e tecido Oxford resistente",
+      "Tapete dupla face, macio, impermeável e antialérgico para maior conforto do bebê",
+      "Espaço amplo: 180x120cm ideal para brincar com segurança e liberdade",
+      "Fácil de montar, desmontar e transportar — ideal para qualquer ambiente",
+      "Isolante térmico, antiderrapante e fácil de limpar, sem cheiro e super durável"
+    ],
+    "videoUrl": "https://www.youtube.com/embed/Y_pMru5goAk",
+    "opinionPreview": "Um cercadinho completo, resistente e com tapete confortável: a solução ideal para a segurança e diversão do seu bebê.",
+    "opinion": "Este cercadinho com tapete para engatinhar é a escolha perfeita para pais que buscam segurança, praticidade e conforto em um só produto. A estrutura em aço inox oferece firmeza, enquanto o tecido Oxford garante durabilidade. O grande diferencial está no tapete dupla face de 8mm de espessura: macio, impermeável, antialérgico e fácil de limpar, ele proporciona um ambiente seguro e confortável para o bebê brincar e se desenvolver. Ótimo para uso interno e externo, o conjunto é fácil de montar e transportar, tornando-se uma excelente opção para manter a criança protegida enquanto os pais realizam suas tarefas com mais tranquilidade.",
+    "linkComprar": [
+      "https://mercadolivre.com/sec/2Jz17Po",
+      "https://s.shopee.com.br/Lcq1tjlgt",
+      "https://amzn.to/4ljEMcV"
+    ],
+    "isFeatured": true
+  },
   {
     "slug": "iphone-16",
     "productCategory": "smartphone",

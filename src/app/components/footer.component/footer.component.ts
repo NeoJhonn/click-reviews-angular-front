@@ -14,7 +14,7 @@ import { RouterModule } from '@angular/router';
 })
 export class FooterComponent {
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  //constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngAfterViewInit(): void {
     // if (isPlatformBrowser(this.platformId)) {
