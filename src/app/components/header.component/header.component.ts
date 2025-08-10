@@ -39,7 +39,13 @@ export class HeaderComponent {
      // Escuta as mudanças de rota
     this.router.events.subscribe(() => {
       const currentRoute = this.router.url;
-      this.showFilter = currentRoute === '/';
+      if ( !currentRoute.startsWith('/contato')
+        || !currentRoute.startsWith('/privacidade')
+        || currentRoute.startsWith('/review') != true
+    ) {
+        console.log("rota atual= ", currentRoute);
+        this.showFilter = true;
+      }
     });
   }
 

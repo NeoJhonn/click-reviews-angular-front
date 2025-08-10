@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ChangeDetectorRef } from '@angular/core';
 import { MaterialModule } from '../../material.module-module';
 import { ProductData, ProductDataService } from '../../services/product-data.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-product-review-page',
@@ -31,7 +32,8 @@ export class ProductReviewPageComponent {
   };
 
   constructor(private route: ActivatedRoute,
-    private productService: ProductDataService, private cdr: ChangeDetectorRef) {
+    private productService: ProductDataService, private cdr: ChangeDetectorRef, private title: Title) {
+
 
   }
 
@@ -41,6 +43,9 @@ export class ProductReviewPageComponent {
     this.productService.getProductBySlug(slug).subscribe(product => {
       if (product) {
         this.product = product;
+
+        // SEO Metadata
+        this.title.setTitle(`${this.product.productTitle} | ClickReviews`);
         //this.cdr.detectChanges();
       } else {
         console.error('Produto não encontrado');

@@ -121,12 +121,12 @@ app.use(async (req, res, next) => {
           <meta name="description" content="${product.subtitle}">
           <meta property="og:title" content="${product.productTitle} | ClickReviews">
           <meta property="og:description" content="${product.subtitle}">
-          <meta property="og:image" content="${product.imageUrl}">
+          <meta property="og:image" content="${product.imageUrl[0]}">
           <meta property="og:url" content="https://clickreviews.com.br/review/${product.slug}">
           <meta name="twitter:card" content="summary_large_image">
           <meta name="twitter:title" content="${product.productTitle} | ClickReviews">
           <meta name="twitter:description" content="${product.subtitle}">
-          <meta name="twitter:image" content="${product.imageUrl}">
+          <meta name="twitter:image" content="${product.imageUrl[0]}">
           <meta property="twitter:url" content="https://clickreviews.com.br/review/${product.slug}">
           <!-- Canonical link -->
           <link rel="canonical" href="https://www.clickreviews.com.br${pathname}" />
@@ -136,7 +136,7 @@ app.use(async (req, res, next) => {
           "@context": "https://schema.org",
           "@type": "Product",
           "name": "${product.productTitle}",
-          "image": "${product.imageUrl}",
+          "image": "${product.imageUrl[0]}",
           "description": "${product.subtitle}",
           "offers": {
             "@type": "Offer",
