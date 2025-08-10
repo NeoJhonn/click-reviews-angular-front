@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, ElementRef, HostListener, inject } from '@angular/core';
 import { MaterialModule } from '../../material.module-module';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { RouterModule, Router, NavigationEnd, UrlTree } from '@angular/router';
@@ -15,6 +15,7 @@ export class HeaderComponent {
   private snackBar = inject(MatSnackBar);
   private filterService = inject(FilterService);
   private router = inject(Router);
+  private elementRef = inject(ElementRef);
 
   showFilter = false;
   private homeTree!: UrlTree; // UrlTree para a raiz "/"
@@ -56,6 +57,14 @@ export class HeaderComponent {
       fragment: 'ignored',
       matrixParams: 'ignored',
     });
+  }
+
+  // 🔹 Fecha o dropdown ao clicar fora
+  @HostListener('document:click', ['$event'])
+  onClickOutside(event: Event) {
+    if (this.isOpen && !this.elementRef.nativeElement.contains(event.target)) {
+      this.isOpen = false;
+    }
   }
 
   toggleDropdown() {
