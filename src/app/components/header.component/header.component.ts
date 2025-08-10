@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { MaterialModule } from '../../material.module-module';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router, NavigationEnd, UrlTree } from '@angular/router';
 import { FilterService } from '../../services/filter.service';
-import { Router } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +15,9 @@ export class HeaderComponent {
   private snackBar = inject(MatSnackBar);
   private filterService = inject(FilterService);
   private router = inject(Router);
+
   showFilter = false;
+  private homeTree!: UrlTree; // UrlTree para a raiz "/"
 
   selectedCategory: string = '';
   isOpen: boolean = false;
@@ -23,29 +25,36 @@ export class HeaderComponent {
   categories = [
     { label: 'Em destaque', value: 'destaque' },
     { label: 'Todos', value: '' },
-    { label: 'Smartphones', value: 'smartphone' },
+    { label: 'Smartphones', value: 'smartphones' },
     { label: 'Beleza', value: 'beleza' },
-    { label: 'Eletroportáteis', value: 'eletroportatil' },
-    { label: 'Acessórios Gamer', value: 'acessorio-Gamer' },
+    { label: 'Eletroportáteis', value: 'eletroportateis' },
+    { label: 'Acessórios Gamer', value: 'acessorio-gamer' },
     { label: 'Acessórios bebê', value: 'acessorio-bebe' },
-    //{ label: 'Jogos PS5', value: 'Jogo PS5' },
+    // { label: 'Jogos PS5', value: 'jogos-ps5' },
   ];
 
   ngOnInit(): void {
+    // Sincroniza o rótulo selecionado com o service
     this.filterService.category$.subscribe((category) => {
       this.selectedCategory = category;
     });
 
-     // Escuta as mudanças de rota
-    this.router.events.subscribe(() => {
-      const currentRoute = this.router.url;
-      if ( !currentRoute.startsWith('/contato')
-        || !currentRoute.startsWith('/privacidade')
-        || currentRoute.startsWith('/review') != true
-    ) {
-        console.log("rota atual= ", currentRoute);
-        this.showFilter = true;
-      }
+    // Cria a UrlTree da raiz e faz o check inicial
+    this.homeTree = this.router.createUrlTree(['/']);
+    this.updateShowFilter();
+
+    // Atualiza somente quando navegação termina
+    this.router.events
+      .pipe(filter((e) => e instanceof NavigationEnd))
+      .subscribe(() => this.updateShowFilter());
+  }
+
+  private updateShowFilter() {
+    this.showFilter = this.router.isActive(this.homeTree, {
+      paths: 'exact',
+      queryParams: 'ignored',
+      fragment: 'ignored',
+      matrixParams: 'ignored',
     });
   }
 
@@ -59,7 +68,10 @@ export class HeaderComponent {
   }
 
   getSelectedLabel(): string {
-    return this.categories.find(c => c.value === this.selectedCategory)?.label || 'Todos';
+    return (
+      this.categories.find((c) => c.value === this.selectedCategory)?.label ||
+      'Todos'
+    );
   }
 
   sharePage(): void {
@@ -75,19 +87,14 @@ export class HeaderComponent {
         .then(() => console.log('Compartilhado com sucesso!'))
         .catch((err) => console.error('Erro ao compartilhar:', err));
     } else {
-      // Fallback para copiar o link no desktop
       navigator.clipboard
         .writeText(window.location.href)
         .then(() => {
-          this.snackBar.open(
-            'Link copiado para a área de transferência!',
-            'Fechar',
-            {
-              duration: 3000,
-              horizontalPosition: 'center',
-              verticalPosition: 'bottom',
-            }
-          );
+          this.snackBar.open('Link copiado para a área de transferência!', 'Fechar', {
+            duration: 3000,
+            horizontalPosition: 'center',
+            verticalPosition: 'bottom',
+          });
         })
         .catch(() => {
           alert('Não foi possível copiar o link. Copie manualmente.');
