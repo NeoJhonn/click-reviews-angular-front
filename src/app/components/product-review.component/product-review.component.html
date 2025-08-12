@@ -48,6 +48,7 @@
 
     <p class="preco">Compare os preços:</p>
     <div class="afiliate-buttons">
+      @if ( linkComprar[0] != "") {
       <a
         class="affiliate-button"
         mat-stroked-button
@@ -63,7 +64,9 @@
       >
         💰 Ver Preço Atual no Mercado Livre
       </a>
-
+      }
+      
+      @if ( linkComprar[1] != "") {
       <a
         class="affiliate-button"
         mat-stroked-button
@@ -80,7 +83,9 @@
       >
         💰 Ver Preço Atual na Shopee
       </a>
-
+      }
+      
+      @if ( linkComprar[2] != "") {
       <a
         class="affiliate-button"
         mat-stroked-button
@@ -95,6 +100,7 @@
       >
         💰 Ver Preço Atual na Amazon
       </a>
+      }
     </div>
     <p class="preco">Preço a partir de {{ precoFormatado(price) }}</p>
 
@@ -131,6 +137,7 @@
   </mat-card-content>
 
   <div class="afiliate-buttons" style="margin-bottom: 1rem; margin-top: 1rem">
+    @if ( linkComprar[0] != "") {
     <a
       class="affiliate-button"
       mat-raised-button
@@ -145,7 +152,9 @@
     >
       👉 Comprar com Desconto no Mercado Livre
     </a>
-
+    }
+    
+    @if ( linkComprar[1] != "") {
     <a
       class="affiliate-button"
       mat-stroked-button
@@ -162,7 +171,9 @@
     >
       👉 Comprar com Desconto na Shopee
     </a>
-
+    }
+    
+    @if ( linkComprar[2] != "") {
     <a
       class="affiliate-button"
       mat-stroked-button
@@ -177,5 +188,6 @@
     >
       👉 Comprar com Desconto na Amazon
     </a>
+    }
   </div>
 </mat-card>
