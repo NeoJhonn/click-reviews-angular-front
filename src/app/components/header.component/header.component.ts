@@ -26,12 +26,13 @@ export class HeaderComponent {
   categories = [
     { label: 'Em destaque', value: 'destaque' },
     { label: 'Todos', value: '' },
-    { label: 'SmartPhones', value: 'smartphone' },
+    { label: 'Celulares', value: 'smartphone' },
     { label: 'Beleza', value: 'beleza' },
     { label: 'Eletroportáteis', value: 'eletroportatil' },
     { label: 'Acessórios Gamer', value: 'acessorio-gamer' },
     { label: 'Acessórios bebê', value: 'acessorio-bebe' },
-    // { label: 'Jogos PS5', value: 'jogos-ps5' },
+    { label: 'Calçados', value: 'calcados' },
+    { label: 'Vestuário', value: 'vestuario' }
   ];
 
   ngOnInit(): void {
