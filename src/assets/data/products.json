@@ -109,8 +109,8 @@
     "opinionPreview": "Um aspirador automotivo leve, prático e eficiente, perfeito para manter o interior do carro sempre limpo.",
     "opinion": "O Aspirador de Pó Automotivo WAP Car é uma solução prática e inteligente para quem deseja manter o carro limpo com rapidez e eficiência. Seu funcionamento direto na tomada 12V do veículo garante praticidade em qualquer lugar. O filtro HEPA proporciona uma limpeza mais higiênica, capturando até os menores alérgenos. Com seus acessórios versáteis — como o bico escova e a mangueira flexível — você alcança até os cantos mais difíceis com facilidade. O reservatório de 420ml é suficiente para limpezas rápidas, e sua remoção facilita o descarte da sujeira. Ideal para quem preza por conforto e organização no dia a dia.",
     "linkComprar": [
-      "https://mercadolivre.com/sec/1pHa2Xg",
-      "https://s.shopee.com.br/7fPSuR2fhY",
+      "https://mercadolivre.com/sec/19fTL8k",
+      "",
       "https://amzn.to/4mCZ6Hz"
     ],
     "isFeatured": true
@@ -144,6 +144,62 @@
     ],
     "isFeatured": true
   },
+  {
+  "slug": "truss-ultra-hydration-plus",
+  "productCategory": "beleza",
+  "productTitle": "Truss Kit Ultra Hydration Plus Shampoo e Condicionador 2x300ml - Review Completo",
+  "subtitle": "Hidratação profunda, controle do frizz e maciez intensa com a qualidade Truss.",
+  "imageUrl": [
+    "https://http2.mlstatic.com/D_NQ_NP_2X_856631-MLU74261428782_022024-F.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_2X_806130-MLU74261014456_022024-F.webp"
+  ],
+  "price": "150.08",
+  "benefits": [
+    "Hidrata profundamente, deixando os fios macios e sedosos",
+    "Controle eficaz do frizz para um visual mais alinhado",
+    "Fragrância agradável e duradoura",
+    "Qualidade profissional reconhecida no mercado",
+    "Ideal para manter a saúde e o brilho dos cabelos"
+  ],
+  "videoUrl": "https://www.youtube.com/embed/R44I87Lvm2A",
+  "opinionPreview": "Um tratamento de alta performance para cabelos mais hidratados, controlados e perfumados.",
+  "opinion": "O Truss Kit Ultra Hydration Plus combina o poder de hidratação profunda com o cuidado profissional que a marca oferece. O shampoo limpa suavemente enquanto o condicionador sela as cutículas, garantindo fios mais macios, brilhantes e sem frizz. A fragrância é marcante e duradoura, deixando os cabelos com um perfume irresistível. Reconhecida por sua qualidade, a Truss entrega um produto que realmente vale o investimento, sendo ideal para quem busca um cuidado de salão no dia a dia.",
+  "linkComprar": [
+    "https://mercadolivre.com/sec/2USD7FZ",
+    "https://s.shopee.com.br/6KuCvd3jsF",
+    "https://amzn.to/3UXhvCZ"
+  ],
+  "isFeatured": true
+},
+  {
+  "slug": "secador-taiff-style-pro-2000w",
+  "productCategory": "beleza",
+  "productTitle": "Secador de Cabelos Taiff Style Pro 2000W Prata - Review Completo",
+  "subtitle": "Potência profissional, tecnologia de íons e design ergonômico para cabelos impecáveis.",
+  "imageUrl": [
+    "https://http2.mlstatic.com/D_NQ_NP_2X_745062-MLU72836356863_112023-F.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_2X_807550-MLA48403939329_122021-F.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_2X_956774-MLU72761237140_112023-F.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_873262-MLU70171429317_062023-O.webp"
+  ],
+  "price": "231.90",
+  "benefits": [
+    "Potência de 2000W para secagem rápida e resultados profissionais",
+    "Tecnologia de íons que reduz frizz e deixa os fios mais brilhantes",
+    "Design ergonômico e leve para uso prolongado com conforto",
+    "Seis combinações de temperatura e velocidade para personalizar a secagem",
+    "Cabo de 3 metros e função de ar frio para finalização perfeita"
+  ],
+  "videoUrl": "https://www.youtube.com/embed/08wc9wfn5aY",
+  "opinionPreview": "Um secador potente, leve e versátil, ideal para uso profissional ou doméstico com qualidade de salão.",
+  "opinion": "O Secador Taiff Style Pro 2000W é a escolha certa para quem busca desempenho e praticidade. Com motor CA silencioso e tecnologia de íons, ele proporciona uma secagem rápida e eficiente, mantendo os cabelos mais saudáveis e com menos frizz. Suas seis combinações de temperatura e velocidade permitem adaptar o uso para diferentes tipos de cabelo e necessidades. O cabo longo de 3 metros garante liberdade de movimento, enquanto a função ar frio ajuda a fixar penteados. Compacto, leve e durável, é perfeito para profissionais da beleza e para quem deseja resultados de salão em casa.",
+  "linkComprar": [
+    "https://mercadolivre.com/sec/2v8ChLh",
+    "https://s.shopee.com.br/2g0uaH4xNK",
+    "https://amzn.to/45v5utf"
+  ],
+  "isFeatured": true
+},
   {
     "slug": "alfaparf-oil-curls-100ml",
     "productCategory": "beleza",
