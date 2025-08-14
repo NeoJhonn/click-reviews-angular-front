@@ -8,6 +8,7 @@ import express from 'express';
 import { join } from 'node:path';
 import fs from 'fs/promises';
 
+
 const app = express();
 
 const browserDistFolder = join(import.meta.dirname, '../browser');

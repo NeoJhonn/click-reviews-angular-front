@@ -3,209 +3,279 @@
                  bg-[radial-gradient(900px_480px_at_0%_10%,rgba(250,204,21,0.10),transparent)]
                  relative">
 
-    <!-- BG decor suave adicional -->
-    <div class="pointer-events-none absolute inset-0 -z-10 opacity-70">
-      <div class="absolute inset-0 bg-[radial-gradient(1200px_600px_at_100%_0%,rgba(253,230,138,0.18),transparent)]"></div>
+  <!-- BG decor suave adicional -->
+  <div class="pointer-events-none absolute inset-0 -z-10 opacity-70">
+    <div class="absolute inset-0 bg-[radial-gradient(1200px_600px_at_100%_0%,rgba(253,230,138,0.18),transparent)]"></div>
+  </div>
+
+  <!-- Sticky CTA (mobile) -->
+  <div class="fixed inset-x-3 bottom-3 z-50 md:hidden">
+    <a [href]="affiliateLinks.amazon" target="_blank" rel="nofollow noopener sponsored"
+       class="relative group flex items-center justify-center gap-2 px-5 py-3
+              rounded-full bg-black text-white
+              shadow-lg ring-1 ring-white/10
+              transition hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)]
+              animate-pulse
+              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+       data-gtm-event="exit_affiliate" data-model="iphone_16" data-merchant="amazon" data-position="sticky">
+      <strong class="font-semibold">Comprar iPhone 16 agora</strong>
+      <span class="ml-2 text-xs rounded-full bg-amber-300 text-amber-900 px-2 py-0.5 ring-1 ring-amber-400">Dia dos Pais</span>
+      <span class="pointer-events-none absolute inset-0 rounded-full
+                   opacity-0 group-hover:opacity-100 transition
+                   bg-[radial-gradient(80%_50%_at_50%_-20%,rgba(255,255,255,0.35),transparent)]"></span>
+    </a>
+  </div>
+
+  <!-- HERO -->
+  <div class="mx-auto max-w-6xl px-4 pt-10 pb-12 md:pt-16">
+    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full
+                bg-amber-100 text-amber-900 ring-1 ring-amber-200 shadow-sm mb-3">
+      <span class="text-sm font-medium">Oferta especial Dia dos Pais</span>
     </div>
 
-    <!-- Sticky CTA (mobile) -->
-    <div class="fixed inset-x-3 bottom-3 z-50 md:hidden">
-      <a [href]="affiliateLinks.amazon" target="_blank" rel="nofollow noopener sponsored"
-         class="relative group flex items-center justify-center gap-2 px-5 py-3
-                rounded-full bg-black text-white
-                shadow-lg ring-1 ring-white/10
-                transition hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)]
-                animate-[pulse_3s_ease-in-out_infinite]
-                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
-         data-gtm-event="exit_affiliate" data-model="iphone_16" data-merchant="amazon" data-position="sticky">
-        <strong class="font-semibold">Comprar iPhone 16 agora</strong>
-        <span class="ml-2 text-xs rounded-full bg-amber-300 text-amber-900 px-2 py-0.5 ring-1 ring-amber-400">Dia dos Pais</span>
-        <span class="pointer-events-none absolute inset-0 rounded-full
-                     opacity-0 group-hover:opacity-100 transition
-                     bg-[radial-gradient(80%_50%_at_50%_-20%,rgba(255,255,255,0.35),transparent)]"></span>
-      </a>
-    </div>
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <!-- Coluna esquerda -->
+      <div>
+        <h1 class="text-3xl md:text-5xl font-bold tracking-tight">iPhone 16 com preço de oportunidade</h1>
+        <p class="mt-3 text-lg text-gray-700">
+          Novo Controle da Câmera, câmera Fusion de 48 MP, cinco cores lindas e chip A18 superinteligente.
+          Tudo com eficiência excepcional no consumo de energia.
+        </p>
 
-    <!-- HERO -->
-    <div class="mx-auto max-w-6xl px-4 pt-10 pb-12 md:pt-16">
-      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full
-                  bg-amber-100 text-amber-900 ring-1 ring-amber-200 shadow-sm mb-3">
-        <span class="text-sm font-medium">Oferta especial Dia dos Pais</span>
+        <!-- CTAs por marca -->
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
+          @for (m of merchants; track m.key) {
+            <a [href]="affiliateLinks[m.key]" target="_blank" rel="nofollow noopener sponsored"
+               class="group flex items-center justify-center gap-2 rounded-xl border px-4 py-3
+                      shadow-sm transition hover:translate-y-[-1px] hover:shadow-lg
+                      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/10
+                      {{ m.btnBase }} {{ m.btnBorder }} {{ m.btnText }}"
+               data-gtm-event="exit_affiliate" data-model="iphone_16" [attr.data-merchant]="m.key" data-position="hero">
+              <span class="font-semibold">Ver oferta ({{ m.label }})</span>
+              <span class="ml-1 opacity-0 group-hover:opacity-100 transition">→</span>
+            </a>
+          }
+        </div>
+
+        <div class="mt-4 text-sm text-gray-700">
+          a partir de <span class="font-semibold text-gray-900">R$ {{ price.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) }}</span>
+        </div>
+
+        <ul class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+          @for (b of benefits; track b) {
+            <li class="flex items-start gap-2">
+              <span class="mt-1 size-2 rounded-full bg-gray-900"></span>
+              {{ b }}
+            </li>
+          }
+        </ul>
+
+        <!-- Logos -->
+        <div class="mt-6 flex items-center gap-4">
+          @for (logo of logoList; track logo.alt) {
+            <img [ngSrc]="logo.src" width="72" height="72"
+                 class="h-9 w-auto rounded-md ring-1 ring-gray-200 bg-white" [alt]="logo.alt"/>
+          }
+        </div>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-10 items-center">
-        <div>
-          <h1 class="text-3xl md:text-5xl font-bold tracking-tight">iPhone 16 com preço de oportunidade</h1>
-          <p class="mt-3 text-lg text-gray-700">
-            Novo Controle da Câmera, câmera Fusion de 48 MP, cinco cores lindas e chip A18 superinteligente.
-            Tudo com eficiência excepcional no consumo de energia.
-          </p>
-
-          <!-- CTAs por marca -->
-          <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
-            @for (m of merchants; track m.key) {
-              <a [href]="affiliateLinks[m.key]" target="_blank" rel="nofollow noopener sponsored"
-                 class="group flex items-center justify-center gap-2 rounded-xl border px-4 py-3
-                        shadow-sm transition hover:translate-y-[-1px] hover:shadow-lg
-                        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/10
-                        {{ m.btnBase }} {{ m.btnBorder }} {{ m.btnText }}"
-                 data-gtm-event="exit_affiliate" data-model="iphone_16" [attr.data-merchant]="m.key" data-position="hero">
-                <span class="font-semibold">Ver oferta ({{ m.label }})</span>
-                <span class="ml-1 opacity-0 group-hover:opacity-100 transition">→</span>
-              </a>
-            }
+      <!-- Coluna direita – Carrossel responsivo (4 imagens, sem corte/distorção) -->
+      <div class="flex flex-col gap-3">
+        <!-- imagem principal -->
+        <div
+          class="relative aspect-[4/5] md:aspect-[3/4] w-full overflow-hidden rounded-3xl ring-1 ring-gray-200 shadow-sm bg-white select-none"
+          tabindex="0"
+          (keydown.arrowLeft)="prev()"
+          (keydown.arrowRight)="next()"
+          (touchstart)="onTouchStart($event)"
+          (touchend)="onTouchEnd($event)"
+        >
+          <div class="absolute inset-0 p-2 md:p-3 bg-white">
+            <img
+              [ngSrc]="carouselImages[current()]"
+              alt="iPhone 16"
+              width="1200"
+              height="1500"
+              class="block h-full w-full object-contain"
+              priority
+            />
           </div>
 
-          <div class="mt-4 text-sm text-gray-700">
-            a partir de <span class="font-semibold text-gray-900">R$ {{ price.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) }}</span>
-          </div>
+          <!-- seta esquerda -->
+          <button type="button" aria-label="Imagem anterior"
+            class="absolute left-2 top-1/2 -translate-y-1/2 grid place-items-center
+                   h-9 w-9 rounded-full bg-white/95 ring-1 ring-gray-200 shadow
+                   hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/10"
+            (click)="prev()">
+            <span class="text-lg leading-none">‹</span>
+          </button>
 
-          <ul class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
-            @for (b of benefits; track b) {
-              <li class="flex items-start gap-2">
-                <span class="mt-1 size-2 rounded-full bg-gray-900"></span>
-                {{ b }}
-              </li>
-            }
-          </ul>
+          <!-- seta direita -->
+          <button type="button" aria-label="Próxima imagem"
+            class="absolute right-2 top-1/2 -translate-y-1/2 grid place-items-center
+                   h-9 w-9 rounded-full bg-white/95 ring-1 ring-gray-200 shadow
+                   hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/10"
+            (click)="next()">
+            <span class="text-lg leading-none">›</span>
+          </button>
 
-          <!-- Logos -->
-          <div class="mt-6 flex items-center gap-4">
-            @for (logo of logoList; track logo.alt) {
-              <img [ngSrc]="logo.src" width="72" height="72"
-                   class="h-9 w-auto rounded-md ring-1 ring-gray-200 bg-white" [alt]="logo.alt"/>
+          <!-- indicadores -->
+          <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
+            @for (img of carouselImages; track $index) {
+              <span class="h-1.5 w-1.5 rounded-full transition"
+                    [class.bg-gray-900]="$index === current()"
+                    [class.bg-gray-300]="$index !== current()"></span>
             }
           </div>
         </div>
 
-        <div>
-          <div class="aspect-[4/5] w-full overflow-hidden rounded-3xl ring-1 ring-gray-200 shadow-sm bg-white">
-            <img [ngSrc]="heroImages[0]" alt="iPhone 16" class="h-full w-full object-cover" width="1200" height="1500" priority />
-          </div>
-          <div class="mt-3 grid grid-cols-3 gap-3">
-            @for (img of heroImages.slice(1,4); track $index) {
-              <img [ngSrc]="img" width="400" height="300"
-                   class="h-28 w-full object-cover rounded-xl ring-1 ring-gray-200 bg-white"
-                   alt="iPhone 16 galeria" />
-            }
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- DESTAQUES CURTOS -->
-    <div class="mx-auto max-w-6xl px-4 py-8">
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        @for (h of highlights; track h.title) {
-          <div class="rounded-2xl ring-1 ring-gray-200 p-4 bg-white/90 shadow-sm">
-            <div class="text-base font-semibold">{{ h.title }}</div>
-            <p class="mt-1 text-sm text-gray-600">{{ h.desc }}</p>
-          </div>
-        }
-      </div>
-    </div>
-
-    <!-- COMPARATIVO SIMPLES -->
-    <div class="mx-auto max-w-6xl px-4 py-10">
-      <h2 class="text-2xl md:text-3xl font-bold mb-4">Compare e decida agora</h2>
-      <div class="overflow-x-auto rounded-2xl ring-1 ring-gray-200 bg-white shadow-sm">
-        <table class="min-w-full text-left">
-          <thead class="bg-slate-50 text-sm">
-            <tr>
-              <th class="px-4 py-3">Especificação</th>
-              <th class="px-4 py-3">iPhone 16
-                <span class="ml-2 inline-flex items-center rounded-full bg-black text-white text-xs px-2 py-0.5">Recomendado</span>
-              </th>
-              <th class="px-4 py-3">iPhone 15</th>
-              <th class="px-4 py-3">Galaxy S23</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-gray-100 text-sm">
-            @for (row of compareRows; track row.spec) {
-              <tr class="hover:bg-slate-50/60">
-                <td class="px-4 py-3 font-medium">{{ row.spec }}</td>
-                <td class="px-4 py-3">{{ row.iphone16 }}</td>
-                <td class="px-4 py-3">{{ row.iphone15 }}</td>
-                <td class="px-4 py-3">{{ row.s23 }}</td>
-              </tr>
-            }
-          </tbody>
-        </table>
-      </div>
-
-      <div class="mt-4 flex flex-wrap gap-3">
-        @for (c of compareCtas; track c.label) {
-          <a [href]="c.href" target="_blank" rel="nofollow noopener sponsored"
-             class="group flex items-center justify-center gap-2 rounded-xl border px-5 py-3 font-semibold
-                    transition hover:translate-y-[-1px] hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/10
-                    {{ c.btnBase }} {{ c.btnBorder }} {{ c.btnText }}"
-             data-gtm-event="exit_affiliate" [attr.data-model]="c.model" [attr.data-merchant]="c.merchant" data-position="compare">
-            {{ c.label }}
-            <span class="ml-1 opacity-0 group-hover:opacity-100 transition">→</span>
-          </a>
-        }
-      </div>
-    </div>
-
-    <!-- PREÇO / PARCELAMENTO + FAQ -->
-    <div class="mx-auto max-w-6xl px-4 pb-12">
-      <div class="grid md:grid-cols-3 gap-4 items-stretch">
-        <div class="md:col-span-2 rounded-2xl ring-1 ring-gray-200 p-6 bg-white shadow-sm">
-          <h3 class="text-xl font-semibold">Ofertas e parcelamento</h3>
-          <ul class="mt-3 text-sm text-gray-700 list-disc pl-5 space-y-1">
-            <li>Preços a partir de <strong>R$ {{ price.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) }}</strong></li>
-            <li>Parcelamento em até 10x sem juros* (varia por loja)</li>
-            <li>Nota fiscal e garantia do fabricante</li>
-            <li>Entrega rápida nas capitais</li>
-          </ul>
-          <div class="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3">
-            @for (m of merchants; track m.key) {
-              <a [href]="affiliateLinks[m.key]" target="_blank" rel="nofollow noopener sponsored"
-                 class="group flex items-center justify-center gap-2 rounded-xl border px-4 py-3
-                        shadow-sm transition hover:translate-y-[-1px] hover:shadow-lg
-                        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/10
-                        {{ m.btnBase }} {{ m.btnBorder }} {{ m.btnText }}"
-                 data-gtm-event="exit_affiliate" data-model="iphone_16" [attr.data-merchant]="m.key" data-position="price">
-                Ver preço na {{ m.label }}
-                <span class="ml-1 opacity-0 group-hover:opacity-100 transition">→</span>
-              </a>
-            }
-          </div>
-        </div>
-
-        <div class="rounded-2xl ring-1 ring-gray-200 p-6 bg-white shadow-sm">
-          <div class="text-sm text-gray-500">Oferta sazonal</div>
-          <div class="mt-1 text-lg font-semibold">Dia dos Pais</div>
-          <p class="mt-2 text-sm text-gray-700">Presenteie com tecnologia de ponta. Estoques limitados.</p>
-          <a [href]="affiliateLinks.amazon" target="_blank" rel="nofollow noopener sponsored"
-             class="mt-4 inline-flex items-center justify-center gap-2 rounded-xl border px-5 py-3 font-semibold
-                    bg-[#FFE6B3] border-[#E5C999] text-zinc-900
-                    shadow-sm transition hover:translate-y-[-1px] hover:shadow-lg hover:brightness-110
-                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/10"
-             data-gtm-event="exit_affiliate" data-model="iphone_16" data-merchant="amazon" data-position="seasonal">
-            Ver oferta agora
-            <span class="ml-1 opacity-0 group-hover:opacity-100 transition">→</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="mt-10 grid md:grid-cols-2 gap-4">
-        <div class="rounded-2xl ring-1 ring-gray-200 p-6 bg-white shadow-sm">
-          <h3 class="text-lg font-semibold">Perguntas frequentes</h3>
-          <div class="mt-3 text-sm text-gray-700 space-y-2">
-            @for (f of faq; track f.q) {
-              <div>
-                <div class="font-medium">{{ f.q }}</div>
-                <div>{{ f.a }}</div>
+        <!-- miniaturas em grid (4 itens) -->
+        <div class="grid grid-cols-4 gap-3">
+          @for (img of carouselImages; track $index) {
+            <button type="button"
+              class="group relative overflow-hidden rounded-xl ring-1 ring-gray-200 bg-white"
+              (click)="goTo($index)"
+              [class.outline]="current() === $index"
+              [class.outline-2]="current() === $index"
+              [class.outline-gray-400]="current() === $index">
+              <div class="aspect-[4/5] p-1">
+                <img
+                  [ngSrc]="img"
+                  width="400"
+                  height="300"
+                  class="block h-full w-full object-contain transition-transform duration-200 group-hover:scale-[1.02]"
+                  [alt]="'iPhone 16 miniatura ' + ($index + 1)"
+                />
               </div>
-            }
-          </div>
-        </div>
-        <div class="rounded-2xl ring-1 ring-gray-200 p-6 text-xs text-gray-600 leading-relaxed bg-white/90 shadow-sm">
-          <p>¹ A duração da bateria varia de acordo com o uso e a configuração. ² Acessórios vendidos separadamente.
-             ³ As telas têm bordas arredondadas; a área real de visualização é menor. Alguns recursos podem não estar
-             disponíveis em todos os países/regiões. Detecção de Acidente requer rede celular ou Wi-Fi.</p>
+            </button>
+          }
         </div>
       </div>
     </div>
-  </section>
+  </div>
+
+  <!-- DESTAQUES COM IMAGEM -->
+  <div class="mx-auto max-w-6xl px-4 py-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      @for (h of highlightCards; track h.title) {
+        <div class="rounded-2xl ring-1 ring-stone-200 p-4 bg-white/90 shadow-sm">
+          <div class="aspect-[4/3] w-full overflow-hidden rounded-xl ring-1 ring-stone-200 bg-white">
+            <img
+              [ngSrc]="h.img"
+              [alt]="h.alt"
+              width="600"
+              height="450"
+              class="h-full w-full object-cover"
+            />
+          </div>
+          <div class="mt-3 text-base font-semibold">{{ h.title }}</div>
+          <p class="mt-1 text-sm text-stone-600">{{ h.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- COMPARATIVO SIMPLES -->
+  <div class="mx-auto max-w-6xl px-4 py-10">
+    <h2 class="text-2xl md:text-3xl font-bold mb-4">Compare e decida agora</h2>
+    <div class="overflow-x-auto rounded-2xl ring-1 ring-gray-200 bg-white shadow-sm">
+      <table class="min-w-full text-left">
+        <thead class="bg-slate-50 text-sm">
+          <tr>
+            <th class="px-4 py-3">Especificação</th>
+            <th class="px-4 py-3">iPhone 16
+              <span class="ml-2 inline-flex items-center rounded-full bg-black text-white text-xs px-2 py-0.5">Recomendado</span>
+            </th>
+            <th class="px-4 py-3">iPhone 15</th>
+            <th class="px-4 py-3">Galaxy S23</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100 text-sm">
+          @for (row of compareRows; track row.spec) {
+            <tr class="hover:bg-slate-50/60">
+              <td class="px-4 py-3 font-medium">{{ row.spec }}</td>
+              <td class="px-4 py-3">{{ row.iphone16 }}</td>
+              <td class="px-4 py-3">{{ row.iphone15 }}</td>
+              <td class="px-4 py-3">{{ row.s23 }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-4 flex flex-wrap gap-3">
+      @for (c of compareCtas; track c.label) {
+        <a [href]="c.href" target="_blank" rel="nofollow noopener sponsored"
+           class="group flex items-center justify-center gap-2 rounded-xl border px-5 py-3 font-semibold
+                  transition hover:translate-y-[-1px] hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/10
+                  {{ c.btnBase }} {{ c.btnBorder }} {{ c.btnText }}"
+           data-gtm-event="exit_affiliate" [attr.data-model]="c.model" [attr.data-merchant]="c.merchant" data-position="compare">
+          {{ c.label }}
+          <span class="ml-1 opacity-0 group-hover:opacity-100 transition">→</span>
+        </a>
+      }
+    </div>
+  </div>
+
+  <!-- PREÇO / PARCELAMENTO + FAQ -->
+  <div class="mx-auto max-w-6xl px-4 pb-12">
+    <div class="grid md:grid-cols-3 gap-4 items-stretch">
+      <div class="md:col-span-2 rounded-2xl ring-1 ring-gray-200 p-6 bg-white shadow-sm">
+        <h3 class="text-xl font-semibold">Ofertas e parcelamento</h3>
+        <ul class="mt-3 text-sm text-gray-700 list-disc pl-5 space-y-1">
+          <li>Preços a partir de <strong>R$ {{ price.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) }}</strong></li>
+          <li>Parcelamento em até 10x sem juros* (varia por loja)</li>
+          <li>Nota fiscal e garantia do fabricante</li>
+          <li>Entrega rápida nas capitais</li>
+        </ul>
+        <div class="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3">
+          @for (m of merchants; track m.key) {
+            <a [href]="affiliateLinks[m.key]" target="_blank" rel="nofollow noopener sponsored"
+               class="group flex items-center justify-center gap-2 rounded-xl border px-4 py-3
+                      shadow-sm transition hover:translate-y-[-1px] hover:shadow-lg
+                      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/10
+                      {{ m.btnBase }} {{ m.btnBorder }} {{ m.btnText }}"
+               data-gtm-event="exit_affiliate" data-model="iphone_16" [attr.data-merchant]="m.key" data-position="price">
+              Ver preço na {{ m.label }}
+              <span class="ml-1 opacity-0 group-hover:opacity-100 transition">→</span>
+            </a>
+          }
+        </div>
+      </div>
+
+      <div class="rounded-2xl ring-1 ring-gray-200 p-6 bg-white shadow-sm">
+        <div class="text-sm text-gray-500">Oferta sazonal</div>
+        <div class="mt-1 text-lg font-semibold">Dia dos Pais</div>
+        <p class="mt-2 text-sm text-gray-700">Presenteie com tecnologia de ponta. Estoques limitados.</p>
+        <a [href]="affiliateLinks.amazon" target="_blank" rel="nofollow noopener sponsored"
+           class="mt-4 inline-flex items-center justify-center gap-2 rounded-xl border px-5 py-3 font-semibold
+                  bg-[#FFE6B3] border-[#E5C999] text-zinc-900
+                  shadow-sm transition hover:translate-y-[-1px] hover:shadow-lg hover:brightness-110
+                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/10"
+           data-gtm-event="exit_affiliate" data-model="iphone_16" data-merchant="amazon" data-position="seasonal">
+          Ver oferta agora
+          <span class="ml-1 opacity-0 group-hover:opacity-100 transition">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-10 grid md:grid-cols-2 gap-4">
+      <div class="rounded-2xl ring-1 ring-gray-200 p-6 bg-white shadow-sm">
+        <h3 class="text-lg font-semibold">Perguntas frequentes</h3>
+        <div class="mt-3 text-sm text-gray-700 space-y-2">
+          @for (f of faq; track f.q) {
+            <div>
+              <div class="font-medium">{{ f.q }}</div>
+              <div>{{ f.a }}</div>
+            </div>
+          }
+        </div>
+      </div>
+      <div class="rounded-2xl ring-1 ring-gray-200 p-6 text-xs text-gray-600 leading-relaxed bg-white/90 shadow-sm">
+        <p>¹ A duração da bateria varia de acordo com o uso e a configuração. ² Acessórios vendidos separadamente.
+           ³ As telas têm bordas arredondadas; a área real de visualização é menor. Alguns recursos podem não estar
+           disponíveis em todos os países/regiões. Detecção de Acidente requer rede celular ou Wi-Fi.</p>
+      </div>
+    </div>
+  </div>
+</section>
