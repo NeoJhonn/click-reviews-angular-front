@@ -8,7 +8,6 @@ import express from 'express';
 import { join } from 'node:path';
 import fs from 'fs/promises';
 
-
 const app = express();
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
@@ -16,20 +15,20 @@ const browserDistFolder = join(import.meta.dirname, '../browser');
 // Serve robots.txt from browser folder after build
 app.get('/robots.txt', (req, res) => {
   res.type('text/plain');
-  res.sendFile(join(import.meta.dirname,  '../browser/robots.txt'));
+  res.sendFile(join(import.meta.dirname, '../browser/robots.txt'));
 });
 
 // Serve sitemap.xml from browser folder after build
 app.get('/sitemap.xml', (req, res) => {
   res.type('application/xml');
-  res.sendFile(join(import.meta.dirname,  '../browser/sitemap.xml'));
+  res.sendFile(join(import.meta.dirname, '../browser/sitemap.xml'));
 });
-
-
 
 const angularApp = new AngularNodeAppEngine();
 
-async function streamToString(stream: ReadableStream<Uint8Array>): Promise<string> {
+async function streamToString(
+  stream: ReadableStream<Uint8Array>
+): Promise<string> {
   const reader = stream.getReader();
   const chunks: Uint8Array[] = [];
 
@@ -106,7 +105,10 @@ app.use(async (req, res, next) => {
       `;
       html = html
         .replace(/<title[^>]*>.*?<\/title>/i, '')
-        .replace(/<meta\s+(?:name|property)="(description|og:[^"]+|twitter:[^"]+)"[^>]*>/gi, '')
+        .replace(
+          /<meta\s+(?:name|property)="(description|og:[^"]+|twitter:[^"]+)"[^>]*>/gi,
+          ''
+        )
         .replace('<head>', `<head>\n${title}\n${metas}`);
     }
 
@@ -150,9 +152,101 @@ app.use(async (req, res, next) => {
         `;
         html = html
           .replace(/<title[^>]*>.*?<\/title>/i, '')
-          .replace(/<meta\s+(?:name|property)="(description|og:[^"]+|twitter:[^"]+)"[^>]*>/gi, '')
+          .replace(
+            /<meta\s+(?:name|property)="(description|og:[^"]+|twitter:[^"]+)"[^>]*>/gi,
+            ''
+          )
           .replace('<head>', `<head>\n${title}\n${metas}`);
       }
+    }
+
+    // LANDING PAGE: /oferta/iphone-16
+    const normalized = pathname.replace(/\/+$/, '');
+    if (normalized === '/oferta/iphone-16') {
+      console.log('📦 Injecting LP meta for: /oferta/iphone-16');
+
+      const lp = {
+        title: 'iPhone 16 com preço de oportunidade | ClickReviews',
+        subtitle:
+          'Novo Controle da Câmera, câmera Fusion de 48 MP, cinco cores lindas e chip A18 superinteligente. Tudo com eficiência excepcional no consumo de energia.',
+        images: [
+          'https://http2.mlstatic.com/D_NQ_NP_2X_928475-MLA78901058072_092024-F.webp',
+          'https://http2.mlstatic.com/D_NQ_NP_2X_809152-MLA79138858581_092024-F.webp',
+          'https://http2.mlstatic.com/D_NQ_NP_2X_888579-MLA78900902176_092024-F.webp',
+          'https://http2.mlstatic.com/D_NQ_NP_2X_888921-MLA78901058088_092024-F.webp',
+        ],
+        price: 4679.1,
+        url: 'https://www.clickreviews.com.br/oferta/iphone-16',
+        offers: [
+          {
+            seller: 'Amazon',
+            url: 'https://amzn.to/45AdB8b',
+          },
+          {
+            seller: 'Mercado Livre',
+            url: 'https://mercadolivre.com/sec/1HzCfrS',
+          },
+          {
+            seller: 'Shopee',
+            url: 'https://s.shopee.com.br/8pbZvNw2Pl',
+          },
+        ],
+      };
+
+      const title = `<title>${lp.title}</title>`;
+      const metas = `
+      <meta name="description" content="${lp.subtitle}">
+      <meta property="og:title" content="${lp.title}">
+      <meta property="og:description" content="${lp.subtitle}">
+      <meta property="og:image" content="${lp.images[0]}">
+      <meta property="og:url" content="${lp.url}">
+      <meta property="og:type" content="product">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:title" content="${lp.title}">
+      <meta name="twitter:description" content="${lp.subtitle}">
+      <meta name="twitter:image" content="${lp.images[0]}">
+      <meta property="twitter:url" content="${lp.url}">
+      <!-- Canonical link -->
+      <link rel="canonical" href="${lp.url}" />
+      <!-- JSON-LD -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Apple iPhone 16",
+        "description": "${lp.subtitle.replace(/"/g, '\\"')}",
+        "image": ${JSON.stringify(lp.images)},
+        "brand": { "@type": "Brand", "name": "Apple" },
+        "offers": [
+          ${lp.offers
+            .map(
+              (o) => `{
+            "@type": "Offer",
+            "priceCurrency": "BRL",
+            "price": "${lp.price.toFixed(2)}",
+            "availability": "https://schema.org/InStock",
+            "seller": { "@type": "Organization", "name": "${o.seller}" },
+            "url": "${o.url}"
+          }`
+            )
+            .join(',')}
+        ]
+      }
+      </script>
+    `;
+
+      html = html
+        // remove <title> atual
+        .replace(/<title[^>]*>.*?<\/title>/i, '')
+        // remove metas og/twitter/description existentes
+        .replace(
+          /<meta\s+(?:name|property)="(description|og:[^"]+|twitter:[^"]+)"[^>]*>\s*/gi,
+          ''
+        )
+        // remove canonical existente
+        .replace(/<link\s+rel="canonical"[^>]*>\s*/i, '')
+        // injeta no <head>
+        .replace('<head>', `<head>\n${title}\n${metas}`);
     }
 
     // CONTATO PAGE
@@ -175,7 +269,10 @@ app.use(async (req, res, next) => {
       `;
       html = html
         .replace(/<title[^>]*>.*?<\/title>/i, '')
-        .replace(/<meta\s+(?:name|property)="(description|og:[^"]+|twitter:[^"]+)"[^>]*>/gi, '')
+        .replace(
+          /<meta\s+(?:name|property)="(description|og:[^"]+|twitter:[^"]+)"[^>]*>/gi,
+          ''
+        )
         .replace('<head>', `<head>\n${title}\n${metas}`);
     }
 
@@ -194,7 +291,9 @@ app.use(async (req, res, next) => {
 
 if (isMainModule(import.meta.url)) {
   const port = process.env['PORT'] || 4000;
-  app.listen(port, () => console.log(`✅ Server listening at http://localhost:${port}`));
+  app.listen(port, () =>
+    console.log(`✅ Server listening at http://localhost:${port}`)
+  );
 }
 
 export const handler = createNodeRequestHandler(app);
