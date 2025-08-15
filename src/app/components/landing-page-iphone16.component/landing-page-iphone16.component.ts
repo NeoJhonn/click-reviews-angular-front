@@ -109,7 +109,7 @@ export class LandingPageIphone16Component {
       alt: 'Mercado Livre',
     },
     {
-      src: 'https://i.pinimg.com/1200x/5d/37/4b/5d374ba5148119cf4ae8940bceca7a78.jpg',
+      src: 'https://i.pinimg.com/1200x/2e/33/01/2e3301fdd34755e5e0f48c608ba6fc16.jpg',
       alt: 'Shopee',
     },
   ];

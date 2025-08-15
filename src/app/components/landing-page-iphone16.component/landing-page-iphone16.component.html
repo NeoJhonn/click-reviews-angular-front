@@ -11,7 +11,7 @@
   <!-- Sticky CTA (mobile) -->
   <div class="fixed inset-x-3 bottom-3 z-50 md:hidden">
     <a [href]="affiliateLinks.amazon" target="_blank" rel="nofollow noopener sponsored"
-       class="relative group flex items-center justify-center gap-2 px-5 py-3
+       class="affiliate-button relative group flex items-center justify-center gap-2 px-5 py-3
               rounded-full bg-black text-white
               shadow-lg ring-1 ring-white/10
               transition hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)]
@@ -19,7 +19,7 @@
               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
        data-gtm-event="exit_affiliate" data-model="iphone_16" data-merchant="amazon" data-position="sticky">
       <strong class="font-semibold">Comprar iPhone 16 agora</strong>
-      <span class="ml-2 text-xs rounded-full bg-amber-300 text-amber-900 px-2 py-0.5 ring-1 ring-amber-400">Dia dos Pais</span>
+      <span class="ml-2 text-xs rounded-full bg-amber-300 text-amber-900 px-2 py-0.5 ring-1 ring-amber-400">Mês dos Pais</span>
       <span class="pointer-events-none absolute inset-0 rounded-full
                    opacity-0 group-hover:opacity-100 transition
                    bg-[radial-gradient(80%_50%_at_50%_-20%,rgba(255,255,255,0.35),transparent)]"></span>
@@ -30,7 +30,7 @@
   <div class="mx-auto max-w-6xl px-4 pt-10 pb-12 md:pt-16">
     <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full
                 bg-amber-100 text-amber-900 ring-1 ring-amber-200 shadow-sm mb-3">
-      <span class="text-sm font-medium">Oferta especial Dia dos Pais</span>
+      <span class="text-sm font-medium">Oferta especial Mês dos Pais</span>
     </div>
 
     <div class="grid md:grid-cols-2 gap-10 items-center">
@@ -46,7 +46,7 @@
         <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
           @for (m of merchants; track m.key) {
             <a [href]="affiliateLinks[m.key]" target="_blank" rel="nofollow noopener sponsored"
-               class="group flex items-center justify-center gap-2 rounded-xl border px-4 py-3
+               class="affiliate-button group flex items-center justify-center gap-2 rounded-xl border px-4 py-3
                       shadow-sm transition hover:translate-y-[-1px] hover:shadow-lg
                       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/10
                       {{ m.btnBase }} {{ m.btnBorder }} {{ m.btnText }}"
@@ -207,7 +207,7 @@
     <div class="mt-4 flex flex-wrap gap-3">
       @for (c of compareCtas; track c.label) {
         <a [href]="c.href" target="_blank" rel="nofollow noopener sponsored"
-           class="group flex items-center justify-center gap-2 rounded-xl border px-5 py-3 font-semibold
+           class="affiliate-button group flex items-center justify-center gap-2 rounded-xl border px-5 py-3 font-semibold
                   transition hover:translate-y-[-1px] hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/10
                   {{ c.btnBase }} {{ c.btnBorder }} {{ c.btnText }}"
            data-gtm-event="exit_affiliate" [attr.data-model]="c.model" [attr.data-merchant]="c.merchant" data-position="compare">
@@ -232,7 +232,7 @@
         <div class="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3">
           @for (m of merchants; track m.key) {
             <a [href]="affiliateLinks[m.key]" target="_blank" rel="nofollow noopener sponsored"
-               class="group flex items-center justify-center gap-2 rounded-xl border px-4 py-3
+               class="affiliate-button group flex items-center justify-center gap-2 rounded-xl border px-4 py-3
                       shadow-sm transition hover:translate-y-[-1px] hover:shadow-lg
                       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/10
                       {{ m.btnBase }} {{ m.btnBorder }} {{ m.btnText }}"
@@ -246,10 +246,10 @@
 
       <div class="rounded-2xl ring-1 ring-gray-200 p-6 bg-white shadow-sm">
         <div class="text-sm text-gray-500">Oferta sazonal</div>
-        <div class="mt-1 text-lg font-semibold">Dia dos Pais</div>
+        <div class="mt-1 text-lg font-semibold">Mês dos Pais</div>
         <p class="mt-2 text-sm text-gray-700">Presenteie com tecnologia de ponta. Estoques limitados.</p>
         <a [href]="affiliateLinks.amazon" target="_blank" rel="nofollow noopener sponsored"
-           class="mt-4 inline-flex items-center justify-center gap-2 rounded-xl border px-5 py-3 font-semibold
+           class="affiliate-button mt-4 inline-flex items-center justify-center gap-2 rounded-xl border px-5 py-3 font-semibold
                   bg-[#FFE6B3] border-[#E5C999] text-zinc-900
                   shadow-sm transition hover:translate-y-[-1px] hover:shadow-lg hover:brightness-110
                   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/10"
