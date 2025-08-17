@@ -10,7 +10,7 @@
   <a [routerLink]="['/review', product.slug]">
     <img mat-card-image [attr.loading]="'lazy'" [src]="product.imageUrl[0]" [alt]="product.productTitle" [style]="{'width': '15rem', 'text-align': 'center', 'margin-left': '2rem'}">
   </a>
-  
+
   <mat-card-content>
     <p>{{ product.opinionPreview }}</p>
   </mat-card-content>
@@ -19,8 +19,8 @@
     <button matButton class="custom-button">
       <a [routerLink]="['/review', product.slug]">Review/Análise</a>
     </button>
-    <button matButton class="custom-button">
-      <a [href]="product.linkComprar[0]" target="_blank">Comprar no Mercado Livre</a>
+    <button matButton class="custom-button" style="margin-left: 1rem !important;">
+      <a [href]="product.linkComprar[0]" target="_blank"> Ver Preço Agora</a>
     </button>
   </mat-card-actions>
 </mat-card>

@@ -1,7 +1,7 @@
 <mat-card class="product-review">
   <mat-card-header>
-    <mat-card-title>{{ productTitle }}</mat-card-title>
-    <mat-card-subtitle>{{ subtitle }}</mat-card-subtitle>
+    <mat-card-title style="margin-bottom: 1rem !important;">{{ productTitle }}</mat-card-title>
+    <mat-card-subtitle style="margin-bottom: 1rem !important;">{{ subtitle }}</mat-card-subtitle>
   </mat-card-header>
 
   <!-- Carrosel de imagens-->
@@ -36,7 +36,7 @@
   </div>
 
   <mat-card-content>
-    <h3>✨ Principais Benefícios</h3>
+    <h3 style="margin-top: 1rem !important;">✨ Principais Benefícios</h3>
     <div class="benefits-list">
       @for (benefit of benefits; track benefit) {
       <div class="benefit-item">
@@ -65,7 +65,7 @@
         💰 Ver Preço Atual no Mercado Livre
       </a>
       }
-      
+
       @if ( linkComprar[1] != "") {
       <a
         class="affiliate-button"
@@ -84,7 +84,7 @@
         💰 Ver Preço Atual na Shopee
       </a>
       }
-      
+
       @if ( linkComprar[2] != "") {
       <a
         class="affiliate-button"
@@ -127,8 +127,13 @@
       ></iframe>
     </div>
 
+    <br>
+
     <h3>💡 Nossa Opinião</h3>
+    <br>
     <p>{{ opinion }}</p>
+
+    <br>
 
     <p>
       <mat-icon color="primary">verified</mat-icon>
@@ -153,7 +158,7 @@
       👉 Comprar com Desconto no Mercado Livre
     </a>
     }
-    
+
     @if ( linkComprar[1] != "") {
     <a
       class="affiliate-button"
@@ -172,7 +177,7 @@
       👉 Comprar com Desconto na Shopee
     </a>
     }
-    
+
     @if ( linkComprar[2] != "") {
     <a
       class="affiliate-button"
