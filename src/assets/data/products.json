@@ -314,6 +314,35 @@
     "isFeatured": true
   },
   {
+  "slug": "moedor-cafe-oster",
+  "productCategory": "eletroportatil",
+  "productTitle": "Moedor de Café Oster Inox - Review Completo",
+  "subtitle": "Praticidade, rapidez e sabor de café fresco em cada moagem.",
+  "imageUrl": [
+    "https://http2.mlstatic.com/D_NQ_NP_909680-MLA84842531445_052025-O.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_637154-MLA84842531463_052025-O.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_873301-MLA84842394239_052025-O.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_922807-MLA84842635379_052025-O.webp"
+  ],
+  "price": "247.47",
+  "benefits": [
+    "Moagem rápida e eficiente em poucos segundos",
+    "Design em inox durável e elegante",
+    "Compacto e fácil de usar no dia a dia",
+    "Recipiente prático e simples de limpar",
+    "Marca confiável com ótimo custo-benefício"
+  ],
+  "videoUrl": "https://www.youtube.com/embed/ZYWw1s2H-GM",
+  "opinionPreview": "Um moedor eficiente, prático e confiável para garantir café fresco e saboroso sempre.",
+  "opinion": "O Moedor de Café Oster Inox é uma excelente escolha para os amantes de café que prezam por sabor e praticidade. Com design moderno em inox, ele realiza a moagem em poucos segundos, garantindo que o café preserve aroma e frescor. Compacto e simples de usar, é ideal para quem deseja preparar café moído na hora sem complicação. Usuários elogiam sua durabilidade, custo-benefício e a confiança da marca Oster. Um aparelho que une praticidade, qualidade e sabor, tornando-se um ótimo investimento para o dia a dia.",
+  "linkComprar": [
+    "https://mercadolivre.com/sec/11bVuPa",
+    "https://s.shopee.com.br/10KxTZLZU",
+    "https://amzn.to/4fJIBXT"
+  ],
+  "isFeatured": true
+},
+  {
     "slug": "cercadinho-tapete-bebe-180x120",
     "productCategory": "acessorio-bebe",
     "productTitle": "Cercadinho Para Crianças + Tapete Para Engatinhar 180x120 - Review Completo",
@@ -340,8 +369,37 @@
       "https://s.shopee.com.br/Lcq1tjlgt",
       "https://amzn.to/4ljEMcV"
     ],
-    "isFeatured": true
+    "isFeatured": false
   },
+  {
+  "slug": "wella-oil-reflections",
+  "productCategory": "beleza",
+  "productTitle": "Wella Oil Reflections Óleo Capilar 100ml - Review Completo",
+  "subtitle": "Brilho, nutrição e saúde para cabelos com química e tintura.",
+  "imageUrl": [
+    "https://http2.mlstatic.com/D_NQ_NP_799640-MLU73578931492_122023-O.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_853977-MLU69962643675_062023-O.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_763495-MLU69962683423_062023-O.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_662866-MLU69962683439_062023-O.webp"
+  ],
+  "price": "128.00",
+  "benefits": [
+    "Nutre profundamente cabelos com química e tintura",
+    "Proporciona brilho intenso e aspecto saudável",
+    "Textura leve que não pesa nos fios",
+    "Fragrância agradável e sofisticada",
+    "Produto aprovado e recomendado por usuários fiéis"
+  ],
+  "videoUrl": "https://www.youtube.com/embed/BTzePeP74QA",
+  "opinionPreview": "Um óleo capilar premium que hidrata, realça o brilho e melhora a saúde dos fios tratados quimicamente.",
+  "opinion": "O Wella Oil Reflections é um dos óleos capilares mais elogiados do mercado, especialmente por quem possui cabelos quimicamente tratados ou coloridos. Ele proporciona nutrição e brilho intenso sem deixar os fios pesados, ajudando a manter a aparência saudável e sedosa. Além de sua fragrância sofisticada, é reconhecido pela eficácia no tratamento contínuo dos cabelos, tornando-se um produto indispensável na rotina de beleza. Usuários destacam a alta qualidade e confirmam que o investimento vale a pena pelo resultado entregue.",
+  "linkComprar": [
+    "https://mercadolivre.com/sec/2Jv8yuD",
+    "https://s.shopee.com.br/8Uyt7f99iC",
+    "https://amzn.to/3HEKPv3"
+  ],
+  "isFeatured": true
+},
   {
     "slug": "iphone-16",
     "productCategory": "smartphone",
@@ -427,7 +485,7 @@
       "https://s.shopee.com.br/8UyOESwvwL",
       "https://amzn.to/4fdTpx3"
     ],
-    "isFeatured": true
+    "isFeatured": false
   },
   {
     "slug": "galaxy-a15",
