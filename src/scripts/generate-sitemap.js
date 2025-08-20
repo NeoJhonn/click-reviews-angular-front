@@ -5,7 +5,7 @@ const products = JSON.parse(
   await fs.readFile(new URL('../assets/data/products.json', import.meta.url))
 );
 
-const baseUrl = 'https://www.clickreviews.com.br';
+const baseUrl = 'https://www.clickreviews.com.br/';
 const privacyUrl = 'https://www.clickreviews.com.br/privacidade';
 const contactUrl = 'https://www.clickreviews.com.br/contato';
 const ofertaiPhoneUrl ="https://www.clickreviews.com.br/oferta/iphone-16"
