@@ -102,7 +102,7 @@ app.use(async (req, res, next) => {
         <meta name="twitter:image" content="https://www.clickreviews.com.br/assets/icons/logo_site.webp">
         <meta property="twitter:url" content="https://www.clickreviews.com.br/privacidade">
         <!-- Canonical link -->
-        <link rel="canonical" href="https://www.clickreviews.com.br/privacidade}" />
+        <link rel="canonical" href="https://www.clickreviews.com.br/privacidade" />
       `;
       html = html
         .replace(/<title[^>]*>.*?<\/title>/i, '')
