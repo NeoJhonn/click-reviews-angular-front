@@ -11,10 +11,10 @@ const contactUrl = 'https://www.clickreviews.com.br/contato';
 const ofertaiPhoneUrl ="https://www.clickreviews.com.br/oferta/iphone-16"
 
 const urls = [
-  `<url><loc>${baseUrl}/</loc><changefreq>daily</changefreq><priority>0.9</priority></url>`,
-  `<url><loc>${privacyUrl}/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>`,
-  `<url><loc>${contactUrl}/</loc><changefreq>daily</changefreq><priority>0.5</priority></url>`,
-  `<url><loc>${ofertaiPhoneUrl}/</loc><changefreq>daily</changefreq><priority>0.5</priority></url>`,
+  `<url><loc>${baseUrl}</loc><changefreq>daily</changefreq><priority>0.9</priority></url>`,
+  `<url><loc>${privacyUrl}</loc><changefreq>daily</changefreq><priority>1.0</priority></url>`,
+  `<url><loc>${contactUrl}</loc><changefreq>daily</changefreq><priority>0.5</priority></url>`,
+  `<url><loc>${ofertaiPhoneUrl}</loc><changefreq>daily</changefreq><priority>0.5</priority></url>`,
   ...products.map(product =>
     `<url><loc>${baseUrl}/review/${product.slug}</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>`
   ),
