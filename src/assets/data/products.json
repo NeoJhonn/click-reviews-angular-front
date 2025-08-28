@@ -29,6 +29,35 @@
     "isFeatured": true
   },
   {
+  "slug": "air-fryer-mondial",
+  "productCategory": "eletroportatil",
+  "productTitle": "Fritadeira Air Fryer Mondial Oven 12L - Review Completo",
+  "subtitle": "Mais espaço, praticidade e versatilidade na cozinha com a Air Fryer Forno 2 em 1 da Mondial.",
+  "imageUrl": [
+    "https://http2.mlstatic.com/D_NQ_NP_2X_907753-MLA88156326024_072025-F.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_2X_743064-MLA89669871068_082025-F.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_2X_799558-MLA90044073655_082025-F.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_2X_864108-MLA89670015244_082025-F.webp"
+  ],
+  "price": "556.80",
+  "benefits": [
+    "2 em 1: Air Fryer e Forno, unindo versatilidade e praticidade",
+    "Capacidade total de 12L com cesto de 5L e 3 assadeiras antiaderentes",
+    "Painel digital com 10 funções predefinidas e timer de 90 minutos",
+    "Permite preparar até 3 receitas de uma só vez",
+    "Acompanha luva de silicone para segurança no manuseio"
+  ],
+  "videoUrl": "https://www.youtube.com/embed/HX29IVfqS4c",
+  "opinionPreview": "Uma Air Fryer potente e espaçosa, ideal para quem busca praticidade e receitas saudáveis.",
+  "opinion": "A Fritadeira Air Fryer Mondial Oven 12L é muito mais que uma simples fritadeira: é uma solução completa para a cozinha. Com espaço generoso e a versatilidade de forno, permite preparar diferentes receitas ao mesmo tempo, economizando tempo e energia. Seu painel digital intuitivo facilita o uso, enquanto as funções predefinidas tornam o preparo mais prático. Além disso, o cesto de 5L e as assadeiras antiaderentes proporcionam maior variedade no cardápio. O design moderno, aliado à facilidade de limpeza e à possibilidade de cozinhar sem óleo, faz dela a escolha ideal para quem busca saúde, praticidade e economia no dia a dia.",
+  "linkComprar": [
+    "https://mercadolivre.com/sec/2xCvTG2",
+    "https://s.shopee.com.br/7V6Yctyoex",
+    "https://amzn.to/47jKc4E"
+  ],
+  "isFeatured": true
+},
+  {
     "slug": "purificador-electrolux-pe12g",
     "productCategory": "eletroportatil",
     "productTitle": "Purificador de Água Electrolux PE12G - Review Completo",
@@ -142,7 +171,7 @@
       "https://s.shopee.com.br/9pTqUeC3cC",
       "https://amzn.to/40NaCrp"
     ],
-    "isFeatured": true
+    "isFeatured": false
   },
   {
   "slug": "truss-ultra-hydration-plus",
@@ -198,7 +227,7 @@
     "https://s.shopee.com.br/2g0uaH4xNK",
     "https://amzn.to/45v5utf"
   ],
-  "isFeatured": true
+  "isFeatured": false
 },
   {
     "slug": "alfaparf-oil-curls-100ml",
@@ -227,7 +256,7 @@
       "https://s.shopee.com.br/AKQ3ZSHuVK",
       "https://amzn.to/4m7xZUU"
     ],
-    "isFeatured": true
+    "isFeatured": false
   },
   {
     "slug": "aparador-philips-oneblade",
@@ -256,7 +285,7 @@
       "https://s.shopee.com.br/gFdj1FMQc",
       "https://amzn.to/3J1VfFm"
     ],
-    "isFeatured": true
+    "isFeatured": false
   },
   {
     "slug": "kit-alfaparf-real-rigen-nutritive-1000ml",
@@ -282,7 +311,7 @@
       "https://s.shopee.com.br/709uqyrWdK",
       ""
     ],
-    "isFeatured": true
+    "isFeatured": false
   },
   {
     "slug": "galaxy-a06",
@@ -398,7 +427,7 @@
     "https://s.shopee.com.br/8Uyt7f99iC",
     "https://amzn.to/3HEKPv3"
   ],
-  "isFeatured": true
+  "isFeatured": false
 },
   {
     "slug": "iphone-16",
@@ -427,7 +456,7 @@
       "https://s.shopee.com.br/7pihJrC483",
       "https://amzn.to/4ogXlBs"
     ],
-    "isFeatured": true
+    "isFeatured": false
   },
   {
     "slug": "death-stranding-2-ps5",

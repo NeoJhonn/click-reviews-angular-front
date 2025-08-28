@@ -8,7 +8,6 @@ import express from 'express';
 import { join } from 'node:path';
 import fs from 'fs/promises';
 
-
 const app = express();
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
@@ -110,6 +109,8 @@ app.use(async (req, res, next) => {
           /<meta\s+(?:name|property)="(description|og:[^"]+|twitter:[^"]+)"[^>]*>/gi,
           ''
         )
+        // remove canonical existente
+        .replace(/<link\s+rel="canonical"[^>]*>\s*/i, '')
         .replace('<head>', `<head>\n${title}\n${metas}`);
     }
 
@@ -157,6 +158,8 @@ app.use(async (req, res, next) => {
             /<meta\s+(?:name|property)="(description|og:[^"]+|twitter:[^"]+)"[^>]*>/gi,
             ''
           )
+          // remove canonical existente
+          .replace(/<link\s+rel="canonical"[^>]*>\s*/i, '')
           .replace('<head>', `<head>\n${title}\n${metas}`);
       }
     }
@@ -274,6 +277,8 @@ app.use(async (req, res, next) => {
           /<meta\s+(?:name|property)="(description|og:[^"]+|twitter:[^"]+)"[^>]*>/gi,
           ''
         )
+        // remove canonical existente
+        .replace(/<link\s+rel="canonical"[^>]*>\s*/i, '')
         .replace('<head>', `<head>\n${title}\n${metas}`);
     }
 
