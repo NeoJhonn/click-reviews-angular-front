@@ -16,7 +16,7 @@ const urls = [
   `<url><loc>${contactUrl}</loc><changefreq>daily</changefreq><priority>0.5</priority></url>`,
   `<url><loc>${ofertaiPhoneUrl}</loc><changefreq>daily</changefreq><priority>0.5</priority></url>`,
   ...products.map(product =>
-    `<url><loc>${baseUrl}/review/${product.slug}</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>`
+    `<url><loc>${baseUrl}review/${product.slug}</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>`
   ),
 ];
 
