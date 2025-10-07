@@ -14,17 +14,17 @@ import { RouterModule } from '@angular/router';
 })
 export class FooterComponent {
 
-  //constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngAfterViewInit(): void {
-    // if (isPlatformBrowser(this.platformId)) {
-    //   try {
-    //     window.adsbygoogle = window.adsbygoogle || [];
-    //     window.adsbygoogle.push({});
-    //   } catch (e) {
-    //     console.error('Erro ao carregar anúncio do AdSense:', e);
-    //   }
-    // }
+    if (isPlatformBrowser(this.platformId)) {
+      try {
+        window.adsbygoogle = window.adsbygoogle || [];
+        window.adsbygoogle.push({});
+      } catch (e) {
+        console.error('Erro ao carregar anúncio do AdSense:', e);
+      }
+    }
   }
 
   currentYear: number = new Date().getFullYear();

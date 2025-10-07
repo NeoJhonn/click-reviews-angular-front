@@ -372,6 +372,35 @@
     "isFeatured": true
   },
   {
+  "slug": "samsung-galaxy-a16-5g",
+  "productCategory": "smartphone",
+  "productTitle": "Samsung Galaxy A16 5G 256GB + 8GB RAM - Review Completo",
+  "subtitle": "Desempenho veloz, tela vibrante e bateria duradoura em um design elegante e moderno.",
+  "imageUrl": [
+    "https://http2.mlstatic.com/D_NQ_NP_2X_802978-MLA80779777864_112024-F.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_2X_980386-MLA80779594038_112024-F.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_2X_879594-MLA80779729652_112024-F.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_2X_887951-MLA80779777898_112024-F.webp"
+  ],
+  "price": "1160.00",
+  "benefits": [
+    "Tela Super AMOLED FHD+ de 6.7” e 90Hz para cores vivas e fluidez",
+    "Processador Helio G99 com desempenho estável e veloz",
+    "256GB de armazenamento e 8GB de RAM + 8GB de RAM Plus",
+    "Câmera tripla com sensor principal de até 50MP para fotos nítidas e detalhadas",
+    "Bateria de 5000mAh com carregamento super-rápido de até 25W"
+  ],
+  "videoUrl": "https://www.youtube.com/embed/vIjDSntIrjo",
+  "opinionPreview": "Um smartphone completo, equilibrando desempenho, design e recursos premium com ótimo custo-benefício.",
+  "opinion": "O Samsung Galaxy A16 5G é uma das melhores opções da linha intermediária da marca, oferecendo desempenho fluido e design sofisticado. A tela Super AMOLED de 6.7” garante cores vibrantes e excelente nitidez, perfeita para vídeos, jogos e redes sociais. O processador Helio G99, aliado aos 8GB de RAM (expansíveis com RAM Plus), entrega performance estável mesmo em multitarefas. A câmera principal de 50MP captura imagens com ótima definição, enquanto a bateria de 5000mAh assegura autonomia para o dia todo. Além disso, o NFC, a certificação IP54 e o suporte a 5G tornam o A16 um smartphone moderno e preparado para o futuro. Ideal para quem busca tecnologia, durabilidade e estilo em um só aparelho.",
+  "linkComprar": [
+    "https://mercadolivre.com/sec/2a738DX",
+    "https://s.shopee.com.br/6VF3JVwU6N",
+    "https://amzn.to/4mSe6RC"
+  ],
+  "isFeatured": true
+},
+  {
   "slug": "moedor-cafe-oster",
   "productCategory": "eletroportatil",
   "productTitle": "Moedor de Café Oster Inox - Review Completo",
