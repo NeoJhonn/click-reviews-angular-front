@@ -27,8 +27,36 @@
     "https://amzn.to/3Q8G1Cg"
   ],
   "isFeatured": true
-}
-  ,
+},
+  {
+  "slug": "panela-pressao-inox-tramontina",
+  "productCategory": "utensilios-cozinha",
+  "productTitle": "Panela de Pressão 4,5L Inox Fundo Triplo Brava Tramontina - Review Completo",
+  "subtitle": "Segurança, durabilidade e cozimento uniforme em uma panela de pressão premium feita totalmente em aço inox.",
+  "imageUrl": [
+    "https://tramontina.vtexassets.com/arquivos/ids/168938-1200-auto?v=638820467130870000&width=1200&height=auto&aspect=true",
+    "https://tramontina.vtexassets.com/arquivos/ids/168939-1200-auto?v=638820467132300000&width=1200&height=auto&aspect=true",
+    "https://tramontina.vtexassets.com/arquivos/ids/168940-1200-auto?v=638820467133130000&width=1200&height=auto&aspect=true",
+    "https://tramontina.vtexassets.com/arquivos/ids/168941-1200-auto?v=638820467134000000&width=1200&height=auto&aspect=true"
+  ],
+  "price": "399.90",
+  "benefits": [
+    "Construção totalmente em aço inox, extremamente durável e resistente à corrosão",
+    "Fundo triplo (aço inox + alumínio + aço inox) para cozimento mais rápido e uniforme",
+    "Compatível com fogões a gás, elétricos, vitrocerâmicos e por indução",
+    "Possui múltiplos sistemas de segurança e certificação INMETRO",
+    "Medidor interno de capacidade e sistema de descompressão para maior praticidade"
+  ],
+  "videoUrl": "https://www.youtube.com/embed/GemPnmtwLrY",
+  "opinionPreview": "Uma das melhores panelas de pressão em inox do mercado para quem busca durabilidade, segurança e desempenho superior.",
+  "opinion": "A Panela de Pressão Brava 4,5L da Tramontina é uma opção premium voltada para quem deseja investir em um utensílio durável e de alta qualidade. Diferente dos modelos convencionais de alumínio, ela é fabricada totalmente em aço inox, material que não libera resíduos nos alimentos e mantém sua aparência por muitos anos. Seu fundo triplo distribui o calor de forma uniforme, reduzindo o tempo de cozimento e contribuindo para a economia de energia. Outro grande diferencial está na compatibilidade com todos os tipos de fogão, incluindo indução, além dos diversos sistemas de segurança que proporcionam mais tranquilidade durante o uso. O acabamento sofisticado, os cabos antitérmicos e o medidor interno tornam a experiência ainda mais prática. É uma excelente escolha para quem cozinha frequentemente e procura uma panela de pressão robusta, segura e preparada para durar muitos anos.",
+  "linkComprar": [
+    "https://meli.la/2q7HNnr",
+    "",
+    "https://amzn.to/3SehfBr"
+  ],
+  "isFeatured": true
+},
   {
     "slug": "fire-tv-stick-3-geracao",
     "productCategory": "eletroportatil",
